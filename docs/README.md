@@ -1,6 +1,14 @@
-# Bounded native Markdown API
+# Bounded native Markdown API and manual supplement
 
-[API.md](API.md) binds all 99 doc-gen4 display sites in seven library leaves to
+The new eighth leaf, [`CompactOpenBasis`](CompactOpenBasis.md), has a separate
+manual API supplement listing all eight declarations and exact hypotheses.
+It was not in the frozen native doc-gen4 run, historical 99 display sites,
+loaded-environment census or raw-artifact application below. These historical
+counts and receipts cannot certify the new leaf or changed public-import and
+example bytes. Do not regenerate or reinterpret the old records as if the new
+module had been analyzed; the manual supplement is not native output.
+
+[API.md](API.md) binds all 99 historical doc-gen4 display sites in seven library leaves to
 exact native names, kinds, preserved visible header tokens, source docstrings
 and line ranges. [Guide.md](Guide.md) explains the mathematics; [CREDITS.md](CREDITS.md)
 records project expression and adaptation origins. `SpectralStoneDuality.lean`
@@ -22,8 +30,11 @@ recursors `SpectralStoneDuality.SpectralCat.rec` and
 `SpectralStoneDuality.SpectralCat.Hom.rec`. A *display site* is not a unique
 kernel declaration count or a complete proof, visibility or rights audit.
 The equation and two recursors are generated despite the false classification
-flag. A separate raw-artifact inventory and stored-body application must
-determine their own complete checking units; 272 is not a prescribed total.
+flag. The historical raw-artifact inventory and stored-body application used
+their own checking units; 272 is not a prescribed total for another revision.
+Current computational release checks are the pinned build and complete actual
+transitive standard-axiom audit, including private repository declarations.
+Separate stored-proof replay and fresh doc generation are not prerequisites.
 
 The frozen nine-module raw-artifact author application separately checks 272
 raw occurrences as 266 stored bodies plus six structural replay units, including
@@ -40,13 +51,20 @@ not ship the native HTML website, JS, styles, fonts, search or dependency
 documentation. No browser rendering or full dependency-site coverage has been
 claimed. Historical full-revision GitHub source URL strings are verified as
 native input records, not asserted to be live or reachable in an independent
-public lineage. The shipped `[Source]` links resolve **within this release
-tree**, where all nine source files have byte-identical counterparts to the
-frozen source revision.
+public lineage. The historical `[Source]` links resolve within this tree for
+the original seven leaves, whose source bytes and native ranges remain unchanged.
+The aggregate import and Examples file have changed and did not contribute
+native display sites; the added eighth leaf has only its manual supplement.
 
 ## Reproduce native input and generated output
 
-To reproduce the shipped Markdown in this release checkout, use the nine
+To reproduce the frozen generated Markdown, work in a separate checkout with
+the nine historical Lean inputs and translated Lake configuration unchanged
+(for example, the prior public-release revision
+`698de8ace0c572cf3766529aa3edcede548e9848`). This candidate deliberately
+changes the aggregate and Examples sources, so `generate_api.py --check`
+**rejects it for input drift**; do not reinterpret the historical manifest
+as a check of this candidate. In the separate checkout, use the nine
 authenticated historical `declaration-data-*.bmp` records from the retained native
 generation evidence (obtain that evidence from the maintainer). They are not
 bundled website assets. No development ancestry or dependency cache is needed
@@ -60,7 +78,8 @@ python3 -B -O scripts/test_generate_api.py --native-data "$native_data"
 python3 -B -OO scripts/test_generate_api.py --native-data "$native_data"
 ```
 
-The shipped API is directly usable without this evidence or historical checkout.
+The historical generated API and new manual supplement are directly usable
+without this evidence or historical checkout.
 For an optional new native generation, the following is the **historical input
 recipe**, not a claim that the translated release configuration was analyzed.
 It additionally requires access to the exact historical source checkout and its

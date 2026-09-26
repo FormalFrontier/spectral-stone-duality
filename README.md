@@ -20,8 +20,10 @@ compact-open lattice. These natural identifications give
 
 The topology API also proves that small cofiltered limits of spectral spaces along
 spectral maps are spectral, that the projections are spectral, and that compact-open
-cylinders form a basis. Nonemptiness of the limit is a separate theorem requiring
-every diagram object to be nonempty. Independently, a compact open of any subspace
+cylinders form a basis on any specified limiting cone or the actual chosen limit.
+Nonemptiness of the limit is a separate theorem requiring every diagram object
+to be nonempty; cylinder-basis theorems do not require it. Independently, a
+compact open of any subspace
 of a prespectral space lifts to an ambient compact open; the subspace need not be
 closed or compact. Spectrality of a map to that subspace can be detected after
 composing with its inclusion.
@@ -34,7 +36,7 @@ correspondence and coverage decisions are maintained outside this repository.
 
 Use `import SpectralStoneDuality` for the whole library, or import a leaf below.
 All library modules opt into Lean's module system; the root publicly re-exports
-the seven leaves. Implementation-local helpers remain private.
+the eight leaves. Implementation-local helpers remain private.
 
 | Module under `SpectralStoneDuality` | Selected interfaces |
 | --- | --- |
@@ -44,6 +46,7 @@ the seven leaves. Implementation-local helpers remain private.
 | `Reconstruction` | `spaceToSpectrum`, `spaceSpectrumHomeomorph`, `spaceUnitIso` |
 | `Equivalence` | `stoneDuality` |
 | `Limits` | `spectralSpace_limit_of_spectral`, `nonempty_limit_of_spectral`, spectral projections and compact-open cylinder basis |
+| `CompactOpenBasis` | `compactOpenCylinders_isBasis`, `chosenLimitCompactOpenCylinders_isBasis`, `directedCompactOpenCylinders_isBasis` and their cylinder/index definitions |
 | `Subspace` | `exists_compactOpen_image_eq_inter`, `isSpectralMap_to_subtype_of_comp` |
 
 Names in the first two rows, apart from `PrimeIdealSpectrum`, are in the namespace
@@ -51,6 +54,11 @@ Names in the first two rows, apart from `PrimeIdealSpectrum`, are in the namespa
 `SpectralStoneDuality`. The `Limits` diagram APIs use `J : Type v`, `[SmallCategory J]`
 and `F : J ⥤ TopCat.{max v u}`. The general constructible-continuity helper supports
 independent source and target universes.
+The separate `CompactOpenBasis` API permits `[Category.{w} J]` rather than
+`[SmallCategory J]` with `D : J ⥤ TopCat.{max v u}` and a specified `IsLimit C`;
+its chosen version assumes `[HasLimit D]` and its `Iᵒᵖ` specialization uses
+`[Preorder I] [IsDirectedOrder I] [Nonempty I]` and `TopCat.{v}`. See the
+[manual module API](docs/CompactOpenBasis.md) for exact hypotheses.
 
 ## Build and examples
 
@@ -98,13 +106,16 @@ objectwise nonempty hypothesis explicitly in the nonempty-limit theorem.
 
 The [mathematical guide](docs/Guide.md) explains spectrum conventions, map
 orientation, sobriety, limit hypotheses and arbitrary-subspace lifting. The
-[generated Markdown API](docs/API.md) contains all 99 native display sites from
-the seven leaves, with same-tree source ranges; the root and separate examples
-have no native display sites. Its [reproduction recipe](docs/README.md),
+[generated Markdown API](docs/API.md) retains 99 historical native display sites
+from the original seven unchanged leaves, with frozen same-tree source ranges;
+the eighth
+leaf is documented in a [manual API supplement](docs/CompactOpenBasis.md) and
+was **not** part of native generation. Its [reproduction recipe](docs/README.md),
 [input/output manifest](docs/api-manifest.json) and maintained bounded
 [adapter](scripts/generate_api.py) and [tests](scripts/test_generate_api.py)
 bind the exact source and tool revisions. These display records do not replace
-the complete raw-declaration proof audit. The [credits](docs/CREDITS.md) distinguish
+the complete transitive axiom audit of built repository declarations.
+The [credits](docs/CREDITS.md) distinguish
 project expression, mathematical background and adapted project tooling.
 
 Measured **on the historical analyzed graph** with internal Ideal revision
@@ -130,6 +141,17 @@ GiB (about 7.8 GiB in this worktree). Network, hardware, cache availability,
 memory accounting and cold compilation can change all these costs substantially.
 
 ## Development and release status
+
+The computational release checks are a successful build of the pinned candidate
+and a complete transitive axiom audit, including private repository declarations;
+only `propext`, `Classical.choice` and `Quot.sound` are permitted. An ordinary
+Lean build checks proofs. Separate stored-proof replay is not a release
+prerequisite. Applicable unchanged evidence is reused; the historical replay
+and native-documentation records below do not cover the new module or clients.
+The compact-open basis contribution has its own successful default build and
+standard-axiom results for all eight new public and seven new private example
+declarations, retained in the development review record. Independent acceptance
+and publication are separate decisions recorded against exact revisions.
 
 The mathematical development and module-system/example/metadata repair at
 `e6e5b4c` had independent ordinary-main review (PR18 review 3097, acceptance in

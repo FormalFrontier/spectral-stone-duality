@@ -5,7 +5,8 @@ project:
   name: "spectral-stone-duality"
   description: >-
     Prime-ideal spectra of bounded distributive lattices, their contravariant
-    equivalence with spectral spaces, cofiltered spectral limits and compact-open
+    equivalence with spectral spaces, cofiltered spectral limits, compact-open
+    cylinder bases on specified and chosen limiting cones, and compact-open
     lifting from arbitrary subspaces of prespectral spaces.
   authors:
     - "Formal Frontier Agents"
@@ -20,13 +21,15 @@ sources:
     note: >-
       Classical order and topology results proved with native mathlib and the
       ideal-completion library. No novelty or source-author endorsement is claimed.
-  - title: "Cofiltered spectral limits and compact opens of subspaces"
+  - title: "Cofiltered spectral limits, compact-open cylinders and subspaces"
     type: "folklore"
     relationship: "independently-proves"
     note: >-
       The limit theorem assumes spectral transition maps and a small cofiltered
       category; nonemptiness additionally assumes objectwise nonemptiness.
-      The compact-open lifting theorem allows arbitrary subspaces.
+      Compact-open cylinder bases for specified and chosen cofiltered limits
+      need spectral stages and arrows, but not inhabited stage spaces. The
+      compact-open lifting theorem allows arbitrary subspaces.
   - title: "Foundations of Rigid Geometry I"
     authors:
       - "Kazuhiro Fujiwara"
@@ -71,7 +74,7 @@ automation:
 
 status:
   scope: >-
-    Reusable Stone duality and the stated limit/subspace topology. This metadata
+    Reusable Stone duality and the stated limit/cylinder/subspace topology. This metadata
     does not assert full Fujiwara-Kato source coverage or release acceptance.
 
 review:
@@ -95,7 +98,10 @@ review:
     status prose. This successor addresses those findings and binds the public
     dependency translation; its fresh exact-candidate review was not yet recorded
     at preparation. This historical account does not predict later decisions or
-    itself certify release acceptance.
+    itself certify release acceptance. The additive CompactOpenBasis candidate
+    and its import-only clients are not accepted by the earlier source-local
+    review; they require fresh exact-candidate library review before integration
+    and any subsequent release.
 
 acknowledgements: >-
   Lean and mathlib authors for the proof assistant, automation and mathematical

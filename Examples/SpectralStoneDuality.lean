@@ -14,10 +14,11 @@ are a separate default build target, not additional library API. They exercise
 the advertised structures and maps without opening private implementations.
 -/
 
-open CategoryTheory Order Set TopologicalSpace Topology SpectralStoneDuality
+open CategoryTheory CategoryTheory.Limits Order Set TopologicalSpace Topology
+  SpectralStoneDuality Opposite
 open SpectralStoneDuality.PrimeIdealSpectrum
 
-universe u v
+universe u v w
 
 namespace SpectralStoneDualityExamples
 
@@ -89,6 +90,62 @@ private theorem nonemptyLimit (hne : ∀ j, Nonempty (F.obj j)) :
     Nonempty (TopCat.limitCone F).pt := nonempty_limit_of_spectral F hX hmap hne
 
 end Limits
+
+section CompactOpenBasis
+
+variable {J : Type v} [Category.{w} J] [IsCofiltered J]
+  (D : J ⥤ TopCat.{max v u}) (C : Cone D)
+  (hC : IsLimit C)
+  (hX : ∀ j, SpectralSpace (D.obj j))
+  (hmap : ∀ {i j : J} (f : i ⟶ j), IsSpectralMap (D.map f))
+
+include hC hX hmap
+
+private theorem specifiedConeBasis :
+    Opens.IsBasis (Set.range (compactOpenCylinder D C)) :=
+  compactOpenCylinders_isBasis D C hC hX hmap
+
+omit hC in
+private theorem chosenConeBasis [HasLimit D] :
+    Opens.IsBasis (Set.range (chosenLimitCompactOpenCylinder D)) :=
+  chosenLimitCompactOpenCylinders_isBasis D hX hmap
+
+end CompactOpenBasis
+
+section DirectedCompactOpenBasis
+
+private theorem natRefinement (D : Natᵒᵖ ⥤ TopCat.{0}) [HasLimit D]
+    (hX : ∀ i : Nat, SpectralSpace (D.obj (op i)))
+    (hmap : ∀ {a b : Natᵒᵖ} (f : a ⟶ b), IsSpectralMap (D.map f))
+    (W : Opens ((limit D : TopCat.{0}))) (x : (limit D : TopCat.{0})) (hx : x ∈ W) :
+    ∃ (i : Nat) (U : Opens (D.obj (op i))), IsCompact (U : Set (D.obj (op i))) ∧
+      x ∈ (Opens.map (limit.π D (op i))).obj U ∧
+        (Opens.map (limit.π D (op i))).obj U ≤ W := by
+  obtain ⟨_, ⟨k, rfl⟩, hxU, hUW⟩ :=
+    Opens.isBasis_iff_nbhd.mp (directedCompactOpenCylinders_isBasis D hX hmap) hx
+  change Σ i : Nat, {U : Opens (D.obj (op i)) // IsCompact (U : Set (D.obj (op i)))} at k
+  rcases k with ⟨i, ⟨U, hUc⟩⟩
+  exact ⟨i, U, hUc, hxU, hUW⟩
+
+private def emptyNatDiagram : Natᵒᵖ ⥤ TopCat.{0} :=
+  (Functor.const Natᵒᵖ).obj (TopCat.of Empty)
+
+private instance emptySpectral : SpectralSpace Empty where
+
+private theorem emptyNatBasis :
+    Opens.IsBasis (Set.range (directedCompactOpenCylinder emptyNatDiagram)) := by
+  apply directedCompactOpenCylinders_isBasis emptyNatDiagram
+  · intro _
+    change SpectralSpace Empty
+    infer_instance
+  · intro a b f
+    change IsSpectralMap (id : Empty → Empty)
+    exact isSpectralMap_id
+
+private theorem emptyNatNoPoints (x : (limit emptyNatDiagram : TopCat.{0})) : False :=
+  Empty.elim ((limit.π emptyNatDiagram (op 0)) x)
+
+end DirectedCompactOpenBasis
 
 -- No closedness or compactness of the subspace itself is assumed.
 private theorem liftSubspaceCompactOpen {X : Type u} [TopologicalSpace X]

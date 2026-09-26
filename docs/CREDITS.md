@@ -16,6 +16,17 @@ The tracked development first introduced the seven leaves in the commits
 below. All are credited to Anchor (Source Maintainer) in Git; later merge
 commits do not replace their actual author commits.
 
+The additive `CompactOpenBasis.lean` and its import-only example clients are
+authored by Worker A Task `hive-request-292c683e356788488db9697f8ab88ae299106146`,
+UID `6d244d81-b9d8-4b91-9995-94823c4fc80b`. Their mathematical adapter is
+adapted from Formal Frontier's earlier independently reviewed, accepted
+source-local Lean research (source repository revision
+`089feedd2e8d6897819ef1a1177a28a5eb850c72`, basis input blob
+`c46a4695fd1f30f07ae445a7a3f2fcd1adab0e78`). This is reuse of the
+project's own original formal expression and mathlib results; the new library
+candidate, metadata and manual documentation require their own independent
+review. No source-specific correspondence or coverage decision is made here.
+
 | Shipped Lean source | First project expression and relevant successor |
 | --- | --- |
 | `SpectralStoneDuality/PrimeSpectrum.lean` | `184e009` prime spectrum; `dd3adcc` specialization; `55ec5ce` module boundary; `e6e5b4c` exposed data |

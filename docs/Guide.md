@@ -2,8 +2,9 @@
 
 This is a guide to the *reusable library*, not a source-coverage declaration. Start
 with `import SpectralStoneDuality`; the module-specific imports below are public
-alternatives. The [generated API](API.md) binds displayed declarations to the
-actual sources; [Examples/SpectralStoneDuality.lean](../Examples/SpectralStoneDuality.lean)
+alternatives. The [generated historical API](API.md) binds its seven original leaves
+to frozen sources, while the [compact-open cylinder API](CompactOpenBasis.md) is a
+manual supplement for the new leaf; [Examples/SpectralStoneDuality.lean](../Examples/SpectralStoneDuality.lean)
 is a separately compiled client of the aggregate public import.
 
 ## Prime spectra and the open-set convention
@@ -82,6 +83,16 @@ Sobriety is checked by taking generic points of closures of the projected
 irreducible closed subset and proving their compatibility. Refer to the
 linked statements for the exact size and topology parameters.
 
+`CompactOpenBasis` adapts the native cofiltered set basis to an `Opens.IsBasis` of
+compact-open cylinders. For an arbitrary specified `C : Cone D` with `IsLimit C`,
+it uses `C.π.app`; for a chosen limit it uses the literal `limit.π D`.
+The general diagram requires `J : Type v`, `[Category.{w} J]`,
+`[IsCofiltered J]`, `D : J ⥤ TopCat.{max v u}`, spectral stages and spectral
+diagram arrows. The `Iᵒᵖ` version has the same-universe target `TopCat.{v}`
+and assumes a **nonempty directed index preorder**, not nonempty stage spaces.
+The [manual supplement](CompactOpenBasis.md) lists all eight declarations and
+exact hypotheses. The existing `Limits` set-basis result remains unchanged.
+
 The `Subspace` module has an independent basis-level theorem
 `exists_compactOpen_image_eq_inter_of_basis`. In a prespectral `X`,
 `exists_compactOpen_image_eq_inter` lifts any **compact open of `Y : Set X`**
@@ -94,8 +105,9 @@ spectral map after composition with `Subtype.val : Y → X`, then
 ## Using this guide
 
 The root [README](../README.md) gives the exact toolchain, private dependency
-prerequisite and build commands. [API.md](API.md) displays native doc-gen4
-headers, not self-contained proof terms or a complete raw declaration census.
+prerequisite and build commands. [API.md](API.md) displays frozen native doc-gen4
+headers of seven leaves, not the new manual supplement, self-contained proof terms
+or a complete raw declaration census.
 The [API reproduction contract](README.md) explains revision bindings and
 data-only tests. Examples are compiled by the default build but are private
 clients, not additional exported interfaces. At preparation on September 26, 2026,
