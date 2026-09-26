@@ -1,0 +1,893 @@
+{
+  "SpectralStoneDuality.IsSpectralMap.continuous_constructible": {
+    "display_kind": "theorem",
+    "doc_sha256": "4e572e2e7df77cd9b43879b5fccc4812472ca87bf2b2cc42154ec458cce0c094",
+    "end": 90,
+    "header_sha256": "177690a66ec6bb07074634167624f598eee1e67ea9615ee3c0ef0a94ab0b980b",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 77
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum": {
+    "display_kind": "abbrev",
+    "doc_sha256": "f83d12e1d5e9c83d48334b1e0f735a63044aa6e3d1ac124dfeffcd655c579d76",
+    "end": 40,
+    "header_sha256": "bf474230b84681876f7a443047c9a69a5134c87b697d1e55e6200c67ee36c6c0",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 38
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.basicOpen": {
+    "display_kind": "def",
+    "doc_sha256": "6261be05b355e1a7dac0b63e2e8b4b9cbbe8735db96aaab22c393475a1d36583",
+    "end": 176,
+    "header_sha256": "44fcdb884975e14f84b870a847ca63f3c8481b75baa436ec80548889c0fc5cb8",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 173
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.basicOpen_subset_iff": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 260,
+    "header_sha256": "63ae359c52a0ea50d5143087db05fee0006fbe24a0e1449b63db29b7c3c47b8d",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 255
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.compactOpenOrderIso": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "c422c7af58b8876f5b5b9859a4f3a3c315c00071834687d00865ff018aee77a9",
+    "end": 179,
+    "header_sha256": "d4be9bc0ae606278b858f287eb2020916108c11124ac27536c1b688805ec6d2d",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 158
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.compactOpenOrderIso_apply": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 188,
+    "header_sha256": "3deb0a3d2ebed9cfb051f58145786f05ad84ff664f0daef48c9b698f6a99259a",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 186
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.continuous_spectrumComap": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 113,
+    "header_sha256": "97918296494a549058581387da843cd95eec816475e2a1b57c4788a7b9e77ea3",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 107
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.idealOpenOrderIso": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "2db91c853f2428a86d063cff383632388ac043a1be87e3084b416d246bf52b1c",
+    "end": 290,
+    "header_sha256": "12a371404d9eea41790b5a7349f930f598a737d9b087c3d7470ee16b7a21963e",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 287
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.instCompactSpace": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 380,
+    "header_sha256": "a4de60647d4bc1798dedec9316903bff50749b7d349a8a218646c7f10fab8ec2",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 370
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.instPrespectralSpace": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 346,
+    "header_sha256": "a02c2c26fd4d527d285a561db594798794bd815769482c4650d5a79f068bf51e",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 344
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.instQuasiSeparatedSpace": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 368,
+    "header_sha256": "dab2fcc8c8c4a928eb67e590ab1f2386660d60eb81c8ee13e779b0a888a28dd8",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 364
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.instQuasiSober": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 488,
+    "header_sha256": "d5c3e00fb5fb0a1da3bf900390ad4d6d67b08a8fef1fd46bdd729b29f8376e4f",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 486
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.instSpectralSpace": {
+    "display_kind": "instance",
+    "doc_sha256": "d2a543618b0deb4e5f8484c3bf2d5654d6412d4a69c5a4ff69f21fcc440075bf",
+    "end": 491,
+    "header_sha256": "8589fd8ab8d3a53992290893ac8a54bc020aadbf572c1d30806d64e6f4501e63",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 490
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.instT0Space": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 392,
+    "header_sha256": "fca089be01f1044d04c7b300a3e785def35f65909d93245b92a62c59f9677c19",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 382
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.instTopologicalSpace": {
+    "display_kind": "instance",
+    "doc_sha256": "6132ddda1c414dc0ace0360ae3fef0b8adc3191dfeb269d635fc328797d54acf",
+    "end": 180,
+    "header_sha256": "7db28af5298d622e26fd1ad132f5e64a0341d77622e48baceb89ec51db6674e6",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 178
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.isCompact_basicOpen_iff": {
+    "display_kind": "theorem",
+    "doc_sha256": "a416aa0da41402bedb0f3e9a87c02f6f8851cf26649c90806a8a4cac161bf7c0",
+    "end": 324,
+    "header_sha256": "489b3e347e99a7c1f38065784b8df231eac7d1dd219dd5be16bc516654beec4e",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 317
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.isOpen_basicOpen": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 189,
+    "header_sha256": "646c3d945a8d58f1a2dda84a311f68bcb60d92197fa3044c1676910ab66e68f6",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 186
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.isOpen_iff_exists_basicOpen": {
+    "display_kind": "theorem",
+    "doc_sha256": "933a600d13f5f44390a97ebc47f463b39fbe4ca739d24779f9e36ef4c8f519c5",
+    "end": 203,
+    "header_sha256": "c2ab567a216bb11c1c2a7f99e55c2dd43fea4866a006d2e04739802a1d07f1a2",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 191
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.isSpectralMap_spectrumComap": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 127,
+    "header_sha256": "9fa91b62090209c41c77d2b630d60535c3b8e3e06f8714e46247c40bc0e322b3",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 115
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.isTopologicalBasis_basicOpen_principal": {
+    "display_kind": "theorem",
+    "doc_sha256": "fd8f39cb38cc182104be9dc85f70575df8d92a64f239ce520cabe5c08a8b107d",
+    "end": 338,
+    "header_sha256": "62eb4d1ace344c59a8e34d031cdaaaca948439118df15b4b9e8b3b66b3f62d25",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 326
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.mem_primeFilter": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 55,
+    "header_sha256": "c039df452b497395bd4488ddb24ee721a0e32dee1ab1ecbee6d68c32ca516721",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 53
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.ofPoint": {
+    "display_kind": "def",
+    "doc_sha256": "c2ecae9726173930bf20198f9ddb610ab8fdc5c6a83d359ddd447c5a068d1f86",
+    "end": 132,
+    "header_sha256": "6f3723c10f4577360271ccfbf4c5afa8a549ced91f21b5ca25a98b573c48172a",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 130
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.ofPoint_toPoint": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 139,
+    "header_sha256": "c53096f33be5a9b2475b4fe2b5133441142603fa7cb30896c3c619c3e715d047",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 134
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.pointEquiv": {
+    "display_kind": "def",
+    "doc_sha256": "8efc2eef58c035fa94f719c483f10afaf25a5db19a5a96eed277bb1f5b28af75",
+    "end": 171,
+    "header_sha256": "17aaa4a778ee83b6a917330879cf06657864f3bdad89ded6a6677ffb99dfe118",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 166
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.pointHomeomorph": {
+    "display_kind": "def",
+    "doc_sha256": "c61e96539ea8637a83ac38a140b615fc51095572043d04849329aa5b3ad5992e",
+    "end": 184,
+    "header_sha256": "eb2232d194205db1752b3d1bfb1d0ff59f45d1a1a3286126fb414ce00fdb1f5e",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 182
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.primeFilter": {
+    "display_kind": "def",
+    "doc_sha256": "de59979a8031b24d404746a4c04b237ac40638a5a6bb2804ebf487977800183c",
+    "end": 51,
+    "header_sha256": "4de2a6893d70a265cfe81da06565d8422e77330ac1b8ccbd957d3a14dd016f11",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 49
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.primeFilter_isPrime": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 59,
+    "header_sha256": "fda930d37cdc2fd719e8a818531c324372850d5384ff0b0f15e89dda12753d3f",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 57
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.principalCompactOpen": {
+    "display_kind": "def",
+    "doc_sha256": "b09374180a182137b8458a035fedefd59b50ccb398a5c29bcdb58d57de9a80ab",
+    "end": 135,
+    "header_sha256": "d07a188fd5a069c7a860e6b83e8ea740e5bd56bd9c750ec0e01f01f8fa253f4a",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 129
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.specializes_iff_ideal_le": {
+    "display_kind": "theorem",
+    "doc_sha256": "4f4325a1c94cb60d1ea848a3f3e6a5df28e5bca61d7a646f44be3d0267bc753c",
+    "end": 220,
+    "header_sha256": "f662821452e2c75a81d4c42e0eb6b5481ac4d728ecf5df9d8996b5e743832241",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 205
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.specializes_iff_primeFilter_ge": {
+    "display_kind": "theorem",
+    "doc_sha256": "2ea09dfc6bfa94f62545ba5092c8c5ba4ce76ba7974c424e889663e10f0bf8ee",
+    "end": 231,
+    "header_sha256": "21692bae18895a1c320dd34a962bd28de1455d20443d6da23e36f9f58e36e104",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 222
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.spectrumComap": {
+    "display_kind": "def",
+    "doc_sha256": "f51ee7650bfbfa1fa70976344c3715a5d0323341edff01a9dc139ab0f6ce184b",
+    "end": 88,
+    "header_sha256": "dd09f2e9ac816e331de31cb205652a42518dbc85caf056985b53def051e7a0e3",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 61
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.spectrumComap_comp": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 207,
+    "header_sha256": "691402a2c466eabdcacea1b3fd6ef6c3d01f9b2e4d962f810e31db0f84004d3f",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 198
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.spectrumComap_id": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 196,
+    "header_sha256": "058757fccf80e8a3fe3d71304e6145136306e15d82ca46fe07c12b487dea10af",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 190
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.spectrumComap_preimage_basicOpen_principal": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 105,
+    "header_sha256": "b23b4b87350159b6d240787b76546305a9d889288b2c8004a0af3d7a5f82c8bb",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Functoriality",
+    "start": 97
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.toPoint": {
+    "display_kind": "def",
+    "doc_sha256": "7fc2e6e3390ea6f56dcba1f7891407707c97bd5bb628c6a55ab3160a67f7ed8e",
+    "end": 96,
+    "header_sha256": "db5f138fd97b883701da2459642e41be71c39fe9b8e8aab326389242b09123ab",
+    "kind": "def",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 61
+  },
+  "SpectralStoneDuality.PrimeIdealSpectrum.toPoint_ofPoint": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 164,
+    "header_sha256": "153dc0793b906c99f8f654aa55251e6a4d6152024a3efd06b8a838cb2c4c5b24",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.PrimeSpectrum",
+    "start": 151
+  },
+  "SpectralStoneDuality.SpectralCat": {
+    "display_kind": "structure",
+    "doc_sha256": "34c3cb57e125ae6fca308dfc68e25a8802af13adf8c0885e2c82e7c2c07f011e",
+    "end": 36,
+    "header_sha256": "d63c24bffc7e68639a65d15aa87b44a62b320b80eae4c266b643502e84cfdf28",
+    "kind": "structure",
+    "module": "SpectralStoneDuality.Category",
+    "start": 31
+  },
+  "SpectralStoneDuality.SpectralCat.Hom": {
+    "display_kind": "structure",
+    "doc_sha256": "3f2f9e2d332ceaa81be517aa1253d16dfad3030a59286890924f727b714c1d40",
+    "end": 52,
+    "header_sha256": "e2a442203d9d2a30b14de9f8691307c1f5750003bf4847f408679dd042623307",
+    "kind": "structure",
+    "module": "SpectralStoneDuality.Category",
+    "start": 48
+  },
+  "SpectralStoneDuality.SpectralCat.Hom.ext": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 49,
+    "header_sha256": "536a7d8743bb9a7f038ab93e23c0bd62a86ab39eb569d9fc6217fa1c4632fd03",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Category",
+    "start": 49
+  },
+  "SpectralStoneDuality.SpectralCat.Hom.ext_iff": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 49,
+    "header_sha256": "7be92dc19c49a2afe2edc734df18c7fc462ba6abf59b16025ce1737c56472ddd",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Category",
+    "start": 49
+  },
+  "SpectralStoneDuality.SpectralCat.Hom.hom": {
+    "display_kind": "abbrev",
+    "doc_sha256": "96125697ef41673d7dcc41acfc93ad5f9a93b2aee5fb79c825669c70ef783baa",
+    "end": 65,
+    "header_sha256": "1cd982d3debfee378b598872f0f624b3f9ab2903333f7bc63cfb66e4918a058f",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 63
+  },
+  "SpectralStoneDuality.SpectralCat.Hom.hom'": {
+    "display_kind": "abbrev",
+    "doc_sha256": "67ea764ca10407035fc0171e3f4b0c7ec1a32c66b36331d9f38f7de5f857a879",
+    "end": 52,
+    "header_sha256": "25594bc2b1ccf9724bac1bdc132ba37a8feca3b441e2642773febc60594782af",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 52
+  },
+  "SpectralStoneDuality.SpectralCat.Hom.mk": {
+    "display_kind": "constructor",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 52,
+    "header_sha256": "3f939e07c4d853da03dcaa360d9b2d821faff206de96189d00b9a24cb049ba17",
+    "kind": "ctor",
+    "module": "SpectralStoneDuality.Category",
+    "start": 48
+  },
+  "SpectralStoneDuality.SpectralCat.carrier": {
+    "display_kind": "abbrev",
+    "doc_sha256": "2640ba194972568cdde792503ae85e9920f9c201c2d87931aaea0c886c2c86be",
+    "end": 34,
+    "header_sha256": "23bc5408c0ae4af186de93736b4c8c5a56f5333fa773ba25b512239f42c57ab2",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 34
+  },
+  "SpectralStoneDuality.SpectralCat.ext": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 75,
+    "header_sha256": "cc89877d5c743885a6127a15ef45d882a5245021cca1b5ee52f1c521c8069314",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Category",
+    "start": 73
+  },
+  "SpectralStoneDuality.SpectralCat.ext_iff": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 73,
+    "header_sha256": "fa803ea6fef33b27e22a81c21c544bdb23c414663b1565b909f568d0c00d5c68",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Category",
+    "start": 73
+  },
+  "SpectralStoneDuality.SpectralCat.instCategory": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 57,
+    "header_sha256": "c68846374be647186f7ef511408d36d8736e6a309965c702f2e155c472bb0d03",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.Category",
+    "start": 54
+  },
+  "SpectralStoneDuality.SpectralCat.instCoeSortType": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 42,
+    "header_sha256": "0e2539bad533d4aa94f04c87a78ee8949cf7bdfc444f6243f920c44d3dba7009",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.Category",
+    "start": 42
+  },
+  "SpectralStoneDuality.SpectralCat.instConcreteCategorySpectralMapCarrier": {
+    "display_kind": "instance",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 61,
+    "header_sha256": "413daa3177c6394793d5d30a73729bf0bdcfd8656bcc9849c1a4ead3c405dce6",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.Category",
+    "start": 59
+  },
+  "SpectralStoneDuality.SpectralCat.isoMk": {
+    "display_kind": "def",
+    "doc_sha256": "f1a03086edab93b9dd2b15cab55f5b66257fb2833ebe8369d77b2ca6e3573b19",
+    "end": 276,
+    "header_sha256": "cc92071dad9c1696ea2a9c6f8fc1be0a9fd138823dcbec19640131e4563fe63c",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 265
+  },
+  "SpectralStoneDuality.SpectralCat.mk": {
+    "display_kind": "constructor",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 36,
+    "header_sha256": "cf267c0725b8cb008a571a9fdd8e055b77f1e8b97a50ec16d2af4777c8aef007",
+    "kind": "ctor",
+    "module": "SpectralStoneDuality.Category",
+    "start": 31
+  },
+  "SpectralStoneDuality.SpectralCat.of": {
+    "display_kind": "abbrev",
+    "doc_sha256": "e8a1747f9f99585681e9828f1732b8a1d4b0f0d14f8d9f80f54b7715da133c97",
+    "end": 46,
+    "header_sha256": "6bef16e80f5885f976da9bb2857cd96bf27dbb65c416ef080918af2a41aade61",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 44
+  },
+  "SpectralStoneDuality.SpectralCat.ofHom": {
+    "display_kind": "abbrev",
+    "doc_sha256": "90f2bd676b06e1002e182d27c0b7f3d87a7fe8d472c5f010c2514847a35c35f7",
+    "end": 71,
+    "header_sha256": "86f4622e6beb1b2b3d113046c82c1840f3d3f42f8899a94f21994ceb142abe07",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 67
+  },
+  "SpectralStoneDuality.SpectralCat.spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 36,
+    "header_sha256": "a48992104c1576970c06ffe32722aa2af310501774238c524e345cf2b2b0aab1",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Category",
+    "start": 36
+  },
+  "SpectralStoneDuality.SpectralCat.topology": {
+    "display_kind": "abbrev",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 35,
+    "header_sha256": "e4056e57c772f44f87395c5962aa95ee81325b144181a5cc3e07d2e18d5f1084",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 35
+  },
+  "SpectralStoneDuality.compactOpenComap": {
+    "display_kind": "def",
+    "doc_sha256": "a9dba4f3b6a73004c74c87db1d11a96035df787076c969aa11d97643ee0dd06f",
+    "end": 106,
+    "header_sha256": "221ce38fed7232083954c703ff88c51cf585841f404de5bcd74e64608475e8e1",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 101
+  },
+  "SpectralStoneDuality.compactOpenFunctor": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "169d85f3757f2a073f139f08e99a41aa4aed13a18e8cf0cbe757414219b3d20a",
+    "end": 142,
+    "header_sha256": "efe908ae89b6b3b137df5bd069b9c0a43b9179c127cf8015fba1ee4dd96bd07c",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 125
+  },
+  "SpectralStoneDuality.compactOpenOrderIso_symm_naturality": {
+    "display_kind": "theorem",
+    "doc_sha256": "b407033e90d087a758b46cc35e28a262c641f7006b070dc7b3d6ab9d33bca2ea",
+    "end": 170,
+    "header_sha256": "861de187b43319394ca2dc13847ab8d73ec0c4334af4216f88a4816ee05119ab",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Category",
+    "start": 144
+  },
+  "SpectralStoneDuality.compactOpensDistribLattice": {
+    "display_kind": "instance",
+    "doc_sha256": "0020a07589cc93b7e80ef234aac37970125d79d322b36734c1be20d731512c03",
+    "end": 84,
+    "header_sha256": "682bbfda76fa8f80238a3a2c23af2e54a9de8cc95c4dc26ed6a5bd4a832717e7",
+    "kind": "instance",
+    "module": "SpectralStoneDuality.Category",
+    "start": 79
+  },
+  "SpectralStoneDuality.compactSpace_constructibleLimit": {
+    "display_kind": "theorem",
+    "doc_sha256": "5bbbfd795a3e875c91970be9d487fcdc6314a743936c2caa4ae86d064fc8fff6",
+    "end": 176,
+    "header_sha256": "c98794bd1b5ae8ee17c39ba89d35c3a0f5b50bcee2d8c84d6636346b2501f6f0",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 142
+  },
+  "SpectralStoneDuality.compactSpace_limit_of_spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "479070525b1a68e047781eeae920b97a90415d41bcb053f31327d943ce282286",
+    "end": 232,
+    "header_sha256": "c570e86606da5d2ba61ad995c8e193944f0448c34ee969b4249803e0a5c3aa9e",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 221
+  },
+  "SpectralStoneDuality.constructibleDiagram": {
+    "display_kind": "def",
+    "doc_sha256": "cfeb83a70770c1272a102d20662bdb91fc6560ef3db465e2d33f33edfc36c2f7",
+    "end": 140,
+    "header_sha256": "b3803193a70489663211f641857d46c475403734c9915df70a4ee4f1d86a45a2",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 105
+  },
+  "SpectralStoneDuality.continuous_constructibleToOriginal": {
+    "display_kind": "theorem",
+    "doc_sha256": "c0c394f53c7bacc2149b70b0e65335363ec18f84f70593a32d466553ccbea47e",
+    "end": 103,
+    "header_sha256": "f6535409ff5fa46fea019273a27b854d7aea8127e932dca3d7f1d83dfb0eb115",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 92
+  },
+  "SpectralStoneDuality.continuous_fromConstructibleLimit": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 205,
+    "header_sha256": "640901625763be530b5e5d7dedf74d8b2b7b509e7c6cdcd6edc87f41e63a5ebf",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 188
+  },
+  "SpectralStoneDuality.continuous_spaceToSpectrum": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 76,
+    "header_sha256": "db017af7f96715dd609e87caf1c5c8f4feefe5f50b75f45ad8ca182557098e00",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 72
+  },
+  "SpectralStoneDuality.exists_compactOpen_image_eq_inter": {
+    "display_kind": "theorem",
+    "doc_sha256": "3744a4c173d4bc2d1bb255e8118a7e305a4b83b4669ae1b96883c8f359784d5d",
+    "end": 71,
+    "header_sha256": "c59b3cce3fa2db632390da5294cdd08341dbe498ef335353e8dc36dc7a18e696",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Subspace",
+    "start": 64
+  },
+  "SpectralStoneDuality.exists_compactOpen_image_eq_inter_of_basis": {
+    "display_kind": "theorem",
+    "doc_sha256": "3804c907be5f6e04008753789c30ef64f1b978a50064a0312668d4769c9e8d04",
+    "end": 62,
+    "header_sha256": "afed48dc1312687aa3e7a96ccc1f0bc1f5d19558fd1582b90ebfbea6eda150a8",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Subspace",
+    "start": 30
+  },
+  "SpectralStoneDuality.fromConstructibleLimit": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "ae2e2440fb4f6185688018e977899837295ee0d1318472a61afd50003b3a4fbf",
+    "end": 186,
+    "header_sha256": "ddfa173a55384465965a21b00cfb6108b66bc2b93ea873b6a5821906ec0e18b8",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 178
+  },
+  "SpectralStoneDuality.isCompact_inter_preimage_limitProjections": {
+    "display_kind": "theorem",
+    "doc_sha256": "2065a014c5c81ea92518966553007874bcd4c727031e6c2fffb235956a1bba6b",
+    "end": 338,
+    "header_sha256": "45c743c0f8fad60730c04ce272dec64bde089541d680be9ba03ad61a536deb84",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 279
+  },
+  "SpectralStoneDuality.isCompact_preimage_limitProjection": {
+    "display_kind": "theorem",
+    "doc_sha256": "c8d9e64be4b68547f4316c6813b3c86c3d36672ea92966b266af4a9cca2f6bd8",
+    "end": 277,
+    "header_sha256": "1f9d9af35c4323f0903e258bb4413cf42a29323a7c2257324a27df6178a2f23a",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 234
+  },
+  "SpectralStoneDuality.isOpenMap_spaceToSpectrum": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 257,
+    "header_sha256": "238d89864ff4a5f5f07e5393e2706a8df3e0c17400e4c7061fc5848b4427eafe",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 251
+  },
+  "SpectralStoneDuality.isSpectralMap_limitProjection": {
+    "display_kind": "theorem",
+    "doc_sha256": "e8e8e0fa70ff5e1abed51f2830d51ddba9805373caf127d6ecd991e07817ba32",
+    "end": 349,
+    "header_sha256": "e7184fe3bf954ed73fc46e1a9945bc379fe4e2a54e695c49dc1b262f1edc74a3",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 340
+  },
+  "SpectralStoneDuality.isSpectralMap_spaceToSpectrum": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 86,
+    "header_sha256": "08f24d3e7038b7d3413190d219cfa6a1fc0f612391144fc2038ae05de1b2ea44",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 78
+  },
+  "SpectralStoneDuality.isSpectralMap_to_subtype_of_comp": {
+    "display_kind": "theorem",
+    "doc_sha256": "f7033e29ae161bb1f380db0eabad6bf68715fcc3a593cb903324d200c180ca09",
+    "end": 98,
+    "header_sha256": "6062a64a7e1df1e1c1e40dcf72d390ca6de522362d367a01ee1379a44bf2f04a",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Subspace",
+    "start": 73
+  },
+  "SpectralStoneDuality.isTopologicalBasis_compactOpenCylinders": {
+    "display_kind": "theorem",
+    "doc_sha256": "eca1e24fb7e21e21d00f28e2185146241698419e1bce10fc4e817eaf8d1889f8",
+    "end": 373,
+    "header_sha256": "4a7a58f1338dda79c959d8d77a482af94b03d5cd02dd73e02bbb0325604a6cad",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 351
+  },
+  "SpectralStoneDuality.latticeUnitComponent": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "53e128f2b9e2f485bd86f32c0620abbfc587f691a1d23a1ffe61181c9c17e528",
+    "end": 175,
+    "header_sha256": "e66602cf116b993dfefc393fb6a6456bb8a8bbbb014ca49e711d63467745e461",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 172
+  },
+  "SpectralStoneDuality.latticeUnitIso": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "d24e278d96823fbab037ada4d0ff61d29b232836d566ac95ba3f26fd08d36b56",
+    "end": 184,
+    "header_sha256": "cb84339eb6878f7a998102756d67675f94dceb27080e955949e66def551e7d85",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 177
+  },
+  "SpectralStoneDuality.nonempty_limit_of_spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "9578005671fbcc06479b181119fae28e3f834967de93f5ceb2fb8959353fb72c",
+    "end": 549,
+    "header_sha256": "5d7b7b854f42a235f7dc48159da6da5967d2ec8d715f7433f13439962d8c73ee",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 525
+  },
+  "SpectralStoneDuality.prespectralSpace_limit_of_spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "bfd1356aa40421532e001677065f51c5558a346c7c685ec2bcbe014f15757d11",
+    "end": 386,
+    "header_sha256": "7be9f516bdf6311a719a59872bff805b73c7fc4415a59ce6f83951cd6831fa5c",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 375
+  },
+  "SpectralStoneDuality.quasiSeparatedSpace_limit_of_spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "e7efd0a1bc3838e985a3daf3d779412d23d0076f8ecd5d6b914a11dedbd1b2c9",
+    "end": 415,
+    "header_sha256": "881c5018c8380cd5e39f09591ff80fd7e93beb4a738f4d11ea1fe8a885bdb663",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 388
+  },
+  "SpectralStoneDuality.quasiSober_limit_of_spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "d276950b861c6adcc371664ba25bdd9deb26de58d8f268caaf9ee91b471cfbe6",
+    "end": 510,
+    "header_sha256": "ce9000d51000f0bff1f16052b2f05eb679f60aa869e64020961f736f5d96f872",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 433
+  },
+  "SpectralStoneDuality.spaceSpectrumEquiv": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "4380ce8841853426b2967c293c401b5610021e0e24782a0fc5898d51840a0959",
+    "end": 236,
+    "header_sha256": "a1d649c5eca0ad44aef9a4a6e2446042b2f64716638a2def0b89c5bed69712c6",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 232
+  },
+  "SpectralStoneDuality.spaceSpectrumHomeomorph": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "b4508c6c628be1f0d4f31d81e2baf96dd927769a08c2b7fb8ad2ab0530afeceb",
+    "end": 263,
+    "header_sha256": "36257d94e81f76c9a8425c37b12113a6fc3fc25529e9697d93518c901ae7500e",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 259
+  },
+  "SpectralStoneDuality.spaceToSpectrum": {
+    "display_kind": "def",
+    "doc_sha256": "7723d8cf11163cba6001a252ca1a76a00ea0a0d9361e315740cfbc0e6953721d",
+    "end": 62,
+    "header_sha256": "f8e1efdb05ca45ce6a6c6083cef30f6bdda6fcf7f1eae99f1676c6d4319f30a8",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 59
+  },
+  "SpectralStoneDuality.spaceToSpectrum_image_compactOpen": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 249,
+    "header_sha256": "ac40667e88419144587fe78c5926bb071a053c321fc49b52165b162cbc4a0781",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 238
+  },
+  "SpectralStoneDuality.spaceToSpectrum_injective": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 113,
+    "header_sha256": "6300d02afae6e39dd67823d22bc2b34acaa0dc63f70c5e37e9152901ee1fe5ec",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 88
+  },
+  "SpectralStoneDuality.spaceToSpectrum_preimage_basicOpen": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 70,
+    "header_sha256": "e0c8b9cb17618c4af0c6e12241e8c37ff2d248166b43647c4140faf22026260d",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 64
+  },
+  "SpectralStoneDuality.spaceToSpectrum_spectrumToSpace": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 226,
+    "header_sha256": "1c46cbe1f9303081e6a7440600eca1001401776daf5a67623ec76e83ead86bc1",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 210
+  },
+  "SpectralStoneDuality.spaceToSpectrum_surjective": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 230,
+    "header_sha256": "7b1c6cb4bd24e863e9863c9e7b5907db1e18bfe874fbabdd44b68613a4b64e60",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 228
+  },
+  "SpectralStoneDuality.spaceUnitComponent": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "d32831c6e19f27c3448fa62310c0f2d7b3f3da4fd8edf2e93c2c94ebb7d33ef9",
+    "end": 281,
+    "header_sha256": "ec1c8fe48a21ddd18e47021a060b01184718273ead792f0bce66e93c0617f828",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 278
+  },
+  "SpectralStoneDuality.spaceUnitIso": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "6970ebde349f8b304efc3bf2d059102b518d9c1eacbacce863c668372e7b5b77",
+    "end": 292,
+    "header_sha256": "7c57e3ecb492c3e2ee7cc395dc86a904c6d68f8896c64198b04907fbb143fd1e",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 283
+  },
+  "SpectralStoneDuality.spectralMapCompactOpenComap": {
+    "display_kind": "def",
+    "doc_sha256": "fbebafade2dfa7c46659d71d9e564ecbef40725ac8fbbf510bbfa5d66371b289",
+    "end": 99,
+    "header_sha256": "d782827be53265a247af2594a7eb030fe551659b12b30d63c5b8bc1bb9488792",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 86
+  },
+  "SpectralStoneDuality.spectralSpace_limit_of_spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "adfe366a2de2b0590ed6e0542a939b33782bb5a5e86502669d9ae6269769a430",
+    "end": 523,
+    "header_sha256": "80f7714fc41fd3ac36c673d0fa8060b4fc1f6752d2be6715107e380cef7e8fc5",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 512
+  },
+  "SpectralStoneDuality.spectrumFunctor": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "2de31634598a39d5fde095de7af03946eece87f7639a0ffa4eb78be95fde0cfb",
+    "end": 123,
+    "header_sha256": "0445d510ca21e1c7df1aa82342c679a65e8800bd103ab57695b09c313b842d08",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Category",
+    "start": 108
+  },
+  "SpectralStoneDuality.spectrumToSpace": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "8153ecb87cdb338692f6089ad8472df372ce05a5a3a20d2c0f07a19d302fc2ae",
+    "end": 202,
+    "header_sha256": "eb16a2d1f64d3ad963d42c4f2225fa0d6f00756f3a24c942ec5efa39421542e2",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Reconstruction",
+    "start": 199
+  },
+  "SpectralStoneDuality.stoneDuality": {
+    "display_kind": "noncomputable def",
+    "doc_sha256": "3dab78ff61eeffb6684975c54c0842b5a4b870db8597dcd97a15c1457239ff69",
+    "end": 29,
+    "header_sha256": "2b1fab690ee510fc96bb6c5fea62bb143e33cff345cb93992a8b4b4cee24410d",
+    "kind": "def",
+    "module": "SpectralStoneDuality.Equivalence",
+    "start": 26
+  },
+  "SpectralStoneDuality.surjective_fromConstructibleLimit": {
+    "display_kind": "theorem",
+    "doc_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "end": 219,
+    "header_sha256": "343c9990a84662d61487c6621f8179d851c5a4500f5c9db832e602a96eb5d41a",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 207
+  },
+  "SpectralStoneDuality.t0Space_limit_of_spectral": {
+    "display_kind": "theorem",
+    "doc_sha256": "ca50e6edb699f63008762affe4e59635cf457bc51748965af5864ea5f7aaf351",
+    "end": 431,
+    "header_sha256": "d84642dc934020837c19b36b2b18699000e681a9c1921ab8e5f09270816a9acd",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 417
+  },
+  "SpectralStoneDuality.t2Space_constructible": {
+    "display_kind": "theorem",
+    "doc_sha256": "6bf210964befb02de715b3aad9633a938ae7f91747f6093015e6bee598765f6d",
+    "end": 75,
+    "header_sha256": "3701511ec11c693a4d1f69c59a3ce0ebf457114d785070d88adf2f71c1a9211d",
+    "kind": "theorem",
+    "module": "SpectralStoneDuality.Limits",
+    "start": 35
+  }
+}

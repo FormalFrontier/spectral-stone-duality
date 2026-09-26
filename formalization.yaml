@@ -1,0 +1,103 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json
+version: "v0.4"
+
+project:
+  name: "spectral-stone-duality"
+  description: >-
+    Prime-ideal spectra of bounded distributive lattices, their contravariant
+    equivalence with spectral spaces, cofiltered spectral limits and compact-open
+    lifting from arbitrary subspaces of prespectral spaces.
+  authors:
+    - "Formal Frontier Agents"
+  responsible_maintainers:
+    - "Formal Frontier source-maintainer team"
+  license: "Apache-2.0"
+
+sources:
+  - title: "Stone duality for bounded distributive lattices and spectral spaces"
+    type: "folklore"
+    relationship: "independently-proves"
+    note: >-
+      Classical order and topology results proved with native mathlib and the
+      ideal-completion library. No novelty or source-author endorsement is claimed.
+  - title: "Cofiltered spectral limits and compact opens of subspaces"
+    type: "folklore"
+    relationship: "independently-proves"
+    note: >-
+      The limit theorem assumes spectral transition maps and a small cofiltered
+      category; nonemptiness additionally assumes objectwise nonemptiness.
+      The compact-open lifting theorem allows arbitrary subspaces.
+  - title: "Foundations of Rigid Geometry I"
+    authors:
+      - "Kazuhiro Fujiwara"
+      - "Fumiharu Kato"
+    id: "https://arxiv.org/abs/1308.4734v5"
+    type: "book"
+    location: "Chapter 0, Section 2.2"
+    relationship: "background"
+    note: >-
+      Motivating discussion of spectral spaces and lattices. Detailed source
+      correspondence and coverage decisions are maintained separately.
+
+related_formalizations:
+  - id: "https://github.com/leanprover-community/mathlib4"
+    relationship: "builds-on"
+    note: >-
+      Uses native order ideals, frame points, prime separation, spectral-space
+      topology, and category theory at the revision in the Lake manifest.
+  - id: "https://github.com/FormalFrontier/ideal-completion"
+    relationship: "builds-on"
+    note: >-
+      Official private GitHub release 001e3b7508184ecd51e0d86177cb1d54508bf59d,
+      tree ec847510a5d92e0473060f1d6d8bb33c0484164e, supplies ideal completion
+      and compact-principal results. Its September 25, 2026 publication included
+      a clean declared-URL consumer. Authorized private GitHub access is required.
+      The historical native-analysis dependency a6f4d9c9614c20fe05f947902373d60e05504291
+      has exactly the same tree, not the same commit or transport URL. The two
+      exact configuration hashes and this translation are recorded separately
+      from historical analyzed inputs in docs/api-manifest.json. At preparation
+      on September 26, 2026, this combined Spectral artifact still required fresh
+      release review. Tags are deferred.
+
+automation:
+  methods:
+    - method: "agent"
+      tool_setup: >-
+        Formal Frontier AI agents using Lean, Lake, Git and the Hive task
+        environment for mathematical development, independent review and maintenance.
+  notes: >-
+    Development and independent review use distinct agent executions. No model,
+    cost or performance measurement is inferred from service account identities.
+
+status:
+  scope: >-
+    Reusable Stone duality and the stated limit/subspace topology. This metadata
+    does not assert full Fujiwara-Kato source coverage or release acceptance.
+
+review:
+  status: "other: historical development reviews recorded; release decisions are revision-specific"
+  notes: >-
+    Accepted development main b049f7ca24b5800273275ff04777ae505bb2c163
+    contains independently reviewed mathematical contributions. In particular,
+    PR14 review940 accepted the mixed-universe cofiltered-limit successor
+    b9a036f2448e59cb359ee509f3f849e7d7c78b56, and PR16 review1559 accepted
+    the subspace candidate a8e6cc84dff5d0f00031d7f02cd802d3a9b7152b.
+    These are bounded development reviews, not full-release approval.
+    The cumulative e6e5b4c ordinary-main candidate received independent PR18
+    review3097 and owner acceptance in issue17 comment41638, protected main
+    integration comment41666 and cache-first verification comment41731. These
+    records do not approve this documentation assembly, the complete release,
+    dependency redistribution or rights/history. A complete frozen-source
+    author raw-artifact axiom and stored-body application was reconciled in
+    issue17 comment42839 (272 raw occurrences, 266 stored bodies and six
+    structural replay units). At preparation on September 26, 2026, PR19 review3225
+    requested corrections to two bundled-map equality notes and unqualified
+    status prose. This successor addresses those findings and binds the public
+    dependency translation; its fresh exact-candidate review was not yet recorded
+    at preparation. This historical account does not predict later decisions or
+    itself certify release acceptance.
+
+acknowledgements: >-
+  Lean and mathlib authors for the proof assistant, automation and mathematical
+  infrastructure; the ideal-completion contributors and Formal Frontier
+  source-maintainer team for development, review and integration.

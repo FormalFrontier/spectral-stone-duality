@@ -1,0 +1,20 @@
+name = "spectral-stone-duality"
+version = "0.1.0"
+defaultTargets = ["SpectralStoneDuality", "SpectralStoneDualityExamples"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "83abb3e776bdefcbc447a1e44d0debe4010039e5"
+
+[[require]]
+name = "ideal-completion"
+git = "https://github.com/FormalFrontier/ideal-completion.git"
+rev = "001e3b7508184ecd51e0d86177cb1d54508bf59d"
+
+[[lean_lib]]
+name = "SpectralStoneDuality"
+
+[[lean_lib]]
+name = "SpectralStoneDualityExamples"
+roots = ["Examples.SpectralStoneDuality"]
