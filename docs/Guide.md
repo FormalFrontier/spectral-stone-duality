@@ -6,6 +6,10 @@ alternatives. The [generated historical API](API.md) binds its seven original le
 to frozen sources, while the [compact-open cylinder API](CompactOpenBasis.md) is a
 manual supplement for the new leaf; [Examples/SpectralStoneDuality.lean](../Examples/SpectralStoneDuality.lean)
 is a separately compiled client of the aggregate public import.
+The ninth leaf has its own [cylinder-descent guide](LimitCylinderDescent.md)
+and [direct-import clients](../Examples/LimitCylinderDescent.lean), registered
+as a second root of the same Examples target. This registration candidate's
+combined CI, review, acceptance and release are pending.
 
 ## Prime spectra and the open-set convention
 
@@ -93,6 +97,17 @@ and assumes a **nonempty directed index preorder**, not nonempty stage spaces.
 The [manual supplement](CompactOpenBasis.md) lists all eight declarations and
 exact hypotheses. The existing `Limits` set-basis result remains unchanged.
 
+`LimitCylinderDescent` takes a small cofiltered `J`, spectral stages and spectral
+maps, and an actual cone `C` with `IsLimit C`. For an open compact `U` and open
+`V` at stage `i`, inclusion of their inverse-image cylinders under `C.π.app i`
+is equivalent to the same inclusion under `F.map X.hom` for some `X : Over i`.
+Its chosen-limit version uses `limit.π`; its neighborhood version produces a
+compact open containing the projection range whose inverse image is all of a
+later stage. Empty stages and limits are allowed. No surjective transition,
+inhabited stage or sheaf/section theorem is assumed or supplied. See the
+[manual guide](LimitCylinderDescent.md) for names, exact assumptions and proof
+provenance; none of these declarations belongs to the frozen native API output.
+
 The `Subspace` module has an independent basis-level theorem
 `exists_compactOpen_image_eq_inter_of_basis`. In a prespectral `X`,
 `exists_compactOpen_image_eq_inter` lifts any **compact open of `Y : Set X`**
@@ -109,8 +124,9 @@ prerequisite and build commands. [API.md](API.md) displays frozen native doc-gen
 headers of seven leaves, not the new manual supplement, self-contained proof terms
 or a complete raw declaration census.
 The [API reproduction contract](README.md) explains revision bindings and
-data-only tests. Examples are compiled by the default build but are private
-clients, not additional exported interfaces. At preparation on September 26, 2026,
+data-only tests. The original example root has private clients; the new
+cylinder example root has named public test theorems, not additional library
+interfaces. Both are configured for the default build. At preparation on September 26, 2026,
 the author stored-proof application on the frozen sources was complete, while
 full-release acceptance of the combined artifact remained outstanding. Later
 decisions are recorded against exact revisions; this guide does not certify

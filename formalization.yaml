@@ -7,7 +7,9 @@ project:
     Prime-ideal spectra of bounded distributive lattices, their contravariant
     equivalence with spectral spaces, cofiltered spectral limits, compact-open
     cylinder bases on specified and chosen limiting cones, and compact-open
-    lifting from arbitrary subspaces of prespectral spaces.
+    lifting from arbitrary subspaces of prespectral spaces. Compact-open/open
+    cylinder containment descends to a stage, with eventually-full compact-open
+    neighborhoods of limiting projection ranges.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -30,6 +32,9 @@ sources:
       Compact-open cylinder bases for specified and chosen cofiltered limits
       need spectral stages and arrows, but not inhabited stage spaces. The
       compact-open lifting theorem allows arbitrary subspaces.
+      Cylinder containment descends over an actual limiting cone to an object
+      of Over i; the right-hand open need not be compact. The neighborhood
+      theorem and descent allow empty stages/limits and non-surjective maps.
   - title: "Foundations of Rigid Geometry I"
     authors:
       - "Kazuhiro Fujiwara"
@@ -78,8 +83,21 @@ status:
     does not assert full Fujiwara-Kato source coverage or release acceptance.
 
 review:
-  status: "other: historical development reviews recorded; release decisions are revision-specific"
+  status: "other: cylinder registration candidate awaits exact review and required CI"
   notes: >-
+    The September 27, 2026 LimitCylinderDescent contribution preserves the two
+    Lean payloads of destination transfer d29f6d6. Its incubator donor
+    b0c2b67f44310e2abad89e812a04172592c968a5 was independently reviewed and
+    leaf-accepted in incubator issue4 comment52227; this does not accept the
+    destination registration. Focused destination cache/build/client and
+    private-inclusive 26+3 origin evidence is separate from changed-root
+    required CI and fresh exact destination review. The existing Examples
+    target now declares both example roots without changing any dependency pin.
+    Closely adapted Anchor proof expression, original and adapter Task identities,
+    and notices are recorded in docs/CREDITS.md and docs/LimitCylinderDescent.md.
+    Owner acceptance, protected integration and the next verified official
+    release remain pending. The following preceding preparation records are
+    historical, not evidence for this new candidate.
     Accepted development main b049f7ca24b5800273275ff04777ae505bb2c163
     contains independently reviewed mathematical contributions. In particular,
     PR14 review940 accepted the mixed-universe cofiltered-limit successor

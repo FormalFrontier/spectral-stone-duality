@@ -10,6 +10,42 @@ At preparation on September 26, 2026, this combined assembly was an unaccepted
 development candidate. Independent rights review, including the actual proposed
 public history, is a release requirement; later decisions are revision-specific.
 
+## Cylinder descent promotion — September 27, 2026
+
+`SpectralStoneDuality/LimitCylinderDescent.lean` and
+`Examples/LimitCylinderDescent.lean` transfer accepted unregistered incubator
+leaf `b0c2b67f44310e2abad89e812a04172592c968a5`, authored by worker-b Hive Task
+`hive-request-c9b24d2f4bdfa0523394f9dd6727fa4247db6fa1`, UID
+`f8bccb81-3bb8-40fd-bb6c-dfe216caabaa`. The distinct source-leaf reviewer was
+worker-a Task `hive-request-3ea6976c500dbb041c0809c28e12f2ac34d54150`, UID
+`c3ea94e2-59b5-439b-a49a-6e6f21d6b1a2`; its report is
+`0eb83dd046b791185b16b932d00f2c430ffa1370`, with owner leaf acceptance in
+incubator issue4/52227. That is not destination or combined-root acceptance.
+
+Private compact-locally-closed/quasiseparation proofs and the counterexample
+set/diagram/map/cone constructions closely adapt original project Lean proof
+expression by Anchor from source-fujiwara-kato-rigid-geometry-i
+`e266a5076df34934171cc284ba8f2834e56f8c78`:
+`Research/fk-corollary-2-2-12-scratch.lean` (blob
+`86d58bc1699023362be296e965d3ad49140d1eca`) and
+`Research/fk-proposition-2-2-3-scratch.lean` (blob
+`f08a995d77489a4c1c61a39d0378151d2d7f2e89`). The incubator author assembles the
+source-independent actual-cone, chosen-limit and eventually-full interfaces,
+clients and guide. This is attributed internal original expression, not a
+permission claim over the motivating book or source-coverage certification.
+
+Destination adapter worker-a Task
+`hive-request-7345db7f02bcee5f6f46b45998f9b368443171e9`, UID
+`48bbab48-63ad-4f73-bfbc-4d7253e886f8`, authored transfer `d29f6d6`: precisely
+the module/namespace transformations and the standalone
+[guide](LimitCylinderDescent.md), with the two Lean proofs unchanged. Anchor
+then authored the minimal public-root/example-target registration and
+documentation/metadata additions. Existing mathematical proofs, all dependency
+pins and license notices are retained. There is no incubator ancestry or
+dependency in this deliverable history. Final exact destination review,
+changed-root checks, acceptance, release and verified publication remain
+separate; neither original author nor adapter self-approves this successor.
+
 ## Tracked original expression
 
 The tracked development first introduced the seven leaves in the commits

@@ -3,6 +3,14 @@
 Lean theory of the contravariant equivalence between bounded distributive lattices
 and spectral spaces, with reusable topology of spectral limits and subspaces.
 
+The September 27, 2026 cylinder-descent registration candidate adds a ninth
+public leaf and its separately named example root. Its two Lean payloads are
+unchanged from the focused destination transfer `d29f6d6`; changed-root required
+CI, fresh exact destination review, acceptance and the next official release
+remain pending. The preceding published release is
+`b984767e69d6f9d8cff5c6e824405a48d755368d`. Historical preparation accounts and
+measurements below retain their original scope; they do not certify this candidate.
+
 ## Mathematical scope
 
 For a bounded distributive lattice `A`, the library constructs its prime-ideal
@@ -28,6 +36,12 @@ of a prespectral space lifts to an ambient compact open; the subspace need not b
 closed or compact. Spectrality of a map to that subspace can be detected after
 composing with its inclusion.
 
+For an actual limiting cone, containment of a compact-open cylinder in an open
+cylinder is witnessed at a stage over their common index. A neighborhood of a
+projection's range contains a compact-open neighborhood whose inverse image is
+eventually the entire stage. These results allow empty stages and empty limits;
+they assume neither surjective transitions nor objectwise nonemptiness.
+
 This is a reusable order/topology library, not a formalization of all rigid
 geometry or a reconstruction theorem for arbitrary non-sober spaces. Source-specific
 correspondence and coverage decisions are maintained outside this repository.
@@ -36,7 +50,7 @@ correspondence and coverage decisions are maintained outside this repository.
 
 Use `import SpectralStoneDuality` for the whole library, or import a leaf below.
 All library modules opt into Lean's module system; the root publicly re-exports
-the eight leaves. Implementation-local helpers remain private.
+the nine leaves. Implementation-local helpers remain private.
 
 | Module under `SpectralStoneDuality` | Selected interfaces |
 | --- | --- |
@@ -48,6 +62,7 @@ the eight leaves. Implementation-local helpers remain private.
 | `Limits` | `spectralSpace_limit_of_spectral`, `nonempty_limit_of_spectral`, spectral projections and compact-open cylinder basis |
 | `CompactOpenBasis` | `compactOpenCylinders_isBasis`, `chosenLimitCompactOpenCylinders_isBasis`, `directedCompactOpenCylinders_isBasis` and their cylinder/index definitions |
 | `Subspace` | `exists_compactOpen_image_eq_inter`, `isSpectralMap_to_subtype_of_comp` |
+| `LimitCylinderDescent` | `limitCylinder_subset_iff_eventually`, `chosenLimitCylinder_subset_iff_eventually`, `exists_compactOpen_eventually_full` |
 
 Names in the first two rows, apart from `PrimeIdealSpectrum`, are in the namespace
 `SpectralStoneDuality.PrimeIdealSpectrum`; the other listed names are in
@@ -59,6 +74,8 @@ The separate `CompactOpenBasis` API permits `[Category.{w} J]` rather than
 its chosen version assumes `[HasLimit D]` and its `Iᵒᵖ` specialization uses
 `[Preorder I] [IsDirectedOrder I] [Nonempty I]` and `TopCat.{v}`. See the
 [manual module API](docs/CompactOpenBasis.md) for exact hypotheses.
+The [cylinder-descent guide](docs/LimitCylinderDescent.md) states the separate
+small-cofiltered-category, actual-cone and `Over i` hypotheses precisely.
 
 ## Build and examples
 
@@ -92,11 +109,18 @@ The no-target build includes both the library and the separate
 [`Examples/SpectralStoneDuality.lean`](Examples/SpectralStoneDuality.lean) use only
 the public aggregate import and demonstrate spectra, maps, reconstruction,
 equivalence, mixed-universe continuity, limits and arbitrary subspaces. To build
-just those clients after a successful cache fetch:
+the Examples target after a successful cache fetch:
 
 ```sh
 lake --wfail build SpectralStoneDualityExamples
 ```
+
+That target now has a second explicit root,
+[`Examples/LimitCylinderDescent.lean`](Examples/LimitCylinderDescent.lean), with
+three named direct-import clients for actual cones, eventual-full neighborhoods
+and chosen limits. The original example source is unchanged. Both roots are
+configured for the default build; the final candidate's combined check remains
+pending, distinct from the successful focused transfer checks.
 
 For example, the checked clients recover an arbitrary compact open from the
 corresponding lattice element by `OrderIso.apply_symm_apply` and use the
@@ -109,8 +133,9 @@ orientation, sobriety, limit hypotheses and arbitrary-subspace lifting. The
 [generated Markdown API](docs/API.md) retains 99 historical native display sites
 from the original seven unchanged leaves, with frozen same-tree source ranges;
 the eighth
-leaf is documented in a [manual API supplement](docs/CompactOpenBasis.md) and
-was **not** part of native generation. Its [reproduction recipe](docs/README.md),
+leaf is documented in a [manual API supplement](docs/CompactOpenBasis.md), and
+the ninth in the [cylinder-descent guide](docs/LimitCylinderDescent.md). Neither
+was part of native generation. The historical API's [reproduction recipe](docs/README.md),
 [input/output manifest](docs/api-manifest.json) and maintained bounded
 [adapter](scripts/generate_api.py) and [tests](scripts/test_generate_api.py)
 bind the exact source and tool revisions. These display records do not replace
