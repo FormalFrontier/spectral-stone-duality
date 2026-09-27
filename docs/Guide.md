@@ -4,11 +4,15 @@ This is a guide to the *reusable library*, not a source-coverage declaration. St
 with `import SpectralStoneDuality`; the module-specific imports below are public
 alternatives. The [generated historical API](API.md) binds its seven original leaves
 to frozen sources, while the [compact-open cylinder API](CompactOpenBasis.md) is a
-manual supplement for the new leaf; [Examples/SpectralStoneDuality.lean](../Examples/SpectralStoneDuality.lean)
+manual supplement for the eighth leaf; [Examples/SpectralStoneDuality.lean](../Examples/SpectralStoneDuality.lean)
 is a separately compiled client of the aggregate public import.
 The ninth leaf has its own [cylinder-descent guide](LimitCylinderDescent.md)
 and [direct-import clients](../Examples/LimitCylinderDescent.lean), registered
-as a second root of the same Examples target. This registration candidate's
+as a second root of the same Examples target. The tenth leaf has a
+[finite-cylinder guide](FiniteCylinderDescent.md) and four
+[direct-import clients](../Examples/FiniteCylinderDescent.lean), registered
+as its third explicit root. The preceding cylinder release is accepted at
+`ec25325` and published as `5e2cf412`; this finite-cylinder candidate's
 combined CI, review, acceptance and release are pending.
 
 ## Prime spectra and the open-set convention
@@ -108,6 +112,18 @@ inhabited stage or sheaf/section theorem is assumed or supplied. See the
 [manual guide](LimitCylinderDescent.md) for names, exact assumptions and proof
 provenance; none of these declarations belongs to the frozen native API output.
 
+`FiniteCylinderDescent` uses the same small cofiltered actual-cone hypotheses
+and a finite, possibly empty, type of labels. It descends a family of compact
+opens simultaneously to a stage over a selected index. Its simultaneous
+containment theorem uses commuting triangles, not only a common predecessor
+object. Its cover theorem obtains a cover of the **whole stage**, with the
+original labels and target inclusions intact. No stage is assumed inhabited,
+and no desired eventual containment is a premise. An empty labelled cover of
+an empty limit consequently yields an empty later stage. These are topology
+results, not a sheaf gluing or section-colimit isomorphism theorem. The
+[finite-cylinder supplement](FiniteCylinderDescent.md) records exact statements
+and close proof-expression provenance.
+
 The `Subspace` module has an independent basis-level theorem
 `exists_compactOpen_image_eq_inter_of_basis`. In a prespectral `X`,
 `exists_compactOpen_image_eq_inter` lifts any **compact open of `Y : Set X`**
@@ -125,8 +141,9 @@ headers of seven leaves, not the new manual supplement, self-contained proof ter
 or a complete raw declaration census.
 The [API reproduction contract](README.md) explains revision bindings and
 data-only tests. The original example root has private clients; the new
-cylinder example root has named public test theorems, not additional library
-interfaces. Both are configured for the default build. At preparation on September 26, 2026,
+cylinder and finite-cylinder example roots have named public test theorems,
+not additional library interfaces. All three are configured for the default
+build; the new combined check is pending. At preparation on September 26, 2026,
 the author stored-proof application on the frozen sources was complete, while
 full-release acceptance of the combined artifact remained outstanding. Later
 decisions are recorded against exact revisions; this guide does not certify

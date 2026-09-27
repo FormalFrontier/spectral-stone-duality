@@ -3,12 +3,15 @@
 Lean theory of the contravariant equivalence between bounded distributive lattices
 and spectral spaces, with reusable topology of spectral limits and subspaces.
 
-The September 27, 2026 cylinder-descent registration candidate adds a ninth
-public leaf and its separately named example root. Its two Lean payloads are
-unchanged from the focused destination transfer `d29f6d6`; changed-root required
+The September 27, 2026 finite-cylinder registration candidate adds a tenth
+public leaf and a third explicit example root, for fourteen own Lean modules.
+Its two Lean payloads are unchanged from the focused destination transfer
+`77b6f14`; changed-root required
 CI, fresh exact destination review, acceptance and the next official release
-remain pending. The preceding published release is
-`b984767e69d6f9d8cff5c6e824405a48d755368d`. Historical preparation accounts and
+remain pending. The preceding cylinder-descent contribution is accepted at
+`ec25325f882df909055d62e61c390066aec91ad9` and published as
+`5e2cf4120087d32b1456e0244de46741d85dc83d` (same tree), verified September 27.
+Historical preparation accounts and
 measurements below retain their original scope; they do not certify this candidate.
 
 ## Mathematical scope
@@ -42,6 +45,11 @@ projection's range contains a compact-open neighborhood whose inverse image is
 eventually the entire stage. These results allow empty stages and empty limits;
 they assume neither surjective transitions nor objectwise nonemptiness.
 
+Finite labelled families of compact opens on an actual limit descend together
+over a chosen index. Their compact-open/open containments hold at one coherent
+stage; a finite cover of the limit descends to a cover of an entire stage while
+preserving the labels and target inclusions. The family may be empty.
+
 This is a reusable order/topology library, not a formalization of all rigid
 geometry or a reconstruction theorem for arbitrary non-sober spaces. Source-specific
 correspondence and coverage decisions are maintained outside this repository.
@@ -50,7 +58,7 @@ correspondence and coverage decisions are maintained outside this repository.
 
 Use `import SpectralStoneDuality` for the whole library, or import a leaf below.
 All library modules opt into Lean's module system; the root publicly re-exports
-the nine leaves. Implementation-local helpers remain private.
+the ten leaves. Implementation-local helpers remain private.
 
 | Module under `SpectralStoneDuality` | Selected interfaces |
 | --- | --- |
@@ -63,6 +71,7 @@ the nine leaves. Implementation-local helpers remain private.
 | `CompactOpenBasis` | `compactOpenCylinders_isBasis`, `chosenLimitCompactOpenCylinders_isBasis`, `directedCompactOpenCylinders_isBasis` and their cylinder/index definitions |
 | `Subspace` | `exists_compactOpen_image_eq_inter`, `isSpectralMap_to_subtype_of_comp` |
 | `LimitCylinderDescent` | `limitCylinder_subset_iff_eventually`, `chosenLimitCylinder_subset_iff_eventually`, `exists_compactOpen_eventually_full` |
+| `FiniteCylinderDescent` | `exists_finiteCompactOpen_cylinders`, `finiteCylinder_subset_eventually`, `exists_finiteCompactOpen_fullStageCover` |
 
 Names in the first two rows, apart from `PrimeIdealSpectrum`, are in the namespace
 `SpectralStoneDuality.PrimeIdealSpectrum`; the other listed names are in
@@ -76,6 +85,8 @@ its chosen version assumes `[HasLimit D]` and its `Iᵒᵖ` specialization uses
 [manual module API](docs/CompactOpenBasis.md) for exact hypotheses.
 The [cylinder-descent guide](docs/LimitCylinderDescent.md) states the separate
 small-cofiltered-category, actual-cone and `Over i` hypotheses precisely.
+The [finite-cylinder guide](docs/FiniteCylinderDescent.md) adds `[Finite α]`
+without an inhabited-family or inhabited-stage assumption.
 
 ## Build and examples
 
@@ -115,11 +126,15 @@ the Examples target after a successful cache fetch:
 lake --wfail build SpectralStoneDualityExamples
 ```
 
-That target now has a second explicit root,
+That target also has a second explicit root,
 [`Examples/LimitCylinderDescent.lean`](Examples/LimitCylinderDescent.lean), with
 three named direct-import clients for actual cones, eventual-full neighborhoods
-and chosen limits. The original example source is unchanged. Both roots are
-configured for the default build; the final candidate's combined check remains
+and chosen limits. Its third explicit root,
+[`Examples/FiniteCylinderDescent.lean`](Examples/FiniteCylinderDescent.lean),
+has four named public test theorems for finite labelled descent, coherent
+containment, whole-stage covers and the empty-family case. Both earlier example
+sources are unchanged. All three roots are configured for the default build;
+the final candidate's combined check remains
 pending, distinct from the successful focused transfer checks.
 
 For example, the checked clients recover an arbitrary compact open from the
@@ -134,7 +149,8 @@ orientation, sobriety, limit hypotheses and arbitrary-subspace lifting. The
 from the original seven unchanged leaves, with frozen same-tree source ranges;
 the eighth
 leaf is documented in a [manual API supplement](docs/CompactOpenBasis.md), and
-the ninth in the [cylinder-descent guide](docs/LimitCylinderDescent.md). Neither
+the ninth in the [cylinder-descent guide](docs/LimitCylinderDescent.md), and
+the tenth in the [finite-cylinder guide](docs/FiniteCylinderDescent.md). None
 was part of native generation. The historical API's [reproduction recipe](docs/README.md),
 [input/output manifest](docs/api-manifest.json) and maintained bounded
 [adapter](scripts/generate_api.py) and [tests](scripts/test_generate_api.py)

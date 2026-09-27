@@ -13,6 +13,7 @@ public import SpectralStoneDuality.Limits
 public import SpectralStoneDuality.CompactOpenBasis
 public import SpectralStoneDuality.Subspace
 public import SpectralStoneDuality.LimitCylinderDescent
+public import SpectralStoneDuality.FiniteCylinderDescent
 
 /-!
 # Spectral Stone duality
@@ -22,5 +23,6 @@ reconstruction from compact opens, and `SpectralStoneDuality.stoneDuality`.
 It also exports cofiltered spectral-limit and arbitrary-subspace compact-open APIs.
 Compact-open cylinders of specified or chosen limits have an `Opens.IsBasis` API.
 Their compact-open/open containments descend to a stage over the same index.
+Finite labelled compact-open covers descend coherently to a cover of an entire stage.
 The separately built `Examples.SpectralStoneDuality` module demonstrates this import.
 -/

@@ -10,6 +10,41 @@ At preparation on September 26, 2026, this combined assembly was an unaccepted
 development candidate. Independent rights review, including the actual proposed
 public history, is a release requirement; later decisions are revision-specific.
 
+## Finite-cylinder promotion — September 27, 2026
+
+`SpectralStoneDuality/FiniteCylinderDescent.lean` and
+`Examples/FiniteCylinderDescent.lean` transfer accepted unregistered incubator
+leaf `bd82bf269e4d16bc2ca9bd8f312e0af50649869d`, authored by worker-b Hive Task
+`hive-request-1365e777e728ab94ed1310b0b8cf71258cc1e36b`, UID
+`89236f48-cfbf-4aa2-a592-5b4eaaa8469e`. Fresh source reviewer worker-a Task
+`hive-request-465a3f8e6bef790c3343e1e017d44821174bb338`, UID
+`d7eee5b0-115e-4a5d-998b-887adb1695fb`, supplied report
+`937e38cd68edeadc846fbcc5fd4549eef86828b6`; owner leaf acceptance is
+incubator issue4/52349, not destination or root acceptance.
+
+The single-cylinder finite-subcover, common-stage, pullback-union and
+cone-triangle steps, together with finite labelled common-stage selection,
+closely adapt original project Lean proof expression by Anchor from
+source-fujiwara-kato-rigid-geometry-i `e266a5076df34934171cc284ba8f2834e56f8c78`:
+`Research/fk-cofiltered-compact-opens-scratch.lean` (blob
+`d1fc65316460737e6ca28d0189af3e135680a477`) and
+`Research/fk-proposition-3-1-10-finite-stage-descent-probe.lean` (blob
+`2ae99dbfc3bdc9f197ce8e3c81a7059146e05ee8`). This is close expression reuse,
+not merely mathematical inspiration. The coherent `wideCospan` argument and
+whole-stage cover assembly are the new source-independent contribution.
+Parent cylinder proofs retain their separate credits below.
+
+Destination adapter worker-a Task
+`hive-request-797a8df70fd7324d0d13e121375992410210e406`, UID
+`8754cac4-b56b-4795-93bc-17323f7314d6`, authored `77b6f14`: the exact import
+and namespace substitutions and the [standalone guide](FiniteCylinderDescent.md).
+Anchor authored the public import, third explicit Examples root, and current
+documentation/credit/metadata registration. Both Lean payloads, all old nonroot
+Lean, dependency pins and license notices remain unchanged. This transfer has
+no incubator ancestry or dependency. Focused checks do not replace changed-root
+CI or fresh exact destination review; owner acceptance and verified release
+remain pending, separately from source coverage.
+
 ## Cylinder descent promotion — September 27, 2026
 
 `SpectralStoneDuality/LimitCylinderDescent.lean` and
@@ -42,9 +77,10 @@ the module/namespace transformations and the standalone
 then authored the minimal public-root/example-target registration and
 documentation/metadata additions. Existing mathematical proofs, all dependency
 pins and license notices are retained. There is no incubator ancestry or
-dependency in this deliverable history. Final exact destination review,
-changed-root checks, acceptance, release and verified publication remain
-separate; neither original author nor adapter self-approves this successor.
+dependency in this deliverable history. This preceding contribution completed
+independent review, changed-root checks, acceptance and verified publication
+in issue17/52458: internal `ec25325`, official `5e2cf412`, identical tree.
+That decision does not approve the new finite-cylinder successor above.
 
 ## Tracked original expression
 

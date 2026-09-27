@@ -17,4 +17,4 @@ name = "SpectralStoneDuality"
 
 [[lean_lib]]
 name = "SpectralStoneDualityExamples"
-roots = ["Examples.SpectralStoneDuality", "Examples.LimitCylinderDescent"]
+roots = ["Examples.SpectralStoneDuality", "Examples.LimitCylinderDescent", "Examples.FiniteCylinderDescent"]

@@ -1,15 +1,18 @@
-# Bounded native Markdown API and manual supplement
+# Bounded native Markdown API and manual supplements
 
 The ninth leaf, [LimitCylinderDescent](LimitCylinderDescent.md), is a second
 manual supplement. Its three public theorems and three named direct-import
 clients were not part of the historical native generation or counts below.
-The September 27 registration candidate publicly imports it and explicitly
-adds its example to the existing Examples target's roots. This changes the
-aggregate and `lakefile.toml` bytes, not any dependency revision. Focused
-transfer checks do not establish final changed-root CI, review or acceptance.
+It was accepted in `ec25325` and published in official `5e2cf412` on September 27.
+The tenth leaf, [FiniteCylinderDescent](FiniteCylinderDescent.md), is a third
+manual supplement, with three public producer theorems and four named
+direct-import clients. The current registration candidate adds its public
+import and THIRD explicit Examples root. It changes aggregate and
+`lakefile.toml` bytes, not any dependency revision. Focused transfer checks
+do not establish its final changed-root CI, review or acceptance.
 The original example source and all historical generated files stay unchanged.
 
-The new eighth leaf, [`CompactOpenBasis`](CompactOpenBasis.md), has a separate
+The eighth leaf, [`CompactOpenBasis`](CompactOpenBasis.md), has a separate
 manual API supplement listing all eight declarations and exact hypotheses.
 It was not in the frozen native doc-gen4 run, historical 99 display sites,
 loaded-environment census or raw-artifact application below. These historical

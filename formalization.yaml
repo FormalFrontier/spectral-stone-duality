@@ -9,7 +9,8 @@ project:
     cylinder bases on specified and chosen limiting cones, and compact-open
     lifting from arbitrary subspaces of prespectral spaces. Compact-open/open
     cylinder containment descends to a stage, with eventually-full compact-open
-    neighborhoods of limiting projection ranges.
+    neighborhoods of limiting projection ranges. Finite labelled compact-open
+    families and whole-stage covers descend coherently over a selected index.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -35,6 +36,9 @@ sources:
       Cylinder containment descends over an actual limiting cone to an object
       of Over i; the right-hand open need not be compact. The neighborhood
       theorem and descent allow empty stages/limits and non-surjective maps.
+      Finite labelled families descend simultaneously; finite containment uses
+      coherent arrows over a selected index, and descended covers cover an
+      entire stage. Empty label types and empty stages remain allowed.
   - title: "Foundations of Rigid Geometry I"
     authors:
       - "Kazuhiro Fujiwara"
@@ -83,20 +87,23 @@ status:
     does not assert full Fujiwara-Kato source coverage or release acceptance.
 
 review:
-  status: "other: cylinder registration candidate awaits exact review and required CI"
+  status: "other: finite-cylinder registration candidate awaits exact review and required CI"
   notes: >-
-    The September 27, 2026 LimitCylinderDescent contribution preserves the two
-    Lean payloads of destination transfer d29f6d6. Its incubator donor
-    b0c2b67f44310e2abad89e812a04172592c968a5 was independently reviewed and
-    leaf-accepted in incubator issue4 comment52227; this does not accept the
-    destination registration. Focused destination cache/build/client and
-    private-inclusive 26+3 origin evidence is separate from changed-root
+    The September 27, 2026 FiniteCylinderDescent contribution preserves both
+    Lean payloads of destination transfer 77b6f14. Its incubator donor
+    bd82bf269e4d16bc2ca9bd8f312e0af50649869d was independently reviewed and
+    leaf-accepted in incubator issue4 comment52349; this does not accept the
+    destination registration. Focused destination cache/build/direct-client and
+    private-inclusive 7+4 origin evidence is separate from changed-root
     required CI and fresh exact destination review. The existing Examples
-    target now declares both example roots without changing any dependency pin.
+    target now declares three explicit roots without changing any dependency pin.
     Closely adapted Anchor proof expression, original and adapter Task identities,
-    and notices are recorded in docs/CREDITS.md and docs/LimitCylinderDescent.md.
+    and notices are recorded in docs/CREDITS.md and docs/FiniteCylinderDescent.md.
     Owner acceptance, protected integration and the next verified official
-    release remain pending. The following preceding preparation records are
+    release remain pending. The preceding cylinder-descent release is complete
+    in issue17 comment52458 at internal ec25325f882df909055d62e61c390066aec91ad9
+    and official 5e2cf4120087d32b1456e0244de46741d85dc83d, with the same tree.
+    The following preceding preparation records are
     historical, not evidence for this new candidate.
     Accepted development main b049f7ca24b5800273275ff04777ae505bb2c163
     contains independently reviewed mathematical contributions. In particular,
