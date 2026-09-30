@@ -1,19 +1,15 @@
 # Spectral spaces and bounded distributive lattices
 
-This is a guide to the *reusable library*, not a source-coverage declaration. Start
-with `import SpectralStoneDuality`; the module-specific imports below are public
-alternatives. The [generated historical API](API.md) binds its seven original leaves
-to frozen sources, while the [compact-open cylinder API](CompactOpenBasis.md) is a
-manual supplement for the eighth leaf; [Examples/SpectralStoneDuality.lean](../Examples/SpectralStoneDuality.lean)
-is a separately compiled client of the aggregate public import.
-The ninth leaf has its own [cylinder-descent guide](LimitCylinderDescent.md)
-and [direct-import clients](../Examples/LimitCylinderDescent.lean), registered
-as a second root of the same Examples target. The tenth leaf has a
-[finite-cylinder guide](FiniteCylinderDescent.md) and four
-[direct-import clients](../Examples/FiniteCylinderDescent.lean), registered
-as its third explicit root. The preceding cylinder release is accepted at
-`ec25325` and published as `5e2cf412`; this finite-cylinder candidate's
-combined CI, review, acceptance and release are pending.
+This is a guide to the *reusable library*, not a source-coverage declaration.
+Start with `import SpectralStoneDuality`; the module-specific imports below are
+public alternatives. The [historical native API](API.md) displays seven original
+leaves; the other three have manual supplements for
+[compact-open cylinder bases](CompactOpenBasis.md),
+[single-cylinder descent](LimitCylinderDescent.md) and
+[finite-cylinder descent](FiniteCylinderDescent.md). The separate Examples
+target has three explicit roots: [duality/limits](../Examples/SpectralStoneDuality.lean),
+[single-cylinder clients](../Examples/LimitCylinderDescent.lean), and
+[finite-cylinder clients](../Examples/FiniteCylinderDescent.lean).
 
 ## Prime spectra and the open-set convention
 
@@ -22,12 +18,10 @@ ideals** of a distributive lattice with bounded order. The `BoundedOrder A`
 parameter is retained at this public boundary even though the underlying
 subtype expression only uses the distributive lattice instance: it is the
 bounded-lattice object used throughout the spectrum API, including prime
-properness, the compact top open and functoriality. The retained native linter
-reported this parameter unused in the abbreviation's body. At preparation on
-September 26, 2026, PR19 review3225 accepted this narrow convention departure,
-not a linter pass or full-release approval. That historical disposition does not
-assert acceptance of a later revision; consult its exact-revision release record.
-It has not been suppressed or removed. In particular `A` need not
+properness, the compact top open and functoriality. The historical native linter
+reports this parameter unused in the abbreviation's *body*; the exposed
+interface deliberately retains bounded order. This is not a linter pass and
+has not been suppressed. In particular `A` need not
 be nontrivial; its prime spectrum may be empty.
 
 For an order ideal `I`, `PrimeIdealSpectrum.basicOpen I` is `D(I)`, the prime
@@ -137,14 +131,12 @@ spectral map after composition with `Subtype.val : Y → X`, then
 
 The root [README](../README.md) gives the exact toolchain, private dependency
 prerequisite and build commands. [API.md](API.md) displays frozen native doc-gen4
-headers of seven leaves, not the new manual supplement, self-contained proof terms
-or a complete raw declaration census.
+headers of seven leaves, not the three manual supplements, self-contained
+proof terms or a complete raw declaration census.
 The [API reproduction contract](README.md) explains revision bindings and
-data-only tests. The original example root has private clients; the new
-cylinder and finite-cylinder example roots have named public test theorems,
-not additional library interfaces. All three are configured for the default
-build; the new combined check is pending. At preparation on September 26, 2026,
-the author stored-proof application on the frozen sources was complete, while
-full-release acceptance of the combined artifact remained outstanding. Later
-decisions are recorded against exact revisions; this guide does not certify
-release acceptance, rights clearance or source correspondence.
+data-only tests on its matching historical snapshot. The original example root
+has private clients; the single- and finite-cylinder roots have named public
+test theorems, not additional library interfaces. All three are configured
+for the default build. Historical proof and native-display counts do not
+certify the current tree; exact-revision checks and review are recorded
+separately. This guide makes no source-coverage decision.

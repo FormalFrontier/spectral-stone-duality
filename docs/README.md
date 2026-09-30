@@ -1,35 +1,27 @@
 # Bounded native Markdown API and manual supplements
 
-The ninth leaf, [LimitCylinderDescent](LimitCylinderDescent.md), is a second
-manual supplement. Its three public theorems and three named direct-import
-clients were not part of the historical native generation or counts below.
-It was accepted in `ec25325` and published in official `5e2cf412` on September 27.
-The tenth leaf, [FiniteCylinderDescent](FiniteCylinderDescent.md), is a third
-manual supplement, with three public producer theorems and four named
-direct-import clients. The current registration candidate adds its public
-import and THIRD explicit Examples root. It changes aggregate and
-`lakefile.toml` bytes, not any dependency revision. Focused transfer checks
-do not establish its final changed-root CI, review or acceptance.
-The original example source and all historical generated files stay unchanged.
+The [API reference](API.md) preserves **99 historical native doc-gen4 display
+sites in seven leaves**, not a census of all fourteen current Lean modules or
+all private/generated declarations. The root aggregate import and the original
+Examples client have zero native display sites; they were included as inputs,
+not omitted accidentally. Thirty-eight authored notes are explicitly labelled
+**not source docstrings**. The remaining three leaves are documented in manual
+supplements: [compact-open cylinder bases](CompactOpenBasis.md) (eight public
+declarations), [single-cylinder descent](LimitCylinderDescent.md) (three
+theorems) and [finite-cylinder descent](FiniteCylinderDescent.md) (three
+producer theorems). Their import-only clients are not additional public API.
+See the [mathematical guide](Guide.md) and [credits](CREDITS.md).
 
-The eighth leaf, [`CompactOpenBasis`](CompactOpenBasis.md), has a separate
-manual API supplement listing all eight declarations and exact hypotheses.
-It was not in the frozen native doc-gen4 run, historical 99 display sites,
-loaded-environment census or raw-artifact application below. These historical
-counts and receipts cannot certify the new leaf or changed public-import and
-example bytes. Do not regenerate or reinterpret the old records as if the new
-module had been analyzed; the manual supplement is not native output.
-
-[API.md](API.md) binds all 99 historical doc-gen4 display sites in seven library leaves to
-exact native names, kinds, preserved visible header tokens, source docstrings
-and line ranges. [Guide.md](Guide.md) explains the mathematics; [CREDITS.md](CREDITS.md)
-records project expression and adaptation origins. `SpectralStoneDuality.lean`
-is an aggregate public re-export and `Examples/SpectralStoneDuality.lean` is a
-separate default build client: both have **zero native display sites**, not an
-omission. There are 38 authored API notes explicitly labeled **not source
-docstrings**. Two structures, their constructors and fields are represented
-according to the native display records; a field and its constructor may
-share an enclosing source range.
+The historical reference records native names, kinds, visible header tokens,
+source docstrings and source ranges. A field and its constructor may share an
+enclosing source range. The seven original leaf sources and toolchain are
+byte-identical between the native analysis and the current tree. The aggregate,
+Examples and Lake configuration inputs have since changed: in particular,
+the current aggregate imports ten leaves and the default Examples target has
+three roots. The manifest's historical release inputs and its `api_sha256`
+refer to the **earlier snapshot**, not to this checkout's complete input set
+or the edited API preamble. Do not retarget those hashes without new
+authenticated generation and review.
 
 The separate full-import **loaded-environment inventory** at frozen source
 revision `64d7289b76f6973bd37a9d9098e545437d6a7142` observed 272
@@ -48,15 +40,13 @@ Current computational release checks are the pinned build and complete actual
 transitive standard-axiom audit, including private repository declarations.
 Separate stored-proof replay and fresh doc generation are not prerequisites.
 
-The frozen nine-module raw-artifact author application separately checks 272
-raw occurrences as 266 stored bodies plus six structural replay units, including
-private/generated declarations and the 17 private example declarations; the
-owner reconciled the receipts in issue 17 comment 42839. These raw occurrences
-must not be joined by count alone to the 272 *loaded* `env.constants` names.
-Their transitive axioms are limited to the three permitted foundations. An
-independent release acceptance of the combined artifact remained outstanding at
-preparation on September 26, 2026. Later decisions belong to exact-revision
-release records; this is a historical preparation account, not a live status.
+Separate historical raw-artifact application on the earlier nine-source graph
+counted 272 occurrences (266 stored bodies and six structural replay units,
+including private/generated declarations and private examples), with transitive
+axioms limited to `propext`, `Classical.choice` and `Quot.sound`. This is not
+the same measurement as the 272 *loaded* `env.constants` names, nor an audit
+of this later fourteen-module tree. Consult exact-revision review/build/axiom
+records for a candidate rather than treating these numbers as a new check.
 
 This tree ships Markdown, relative links and an input/output manifest; it does
 not ship the native HTML website, JS, styles, fonts, search or dependency
@@ -64,19 +54,19 @@ documentation. No browser rendering or full dependency-site coverage has been
 claimed. Historical full-revision GitHub source URL strings are verified as
 native input records, not asserted to be live or reachable in an independent
 public lineage. The historical `[Source]` links resolve within this tree for
-the original seven leaves, whose source bytes and native ranges remain unchanged.
-The aggregate import and Examples file have changed and did not contribute
-native display sites; the added eighth leaf has only its manual supplement.
+the original seven leaves, whose source bytes and native ranges remain unchanged;
+the three other leaves have manual supplements only.
 
 ## Reproduce native input and generated output
 
-To reproduce the frozen generated Markdown, work in a separate checkout with
-the nine historical Lean inputs and translated Lake configuration unchanged
-(for example, the prior public-release revision
-`698de8ace0c572cf3766529aa3edcede548e9848`). This candidate deliberately
-changes the aggregate and Examples sources, so `generate_api.py --check`
-**rejects it for input drift**; do not reinterpret the historical manifest
-as a check of this candidate. In the separate checkout, use the nine
+To reproduce the **historical generated API and its original whole-file hash**,
+use an unchanged checkout of the older public snapshot
+`698de8ace0c572cf3766529aa3edcede548e9848`, not this later checkout.
+Its nine source/toolchain bytes and translated Lake configuration match the
+fixed manifest. The current aggregate, Examples and Lake inputs have changed;
+the editorial API introduction changes its whole-file digest independently.
+`generate_api.py --check` cannot certify the current file or tree using that
+older manifest. In the historical checkout, use the nine
 authenticated historical `declaration-data-*.bmp` records from the retained native
 generation evidence (obtain that evidence from the maintainer). They are not
 bundled website assets. No development ancestry or dependency cache is needed
@@ -90,10 +80,11 @@ python3 -B -O scripts/test_generate_api.py --native-data "$native_data"
 python3 -B -OO scripts/test_generate_api.py --native-data "$native_data"
 ```
 
-The historical generated API and new manual supplement are directly usable
+The historical generated API and three manual supplements are directly usable
 without this evidence or historical checkout.
 For an optional new native generation, the following is the **historical input
-recipe**, not a claim that the translated release configuration was analyzed.
+recipe**, not a claim that the translated release configuration was analyzed
+or a request to regenerate docs for the current tree.
 It additionally requires access to the exact historical source checkout and its
 declared dependencies; that development commit need not exist in public history.
 Use a separate, unchanged `leanprover/doc-gen4` checkout at
@@ -152,11 +143,12 @@ matching, authenticated native records, then verify the new tree.
 ## Exact provenance and bounded controls
 
 The committed format-2 [api-manifest.json](api-manifest.json) separates all
-**twelve historical analyzed inputs** from all **twelve release inputs** (nine
+**twelve historical analyzed inputs** from all **twelve release-translated inputs** (nine
 `.lean` files and three configuration files in each), every module path,
 the tool and analyzed source revisions, all 99 display names, each canonical
-native record, the adapter, tests, inventory and notes and the generated Markdown
-hash. Only `lakefile.toml` and `lake-manifest.json` differ: the historical Ideal
+native record, four documentation script/data inputs and the **old** generated
+Markdown hash. Between analyzed and translated records only `lakefile.toml`
+and `lake-manifest.json` differ: the historical Ideal
 revision `a6f4d9c9614c20fe05f947902373d60e05504291` becomes official private
 GitHub revision `001e3b7508184ecd51e0d86177cb1d54508bf59d`, with the identical
 tree `ec847510a5d92e0473060f1d6d8bb33c0484164e`. The exact two release config
@@ -175,7 +167,8 @@ use current-tree relative paths, not historical remote URLs.
 Both modes enforce fixed expected hashes in the adapter, not hashes learned from
 the current files or a modified manifest. When the analyzed historical commit
 exists, the adapter checks all twelve historical input hashes against that Git
-object and compares the nine sources and toolchain byte-for-byte with the release;
+object and compares the nine sources and toolchain byte-for-byte with the old
+translated snapshot;
 the two configs must match their separately fixed translated hashes. Only an explicitly missing
 commit, or a source-only tree with no `.git` marker, permits the committed
 dual hash-manifest fallback with the same fixed translation. Broken Git, command failure, wrong object type, wrong
@@ -185,10 +178,12 @@ The supplied-record tests also cover same-tree relative links, unique anchors,
 changed literals and docstrings, source-only and parentless single-commit Git
 histories, and incorrect Git objects; `-O` and `-OO` exercise optimized modes.
 
-These controls only validate data presented to them. They do not prove that
+These controls apply to the matching historical snapshot, not changed current
+aggregate/Examples/Lake inputs or the edited API introduction. They only
+validate data presented to them. They do not prove that
 arbitrary supplied JSON was produced by doc-gen4, authenticate HTML in a
 browser, or check proofs. Review the separate native receipts, loaded inventory,
-completed frozen proof application, source semantics, rights and release
+historical proof application, source semantics, rights and any changed release
 candidate independently.
 
 ## Selected lint configuration and retained nonpasses
@@ -199,11 +194,9 @@ root, all seven leaves and Examples. The declaration check exited 1: the
 `PrimeIdealSpectrum` abbreviation's `[BoundedOrder A]` argument is unused in
 its *body*. The public type nevertheless advertises bounded distributive
 lattices, and its topology, compact-open and functoriality interface uses that
-domain. At preparation on September 26, 2026, PR19 review3225 accepted this
-narrowly justified unsuppressed convention departure, without approving the
-complete artifact. This historical disposition is not a linter pass or acceptance
-of a later revision; consult its exact-revision release record. The declaration driver's Examples check had zero
-findings among 17 declarations.
+domain. This is an unsuppressed historical linter nonpass, not a claim of a
+successful declaration-linter run on the current tree. The earlier Examples
+declaration check had zero findings among its 17 declarations.
 
 The root and seven-leaf text-style invocations exited 0 but warned that the
 optional `scripts/nolints-style.txt` file is missing (treated as empty). The

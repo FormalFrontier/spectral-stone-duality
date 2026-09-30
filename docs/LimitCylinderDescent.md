@@ -22,11 +22,9 @@ and whose transition maps are spectral, and `i : J`. The public theorems are:
 No stage needs to be nonempty, no transition map needs to be surjective, and
 the limit cone may have an empty vertex. In particular, the eventually-full
 conclusion is meaningful even when the chosen stage is empty. Named actual-cone,
-neighborhood and chosen-limit clients are in `Examples.LimitCylinderDescent`.
-The registration successor publicly imports this module and lists the client
-as a second root of `SpectralStoneDualityExamples`. Its final combined check
-and independent acceptance remain pending; the original three-file transfer
-was unregistered and checked only with focused commands.
+neighborhood and chosen-limit clients are in
+[`Examples/LimitCylinderDescent.lean`](../Examples/LimitCylinderDescent.lean),
+the second explicit root of `SpectralStoneDualityExamples`.
 
 ## Proof and existing APIs
 
@@ -56,48 +54,19 @@ construction. The present proof uses locally closed spectral subspaces instead;
 exposing the diagram is only a possible separately reviewed maintenance change,
 not a prerequisite or an additional dependency of this API.
 
-## Provenance and promotion status
+## Origin and scope
 
-This source-independent transfer is based on the accepted focused incubator
-candidate `b0c2b67f44310e2abad89e812a04172592c968a5` (unregistered,
-`Incubator/Topology/Spectral/LimitCylinderDescent.lean`,
-`IncubatorTest/Topology/Spectral/LimitCylinderDescent.lean`, and
-`docs/SpectralLimitCylinderDescent.md`). Its author is worker-b Hive Task
-`hive-request-c9b24d2f4bdfa0523394f9dd6727fa4247db6fa1` (UID
-`f8bccb81-3bb8-40fd-bb6c-dfe216caabaa`), with Anchor as the responsible
-maintainer. The independent review of that exact incubator leaf is
-`0eb83dd046b791185b16b932d00f2c430ffa1370`,
-`reviews/spectral-limit-cylinder-descent/REVIEW.md` (incubator issue #4).
+The compact locally closed, closed-embedding/quasiseparation and counterexample
+set/diagram/map/cone proofs **closely adapt original project Lean expression**
+by Anchor (source maintainer). A collaborating Formal Frontier agent assembled
+the reusable actual-cone `hC`, chosen-limit and eventually-full interfaces,
+clients and this guide; a separate contributor adapted the paths and namespaces
+for this library without changing the mathematical proof payloads. Anchor
+registered the public import and example root. This is substantive expression
+reuse, not merely mathematical inspiration. See the [credits](CREDITS.md) for
+project origin and third-party attribution; no source-book excerpt or source
+research checkout is imported.
 
-The private compact-locally-closed, closed-embedding/quasiseparation, and
-counterexample set/diagram/map/cone constructions **closely adapt original
-project Lean proof expression** by Anchor (Source Maintainer) from
-`FormalFrontier/source-fujiwara-kato-rigid-geometry-i` commit
-`e266a5076df34934171cc284ba8f2834e56f8c78`: the donor files are
-`Research/fk-corollary-2-2-12-scratch.lean` (blob
-`86d58bc1699023362be296e965d3ad49140d1eca`) and
-`Research/fk-proposition-2-2-3-scratch.lean` (blob
-`f08a995d77489a4c1c61a39d0378151d2d7f2e89`). The worker-b
-contribution assembles the source-independent public API, the actual-cone
-`hC` argument, chosen-limit and eventual-full results, clients, and guide.
-Neither donor research file is imported; the donor research is not accepted
-source coverage. No source PDF, transcript, or external work is copied here.
-The Lean files retain the project Apache-2.0 SPDX and collective author notices.
-
-This destination adaptation is by worker-a Hive Task
-`hive-request-7345db7f02bcee5f6f46b45998f9b368443171e9` (UID
-`48bbab48-63ad-4f73-bfbc-4d7253e886f8`) from destination base
-`2f72af0e938b89ce85a4b667027646d54f785231`. It changes only the
-module paths and namespaces of the two Lean payloads, not their statements
-or proofs. The destination already includes the requisite producer APIs;
-mathlib is pinned at `83abb3e776bdefcbc447a1e44d0debe4010039e5`
-and the official `ideal-completion` dependency at
-`001e3b7508184ecd51e0d86177cb1d54508bf59d`.
-
-**Registered promotion candidate only:** the root/example configuration is now
-present, but destination acceptance, full applicable checks, independent
-destination review, protected integration,
-and verified official deliverable release remain pending. The later incubator
-replacement with the exact official dependency also remains pending. Neither
-this transfer nor the incubator acceptance establishes a source milestone,
-source-root acceptance, or source-formalization decision.
+The results allow empty stages and nonsurjective arrows and do not establish a
+source-coverage milestone or a sheaf-section theorem. Review, proof-integrity
+and release evidence apply to exact candidate revisions, not to this guide.

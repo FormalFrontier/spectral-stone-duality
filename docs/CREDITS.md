@@ -1,198 +1,77 @@
-# Origin, contributors and redistribution
+# Origin and contributors
 
-Authors: Formal Frontier Agents. Original project contributions are under the
-[complete Apache-2.0 license](../LICENSE); the root license was byte-matched
-against Apache's official `LICENSE-2.0.txt` during this preparation. The
-collective credit is not a copyright-owner assertion. Formal Frontier's
-standing operator authorization covers verified original project contributions
-for Apache-2.0 distribution. It does not cover copied third-party expression.
-At preparation on September 26, 2026, this combined assembly was an unaccepted
-development candidate. Independent rights review, including the actual proposed
-public history, is a release requirement; later decisions are revision-specific.
+Authors: Formal Frontier Agents. Original project contributions carry
+Apache-2.0 notices and are distributed under the [project license](../LICENSE).
+This collective credit does not identify a copyright holder, confer rights in
+third-party material or imply endorsement by the authors of a mathematical
+reference. Contributor origins below distinguish original expression from
+project adaptations; exact internal donor and review records are retained
+separately from these public reader-facing credits.
 
-## Finite-cylinder promotion — September 27, 2026
+## Lean development
 
-`SpectralStoneDuality/FiniteCylinderDescent.lean` and
-`Examples/FiniteCylinderDescent.lean` transfer accepted unregistered incubator
-leaf `bd82bf269e4d16bc2ca9bd8f312e0af50649869d`, authored by worker-b Hive Task
-`hive-request-1365e777e728ab94ed1310b0b8cf71258cc1e36b`, UID
-`89236f48-cfbf-4aa2-a592-5b4eaaa8469e`. Fresh source reviewer worker-a Task
-`hive-request-465a3f8e6bef790c3343e1e017d44821174bb338`, UID
-`d7eee5b0-115e-4a5d-998b-887adb1695fb`, supplied report
-`937e38cd68edeadc846fbcc5fd4549eef86828b6`; owner leaf acceptance is
-incubator issue4/52349, not destination or root acceptance.
+Anchor, a Formal Frontier source maintainer, authored the project's original
+prime-spectrum, functoriality, category, reconstruction, equivalence and
+cofiltered-limit developments. The library's seven initial leaves, subsequent
+mixed-universe limit and arbitrary-subspace APIs, and public module boundary
+were developed and reviewed by distinct Formal Frontier agent contributors.
+[`PrimeSpectrum`](../SpectralStoneDuality/PrimeSpectrum.lean),
+[`Limits`](../SpectralStoneDuality/Limits.lean) and
+[`Subspace`](../SpectralStoneDuality/Subspace.lean) document the shipped
+mathematical statements; [the guide](Guide.md) explains their conventions.
 
-The single-cylinder finite-subcover, common-stage, pullback-union and
-cone-triangle steps, together with finite labelled common-stage selection,
-closely adapt original project Lean proof expression by Anchor from
-source-fujiwara-kato-rigid-geometry-i `e266a5076df34934171cc284ba8f2834e56f8c78`:
-`Research/fk-cofiltered-compact-opens-scratch.lean` (blob
-`d1fc65316460737e6ca28d0189af3e135680a477`) and
-`Research/fk-proposition-3-1-10-finite-stage-descent-probe.lean` (blob
-`2ae99dbfc3bdc9f197ce8e3c81a7059146e05ee8`). This is close expression reuse,
-not merely mathematical inspiration. The coherent `wideCospan` argument and
-whole-stage cover assembly are the new source-independent contribution.
-Parent cylinder proofs retain their separate credits below.
+The [compact-open cylinder-basis module](../SpectralStoneDuality/CompactOpenBasis.lean)
+adapts earlier original project Lean research by Anchor into a reusable
+specified-cone, chosen-limit and directed-index interface. Its
+[manual supplement](CompactOpenBasis.md) gives the eight public declarations.
 
-Destination adapter worker-a Task
-`hive-request-797a8df70fd7324d0d13e121375992410210e406`, UID
-`8754cac4-b56b-4795-93bc-17323f7314d6`, authored `77b6f14`: the exact import
-and namespace substitutions and the [standalone guide](FiniteCylinderDescent.md).
-Anchor authored the public import, third explicit Examples root, and current
-documentation/credit/metadata registration. Both Lean payloads, all old nonroot
-Lean, dependency pins and license notices remain unchanged. This transfer has
-no incubator ancestry or dependency. Focused checks do not replace changed-root
-CI or fresh exact destination review; owner acceptance and verified release
-remain pending, separately from source coverage.
+The [single-cylinder descent](../SpectralStoneDuality/LimitCylinderDescent.lean)
+module closely adapts Anchor's original project Lean proof expression for
+compact locally closed subspaces and counterexample diagrams. Another Formal
+Frontier agent assembled the source-independent actual-cone descent,
+chosen-limit and eventually-full results, named clients and
+[guide](LimitCylinderDescent.md); a separate contributor adapted the module
+paths and namespaces for this library. This is **reuse of project proof
+expression**, not merely reliance on mathematical ideas or a claim to have
+copied any source-book expression.
 
-## Cylinder descent promotion — September 27, 2026
-
-`SpectralStoneDuality/LimitCylinderDescent.lean` and
-`Examples/LimitCylinderDescent.lean` transfer accepted unregistered incubator
-leaf `b0c2b67f44310e2abad89e812a04172592c968a5`, authored by worker-b Hive Task
-`hive-request-c9b24d2f4bdfa0523394f9dd6727fa4247db6fa1`, UID
-`f8bccb81-3bb8-40fd-bb6c-dfe216caabaa`. The distinct source-leaf reviewer was
-worker-a Task `hive-request-3ea6976c500dbb041c0809c28e12f2ac34d54150`, UID
-`c3ea94e2-59b5-439b-a49a-6e6f21d6b1a2`; its report is
-`0eb83dd046b791185b16b932d00f2c430ffa1370`, with owner leaf acceptance in
-incubator issue4/52227. That is not destination or combined-root acceptance.
-
-Private compact-locally-closed/quasiseparation proofs and the counterexample
-set/diagram/map/cone constructions closely adapt original project Lean proof
-expression by Anchor from source-fujiwara-kato-rigid-geometry-i
-`e266a5076df34934171cc284ba8f2834e56f8c78`:
-`Research/fk-corollary-2-2-12-scratch.lean` (blob
-`86d58bc1699023362be296e965d3ad49140d1eca`) and
-`Research/fk-proposition-2-2-3-scratch.lean` (blob
-`f08a995d77489a4c1c61a39d0378151d2d7f2e89`). The incubator author assembles the
-source-independent actual-cone, chosen-limit and eventually-full interfaces,
-clients and guide. This is attributed internal original expression, not a
-permission claim over the motivating book or source-coverage certification.
-
-Destination adapter worker-a Task
-`hive-request-7345db7f02bcee5f6f46b45998f9b368443171e9`, UID
-`48bbab48-63ad-4f73-bfbc-4d7253e886f8`, authored transfer `d29f6d6`: precisely
-the module/namespace transformations and the standalone
-[guide](LimitCylinderDescent.md), with the two Lean proofs unchanged. Anchor
-then authored the minimal public-root/example-target registration and
-documentation/metadata additions. Existing mathematical proofs, all dependency
-pins and license notices are retained. There is no incubator ancestry or
-dependency in this deliverable history. This preceding contribution completed
-independent review, changed-root checks, acceptance and verified publication
-in issue17/52458: internal `ec25325`, official `5e2cf412`, identical tree.
-That decision does not approve the new finite-cylinder successor above.
-
-## Tracked original expression
-
-The tracked development first introduced the seven leaves in the commits
-below. All are credited to Anchor (Source Maintainer) in Git; later merge
-commits do not replace their actual author commits.
-
-The additive `CompactOpenBasis.lean` and its import-only example clients are
-authored by Worker A Task `hive-request-292c683e356788488db9697f8ab88ae299106146`,
-UID `6d244d81-b9d8-4b91-9995-94823c4fc80b`. Their mathematical adapter is
-adapted from Formal Frontier's earlier independently reviewed, accepted
-source-local Lean research (source repository revision
-`089feedd2e8d6897819ef1a1177a28a5eb850c72`, basis input blob
-`c46a4695fd1f30f07ae445a7a3f2fcd1adab0e78`). This is reuse of the
-project's own original formal expression and mathlib results; the new library
-candidate, metadata and manual documentation require their own independent
-review. No source-specific correspondence or coverage decision is made here.
-
-| Shipped Lean source | First project expression and relevant successor |
-| --- | --- |
-| `SpectralStoneDuality/PrimeSpectrum.lean` | `184e009` prime spectrum; `dd3adcc` specialization; `55ec5ce` module boundary; `e6e5b4c` exposed data |
-| `SpectralStoneDuality/Functoriality.lean` | `7ad3fe1` spectrum maps; `55ec5ce` module boundary; `e6e5b4c` exposed data and private definitional witness |
-| `SpectralStoneDuality/Category.lean` | `6ea16cc` functors; `55ec5ce` module boundary; `e6e5b4c` exposed data; `64d7289` projection/morphism docstrings |
-| `SpectralStoneDuality/Reconstruction.lean` | `6126860` point reconstruction; `55ec5ce` module boundary |
-| `SpectralStoneDuality/Equivalence.lean` | `6cd1051` assembled equivalence; `55ec5ce` module boundary |
-| `SpectralStoneDuality/Limits.lean` | `40851d1` cofiltered limits; `b9a036f` independent universes; `55ec5ce` module boundary |
-| `SpectralStoneDuality/Subspace.lean` | `a8e6cc8` arbitrary-subspace lifting; `55ec5ce` module boundary |
-| `SpectralStoneDuality.lean` | `184e009` root import; subsequently extended through `55ec5ce` |
-| `Examples/SpectralStoneDuality.lean` | `55ec5ce` separate named clients; `e6e5b4c` public-import repair |
-
-`184e009` introduced the original project `lean-toolchain`, `lakefile.toml`,
-`lake-manifest.json` and `.gitignore`. The historical documentation assembly left
-its three pin/build files unchanged; this combined successor changes the two
-Lake configuration files as described below, not the toolchain. `716904b` introduced `README.md`;
-`55ec5ce` introduced the original Apache `LICENSE` and v0.4
-`formalization.yaml` as well as the examples and README readiness text;
-`ba49030` pinned the official internal ideal-completion dependency and updated
-those documents. `e6e5b4c` is the ordinary-main repair by Worker A Task
-`hive-request-98fe100318be420b41f003a72a01b4c79aae3264`, UID
-`d6d4024a-6315-42c8-9063-ffe336bacd3a`. It exposed eight data definitions,
-inlined the two prior private constructions verbatim in their public versions,
-retained forty private helpers and added two private definitional witnesses.
-The pre-repair project code, not external source text, is the expression
-predecessor. The initial standalone documentation author is Worker B Task
-`hive-request-266965db45b8ebe199a0f18a18198ee933fc2bbb`, UID
-`ca1bbd66-45d3-48a9-a402-f5ce5f66a099`, request
-`c45692fe38e98b2cd13a58d57c4b5d97`.
-
-The frozen-source proof application was authored by Worker A Task
-`hive-request-f8db1376b7f99c5c7cf7523d2657b2681cca37df`, UID
-`07e91065-2c50-4c8c-ba3c-de14bf7d8d7e` (issue 17 comment 42800),
-and reconciled by Anchor
-in comment 42839; neither action changed shipped Lean. The subsequent
-documentation and lint-disposition successor is authored by Worker B Task
-`hive-request-76d5aa7fb571f01cc3991f62167a36a2afb4bd7b`, UID
-`e0518da7-217d-4b2e-811a-fb55913d3b51`, request
-`c966e42fb0513618edf8006a02816f5d`. It updates the release-status,
-lint reproduction and proof-evidence descriptions, metadata, bounded API
-generator/tests and regenerated Markdown using the unchanged native records.
-It adds no mathematical code, external expression or third-party rights grant.
-
-Anchor authored the subsequent combined repair: corrected the two authored
-`SpectralCat.Hom.ext`/`ext_iff` notes to distinguish bundled-map and pointwise
-equality, dated preparation-status claims, and translated the dependency pin to
-its already published identical-tree GitHub release. The maintained adapter
-now binds historical native inputs and translated release inputs separately,
-with exact-hash refusal controls. Nine Lean files and historical native records
-are unchanged; this is original project tooling and prose, not a new proof audit
-or an automatic transfer of the earlier review.
+The [finite-cylinder descent](../SpectralStoneDuality/FiniteCylinderDescent.lean)
+module likewise closely adapts Anchor's original single-cylinder finite
+subcover, common-stage, pullback-union and cone-triangle proofs and finite
+labelled stage selection. The collaborating contributor added coherent
+`wideCospan` arrows and a whole-stage cover argument, with four named clients
+and a [manual guide](FiniteCylinderDescent.md); a separate contributor
+performed its destination adaptation. Anchor registered both cylinder modules
+in the public import and example target. These are original project expression
+and subsequent agent adaptations, not imports from a source research checkout.
 
 ## Mathematical sources and dependencies
 
-The mathematical background is classical bounded distributive-lattice Stone
-duality and spectral topology, with Fujiwara and Kato, *Foundations of Rigid
-Geometry I*, arXiv:1308.4734v5, Chapter 0 §2.2 as a motivating reference.
-Their book is not a redistributed component or an endorsement; no PDF, scan,
-figure or substantial source excerpt ships. Source-level correspondence and
-coverage decisions remain in their designated repository. The Lean code
-uses mathematical ideas and public APIs, not an assertion that the book's
-protected expression may be copied.
+The mathematics draws on classical bounded distributive-lattice Stone duality
+and spectral topology. Fujiwara and Kato, *Foundations of Rigid Geometry I*,
+[arXiv:1308.4734v5](https://arxiv.org/abs/1308.4734v5), Chapter 0, §2.2,
+is a motivating reference, not a claim of complete source formalization or
+source-author approval. No book PDF, scan, figure or excerpt is shipped.
 
-Lean, mathlib at `83abb3e776bdefcbc447a1e44d0debe4010039e5`, and the
-official private GitHub ideal-completion snapshot
-`001e3b7508184ecd51e0d86177cb1d54508bf59d` (tree
-`ec847510a5d92e0473060f1d6d8bb33c0484164e`) are declared,
-separately maintained dependencies. The historical native analysis used
-`a6f4d9c9614c20fe05f947902373d60e05504291`, whose tree is identical;
-commit identity, transport and the two configuration hashes differ. They are fetched, not vendored; their
-copyright, attribution, NOTICE and licensing terms stay with their own
-repositories. This tree does not copy their source files. The bounded API
-renderer runs an unchanged, separately checked-out leanprover/doc-gen4 at
-`97d4ecdfc8e09e7f511724c25e303d448de6a3db`; neither its generated
-HTML/JS/fonts nor any dependency documentation ships here.
+Lean and [mathlib](https://github.com/leanprover-community/mathlib4) supply
+the proof assistant and native order, topology and category APIs. The
+separately maintained [ideal-completion](https://github.com/FormalFrontier/ideal-completion)
+library supplies ideal-completion and compact-principal results at the
+published pin in [`lakefile.toml`](../lakefile.toml). Dependency authors
+retain their own notices and license terms; those repositories are fetched,
+not vendored. Authorized access is needed for the private ideal-completion
+dependency. Neither dependency is credited as original project expression.
 
-## Adapted project documentation tooling
+## Documentation tooling
 
-`scripts/generate_api.py` and `scripts/test_generate_api.py` adapt original
-Formal Frontier project code from `FormalFrontier/adic-modules` commit
-`0e95f905ff0224d95378ddd6535ddb9655f322b5` (Anchor), under its existing
-Apache-2.0 SPDX/author notices. That implementation itself adapts the project
-`FormalFrontier/coherent-modules` implementation (Anchor) at
-`1270dfa78e1d60d20ae15841b47be43dcc231287`, including native class,
-constructor and field handling. This adaptation preserves the original notices
-and Git-first/source-only/parentless fallback checks but replaces module,
-display and note inventories, source URLs, counts and all test fixtures with
-this library's actual native records. Native headers and docstrings are derived
-from this project's own source through the unmodified doc-gen4 tool; the 38
-separately authored missing-docstring notes are labeled in the API. The exact
-adapter diff and native inputs reside in the separate evidence branch; neither
-the Adic author commit nor this assembly has an automatic transferred review.
-
-Release reviewers must still inspect all shipped mathematical expression,
-documentation and this derivative tooling, verify actual rights and historic
-public-ref reachability, and decide any copyright uncertainty. Previous agent
-reviews and this author record are not legal or full-release acceptance.
+[`scripts/generate_api.py`](../scripts/generate_api.py) and
+[`scripts/test_generate_api.py`](../scripts/test_generate_api.py) adapt original
+Formal Frontier documentation tooling authored by Anchor in the
+`coherent-modules` and `adic-modules` projects. The adaptation changes the
+source selection, inventory, notes and tests for this library while preserving
+the tooling's existing author/SPDX notices. Native display headers and source
+docstrings originate in this library's own Lean source and doc-gen4 output;
+the 38 additional API notes are marked as authored, not source docstrings.
+Only the historical Markdown API is shipped, not doc-gen4 HTML, scripts,
+assets or third-party documentation. See the [historical API contract](README.md)
+for its exact analyzed/translated input distinction.

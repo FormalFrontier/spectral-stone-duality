@@ -7,8 +7,9 @@ public API. This module was added **after** the frozen seven-leaf native doc-gen
 input; none of its names occurs in the 99 native display records in
 [`API.md`](API.md) or the historical [`api-manifest.json`](api-manifest.json).
 The declarations here are documented manually, not newly generated doc-gen4
-records. This supplement is an interface guide, not a proof-integrity audit,
-source-coverage decision or release-acceptance record.
+records. The [API reproduction notes](README.md) explain why the historical
+manifest does not enumerate this module; use the imports above for its actual
+interfaces rather than inferring an absence from native display counts.
 
 ## Specified cofiltered limiting cone
 

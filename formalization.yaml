@@ -4,13 +4,12 @@ version: "v0.4"
 project:
   name: "spectral-stone-duality"
   description: >-
-    Prime-ideal spectra of bounded distributive lattices, their contravariant
-    equivalence with spectral spaces, cofiltered spectral limits, compact-open
-    cylinder bases on specified and chosen limiting cones, and compact-open
-    lifting from arbitrary subspaces of prespectral spaces. Compact-open/open
-    cylinder containment descends to a stage, with eventually-full compact-open
-    neighborhoods of limiting projection ranges. Finite labelled compact-open
-    families and whole-stage covers descend coherently over a selected index.
+    Prime-ideal spectra of bounded distributive lattices and their
+    contravariant equivalence with spectral spaces. Also proves spectrality
+    of small cofiltered limits with spectral arrows, compact-open cylinder
+    bases and descent over actual limits, and compact-open lifting from
+    arbitrary subspaces of prespectral spaces. Finite labelled families,
+    including empty families, descend to coherent whole-stage covers.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -22,23 +21,19 @@ sources:
     type: "folklore"
     relationship: "independently-proves"
     note: >-
-      Classical order and topology results proved with native mathlib and the
-      ideal-completion library. No novelty or source-author endorsement is claimed.
-  - title: "Cofiltered spectral limits, compact-open cylinders and subspaces"
+      Prime order ideals, compact opens and spectral maps; the space-side
+      reconstruction assumes spectrality and hence sobriety. No mathematical
+      novelty or source-author endorsement is claimed.
+  - title: "Cofiltered spectral limits, cylinders and subspaces"
     type: "folklore"
     relationship: "independently-proves"
     note: >-
-      The limit theorem assumes spectral transition maps and a small cofiltered
-      category; nonemptiness additionally assumes objectwise nonemptiness.
-      Compact-open cylinder bases for specified and chosen cofiltered limits
-      need spectral stages and arrows, but not inhabited stage spaces. The
-      compact-open lifting theorem allows arbitrary subspaces.
-      Cylinder containment descends over an actual limiting cone to an object
-      of Over i; the right-hand open need not be compact. The neighborhood
-      theorem and descent allow empty stages/limits and non-surjective maps.
-      Finite labelled families descend simultaneously; finite containment uses
-      coherent arrows over a selected index, and descended covers cover an
-      entire stage. Empty label types and empty stages remain allowed.
+      Small cofiltered diagrams require spectral stages and spectral arrows;
+      limit nonemptiness separately requires objectwise nonemptiness. Cylinder
+      descent uses an actual IsLimit cone and Over witnesses, with a compact
+      open on the left and a merely open set on the right. Finite labels may be
+      empty; coherent arrows give covers of an entire stage. Arbitrary-subspace
+      compact-open lifting requires no closedness. No sheaf gluing is asserted.
   - title: "Foundations of Rigid Geometry I"
     authors:
       - "Kazuhiro Fujiwara"
@@ -48,87 +43,47 @@ sources:
     location: "Chapter 0, Section 2.2"
     relationship: "background"
     note: >-
-      Motivating discussion of spectral spaces and lattices. Detailed source
-      correspondence and coverage decisions are maintained separately.
+      Motivating reference only; no claim of complete source formalization.
 
 related_formalizations:
   - id: "https://github.com/leanprover-community/mathlib4"
     relationship: "builds-on"
     note: >-
-      Uses native order ideals, frame points, prime separation, spectral-space
-      topology, and category theory at the revision in the Lake manifest.
+      Native order ideals, frame points, spectral topology and category APIs,
+      pinned at the revision in the Lake manifest.
   - id: "https://github.com/FormalFrontier/ideal-completion"
     relationship: "builds-on"
     note: >-
-      Official private GitHub release 001e3b7508184ecd51e0d86177cb1d54508bf59d,
-      tree ec847510a5d92e0473060f1d6d8bb33c0484164e, supplies ideal completion
-      and compact-principal results. Its September 25, 2026 publication included
-      a clean declared-URL consumer. Authorized private GitHub access is required.
-      The historical native-analysis dependency a6f4d9c9614c20fe05f947902373d60e05504291
-      has exactly the same tree, not the same commit or transport URL. The two
-      exact configuration hashes and this translation are recorded separately
-      from historical analyzed inputs in docs/api-manifest.json. At preparation
-      on September 26, 2026, this combined Spectral artifact still required fresh
-      release review. Tags are deferred.
+      Ideal completion and compact-principal results, pinned to the official
+      published commit 001e3b7508184ecd51e0d86177cb1d54508bf59d.
+      This dependency is private and requires authorized GitHub access.
 
 automation:
   methods:
     - method: "agent"
       tool_setup: >-
-        Formal Frontier AI agents using Lean, Lake, Git and the Hive task
-        environment for mathematical development, independent review and maintenance.
+        Formal Frontier AI agents use Lean, Lake and Git for formalization
+        and maintenance; independent review is recorded by exact revision.
   notes: >-
-    Development and independent review use distinct agent executions. No model,
-    cost or performance measurement is inferred from service account identities.
+    AI assistance and independent review are distinct; service identities
+    alone do not establish proof correctness or review acceptance.
 
 status:
   scope: >-
-    Reusable Stone duality and the stated limit/cylinder/subspace topology. This metadata
-    does not assert full Fujiwara-Kato source coverage or release acceptance.
+    Reusable bounded distributive-lattice Stone duality and the documented
+    spectral-limit, cylinder and subspace topology. Source-specific
+    correspondence and coverage decisions are maintained separately.
 
 review:
-  status: "other: finite-cylinder registration candidate awaits exact review and required CI"
+  status: "other: consult exact-revision independent review and release records"
   notes: >-
-    The September 27, 2026 FiniteCylinderDescent contribution preserves both
-    Lean payloads of destination transfer 77b6f14. Its incubator donor
-    bd82bf269e4d16bc2ca9bd8f312e0af50649869d was independently reviewed and
-    leaf-accepted in incubator issue4 comment52349; this does not accept the
-    destination registration. Focused destination cache/build/direct-client and
-    private-inclusive 7+4 origin evidence is separate from changed-root
-    required CI and fresh exact destination review. The existing Examples
-    target now declares three explicit roots without changing any dependency pin.
-    Closely adapted Anchor proof expression, original and adapter Task identities,
-    and notices are recorded in docs/CREDITS.md and docs/FiniteCylinderDescent.md.
-    Owner acceptance, protected integration and the next verified official
-    release remain pending. The preceding cylinder-descent release is complete
-    in issue17 comment52458 at internal ec25325f882df909055d62e61c390066aec91ad9
-    and official 5e2cf4120087d32b1456e0244de46741d85dc83d, with the same tree.
-    The following preceding preparation records are
-    historical, not evidence for this new candidate.
-    Accepted development main b049f7ca24b5800273275ff04777ae505bb2c163
-    contains independently reviewed mathematical contributions. In particular,
-    PR14 review940 accepted the mixed-universe cofiltered-limit successor
-    b9a036f2448e59cb359ee509f3f849e7d7c78b56, and PR16 review1559 accepted
-    the subspace candidate a8e6cc84dff5d0f00031d7f02cd802d3a9b7152b.
-    These are bounded development reviews, not full-release approval.
-    The cumulative e6e5b4c ordinary-main candidate received independent PR18
-    review3097 and owner acceptance in issue17 comment41638, protected main
-    integration comment41666 and cache-first verification comment41731. These
-    records do not approve this documentation assembly, the complete release,
-    dependency redistribution or rights/history. A complete frozen-source
-    author raw-artifact axiom and stored-body application was reconciled in
-    issue17 comment42839 (272 raw occurrences, 266 stored bodies and six
-    structural replay units). At preparation on September 26, 2026, PR19 review3225
-    requested corrections to two bundled-map equality notes and unqualified
-    status prose. This successor addresses those findings and binds the public
-    dependency translation; its fresh exact-candidate review was not yet recorded
-    at preparation. This historical account does not predict later decisions or
-    itself certify release acceptance. The additive CompactOpenBasis candidate
-    and its import-only clients are not accepted by the earlier source-local
-    review; they require fresh exact-candidate library review before integration
-    and any subsequent release.
+    Earlier accepted mathematical developments and published snapshots do not
+    themselves review or release a changed candidate. Build and complete
+    private-inclusive transitive standard-axiom evidence must apply to the
+    actual checked inputs. This metadata does not self-certify acceptance,
+    redistribution rights or source coverage.
 
 acknowledgements: >-
-  Lean and mathlib authors for the proof assistant, automation and mathematical
-  infrastructure; the ideal-completion contributors and Formal Frontier
-  source-maintainer team for development, review and integration.
+  Lean and mathlib contributors for the proof assistant and mathematical
+  infrastructure; ideal-completion contributors for its separately maintained
+  library; the Formal Frontier source-maintainer team for development and review.
