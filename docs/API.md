@@ -3,11 +3,12 @@
 This reference retains **99 historical native library display sites in seven
 leaves**: 51 theorems, 33 definitions, eleven instances, two structures and
 two constructors. The aggregate and original Examples client have no native
-display sites. Import `SpectralStoneDuality` for all **ten current public
-leaves**; the three later leaves have [manual supplements](README.md), not
-native display records here. The Examples target is not re-exported. Display
-sites do not establish a complete private/generated kernel census or a proof,
-rights, build or acceptance check for the current fourteen-module tree.
+display sites. Import `SpectralStoneDuality` for the public leaves listed in the
+[library README](../README.md). The later cylinder leaves have
+[manual supplements](README.md), while the lattice and soberification leaves
+are not represented by these native display records. The Examples target is
+not re-exported. Display sites do not establish a complete private/generated
+kernel census or a proof, rights or build check for the current source tree.
 
 Headers below are native doc-gen4 display signatures, not complete declarations
 with proof bodies. All native visible tokens, including implicit parameters and
@@ -18,15 +19,14 @@ These displayed fragments are not promised to elaborate alone in a fresh namespa
 Source links are relative to this same checkout.
 
 The [manifest](api-manifest.json) binds the historical analyzed and
-release-translated inputs and the original whole-file API digest. This editorial
-introduction changes the current whole-file digest: the old manifest does
-**not** claim to hash this edited file or the current aggregate/Examples/Lake
-inputs. The frozen generated body below starts at the next module heading and
-retains its original source ranges and headers.
+release-translated inputs and the original whole-file API digest. Its hash does
+**not** cover this later introduction or the aggregate, Examples and Lake
+inputs in this checkout. The historical generated entries begin at the first
+module heading below and retain their original source ranges and headers.
 See [generation instructions](README.md) and the [mathematical guide](Guide.md).
 Where no source docstring exists, a separately authored **API note** is labeled explicitly.
 
-## Complete module inventory
+## Historical native module inventory
 
 | Module | Display sites |
 | --- | --- |
@@ -54,9 +54,8 @@ is a generated equation theorem, despite their false classification flag.
 Historical frozen-source application counted 272 raw occurrences (266 stored
 bodies and six structural replay units, including private declarations and
 examples). This differs in method and scope from the 272 loaded names: equal
-totals do not imply name-for-name correspondence, and neither count certifies
-new leaves or changed imports. Consult exact-revision checking and review
-records for any changed candidate.
+totals do not imply name-for-name correspondence, and neither count describes
+additional leaves, changed imports or the current source tree.
 
 ## SpectralStoneDuality.PrimeSpectrum
 

@@ -1,27 +1,30 @@
 # Bounded native Markdown API and manual supplements
 
 The [API reference](API.md) preserves **99 historical native doc-gen4 display
-sites in seven leaves**, not a census of all fourteen current Lean modules or
+sites in seven leaves**, not a census of the current Lean modules or
 all private/generated declarations. The root aggregate import and the original
 Examples client have zero native display sites; they were included as inputs,
 not omitted accidentally. Thirty-eight authored notes are explicitly labelled
-**not source docstrings**. The remaining three leaves are documented in manual
+**not source docstrings**. Three additional leaves are documented in manual
 supplements: [compact-open cylinder bases](CompactOpenBasis.md) (eight public
 declarations), [single-cylinder descent](LimitCylinderDescent.md) (three
 theorems) and [finite-cylinder descent](FiniteCylinderDescent.md) (three
-producer theorems). Their import-only clients are not additional public API.
-See the [mathematical guide](Guide.md) and [credits](CREDITS.md).
+producer theorems). The lattice and soberification leaves are linked from the
+[library README](../README.md); none of these later leaves has native display
+records in this reference. Their import-only clients are not additional public
+API. See the [mathematical guide](Guide.md) and [credits](CREDITS.md).
 
 The historical reference records native names, kinds, visible header tokens,
 source docstrings and source ranges. A field and its constructor may share an
 enclosing source range. The seven original leaf sources and toolchain are
 byte-identical between the native analysis and the current tree. The aggregate,
-Examples and Lake configuration inputs have since changed: in particular,
-the current aggregate imports ten leaves and the default Examples target has
-three roots. The manifest's historical release inputs and its `api_sha256`
-refer to the **earlier snapshot**, not to this checkout's complete input set
-or the edited API preamble. Do not retarget those hashes without new
-authenticated generation and review.
+Examples and Lake configuration inputs have since changed; see the
+[aggregate](../SpectralStoneDuality.lean) for its imports and
+[`lakefile.toml`](../lakefile.toml) for the example roots. The manifest's
+historical release inputs and its `api_sha256` refer to the **earlier snapshot**,
+not to this checkout's complete input set or API introduction. The historical
+hashes cannot certify modified inputs without matching authenticated native
+generation.
 
 The separate full-import **loaded-environment inventory** at frozen source
 revision `64d7289b76f6973bd37a9d9098e545437d6a7142` observed 272
@@ -35,27 +38,32 @@ recursors `SpectralStoneDuality.SpectralCat.rec` and
 kernel declaration count or a complete proof, visibility or rights audit.
 The equation and two recursors are generated despite the false classification
 flag. The historical raw-artifact inventory and stored-body application used
-their own checking units; 272 is not a prescribed total for another revision.
-Current computational release checks are the pinned build and complete actual
-transitive standard-axiom audit, including private repository declarations.
-Separate stored-proof replay and fresh doc generation are not prerequisites.
+their own checking units; 272 is not a prescribed total for the present full
+inventory. Successful pinned-build evidence and a complete transitive
+standard-axiom audit, including private repository declarations, apply when
+relevant Lean source, build targets and configuration, resolved dependencies,
+toolchain and checker inputs and required coverage match. Reuse matching
+evidence across prose-only commits; renew only affected checks for changed
+inputs or missing coverage. Separate stored-proof replay and fresh doc
+generation are not prerequisites.
 
 Separate historical raw-artifact application on the earlier nine-source graph
 counted 272 occurrences (266 stored bodies and six structural replay units,
 including private/generated declarations and private examples), with transitive
 axioms limited to `propext`, `Classical.choice` and `Quot.sound`. This is not
-the same measurement as the 272 *loaded* `env.constants` names, nor an audit
-of this later fourteen-module tree. Consult exact-revision review/build/axiom
-records for a candidate rather than treating these numbers as a new check.
+the same measurement as the 272 *loaded* `env.constants` names or an audit of
+this source tree. These historical numbers alone do not establish the present
+full inventory or certify changed Lean inputs; use applicable exact-input
+build and private-inclusive axiom-audit evidence for those claims.
 
 This tree ships Markdown, relative links and an input/output manifest; it does
 not ship the native HTML website, JS, styles, fonts, search or dependency
-documentation. No browser rendering or full dependency-site coverage has been
-claimed. Historical full-revision GitHub source URL strings are verified as
-native input records, not asserted to be live or reachable in an independent
-public lineage. The historical `[Source]` links resolve within this tree for
-the original seven leaves, whose source bytes and native ranges remain unchanged;
-the three other leaves have manual supplements only.
+documentation, browser rendering or full dependency-site coverage. Historical
+full-revision GitHub source URLs are retained as native input records; their
+reachability in an independent public lineage is not established. The
+historical `[Source]` links resolve within this tree for the original seven
+leaves, whose source bytes and native ranges remain unchanged; the three
+cylinder leaves have manual supplements instead of native display records.
 
 ## Reproduce native input and generated output
 
@@ -63,11 +71,10 @@ To reproduce the **historical generated API and its original whole-file hash**,
 use an unchanged checkout of the older public snapshot
 `698de8ace0c572cf3766529aa3edcede548e9848`, not this later checkout.
 Its nine source/toolchain bytes and translated Lake configuration match the
-fixed manifest. The current aggregate, Examples and Lake inputs have changed;
-the editorial API introduction changes its whole-file digest independently.
-`generate_api.py --check` cannot certify the current file or tree using that
-older manifest. In the historical checkout, use the nine
-authenticated historical `declaration-data-*.bmp` records from the retained native
+fixed manifest. The aggregate, Examples and Lake inputs, as well as the API
+introduction, differ in this checkout. `generate_api.py --check` cannot certify
+this file or tree using the older manifest. In the historical checkout, use the
+nine authenticated historical `declaration-data-*.bmp` records from the retained native
 generation evidence (obtain that evidence from the maintainer). They are not
 bundled website assets. No development ancestry or dependency cache is needed
 for these data-only commands:
@@ -135,10 +142,10 @@ the native tool to this project's compiled sources and exact imports. Native
 `single` receives a URL without a fragment; doc-gen4 itself appends
 `#Lstart-Lend`. Save argv, native stdout/stderr/warnings and exit status,
 both native manifests, `api.db` and all nine `declaration-data-*.bmp` inputs
-for a serious review. Do not ship raw native HTML simply because `fromDb`
-emits it into the temporary directory. For an intentionally reviewed inventory
-update, omit `--check` to regenerate `API.md` and `api-manifest.json` from
-matching, authenticated native records, then verify the new tree.
+to verify provenance. Do not ship raw native HTML simply because `fromDb`
+emits it into the temporary directory. To update the inventory from matching,
+authenticated native records, omit `--check` when regenerating `API.md` and
+`api-manifest.json`, then verify the new tree.
 
 ## Exact provenance and bounded controls
 
@@ -178,13 +185,12 @@ The supplied-record tests also cover same-tree relative links, unique anchors,
 changed literals and docstrings, source-only and parentless single-commit Git
 histories, and incorrect Git objects; `-O` and `-OO` exercise optimized modes.
 
-These controls apply to the matching historical snapshot, not changed current
-aggregate/Examples/Lake inputs or the edited API introduction. They only
+These controls apply to the matching historical snapshot, not the aggregate,
+Examples, Lake inputs or API introduction in this checkout. They only
 validate data presented to them. They do not prove that
 arbitrary supplied JSON was produced by doc-gen4, authenticate HTML in a
-browser, or check proofs. Review the separate native receipts, loaded inventory,
-historical proof application, source semantics, rights and any changed release
-candidate independently.
+browser, or check proofs. Native provenance, loaded inventories, historical
+proof application, source semantics and rights require separate evidence.
 
 ## Selected lint configuration and retained nonpasses
 

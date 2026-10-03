@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its twelve leaves below.
+or select one of its thirteen leaves below.
 
 ## Headline results
 
@@ -21,6 +21,15 @@ or select one of its twelve leaves below.
   [`SpectralStoneDuality.stoneDuality : BddDistLatᵒᵖ ≌ SpectralCat`](SpectralStoneDuality/Equivalence.lean).
   Its space-side reconstruction uses sobriety; it does not assert a duality for
   arbitrary spaces. See [maps and reconstruction](docs/Guide.md#maps-reconstruction-and-naturality).
+- **Thin-lattice finite coproducts.** In the order category of a distributive
+  lattice with bottom, finite joins are universal coproducts without requiring
+  a top element. In any lattice with bottom, a finite coproduct is disjoint
+  exactly when summands at distinct indices have meet bottom. Such disjoint
+  coproducts stay disjoint after base change in the distributive case; every
+  finite coproduct's injections generate a covering sieve for the extensive
+  topology. This does
+  not assert that every finite coproduct is disjoint or that the category is
+  `FinitaryExtensive`. See [thin lattices](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean).
 - **Soberification.** For any topological space, the topology on its nonempty
   irreducible closed subsets yields a `T₀` quasi-sober space. The unit sends
   a point to its singleton closure; continuous maps into `T₀` quasi-sober
@@ -61,18 +70,22 @@ or select one of its twelve leaves below.
 | [`Subspace`](SpectralStoneDuality/Subspace.lean) | Ambient compact-open lifts and spectral-map detection |
 | [`LimitCylinderDescent`](SpectralStoneDuality/LimitCylinderDescent.lean) | Eventual containment and eventually-full neighborhoods |
 | [`FiniteCylinderDescent`](SpectralStoneDuality/FiniteCylinderDescent.lean) | Coherent finite families and whole-stage covers |
+| [`CategoryTheory.Lattice.Extensive`](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean) | Universal finite joins, conditional disjointness and extensive-topology coverings |
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 
 The [aggregate import](SpectralStoneDuality.lean) publicly re-exports these
-leaves. The three example modules are
+leaves. The three existing example modules are
 [`Examples/SpectralStoneDuality.lean`](Examples/SpectralStoneDuality.lean),
 [`Examples/LimitCylinderDescent.lean`](Examples/LimitCylinderDescent.lean), and
 [`Examples/FiniteCylinderDescent.lean`](Examples/FiniteCylinderDescent.lean).
 The separately built
 [`SpectralStoneDualityExamples/Soberification.lean`](SpectralStoneDualityExamples/Soberification.lean)
 exercises the reflection on empty and non-separated spaces, `Prop` and the
-infinite cofinite space. These are separate example modules, not exported by
+infinite cofinite space. The
+[`SpectralStoneDualityExamples/LatticeExtensive.lean`](SpectralStoneDualityExamples/LatticeExtensive.lean)
+clients cover finite disjoint families, base change and a non-disjoint repeated
+summand. These are separate example modules, not exported by
 `SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
 `SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The
 [mathematical guide](docs/Guide.md) gives conventions and proof outlines.
@@ -94,33 +107,39 @@ lake --wfail build
 ```
 
 The default build includes the library, the three existing example roots and
-the explicit `SpectralStoneDualityExamples.Soberification` root of the
+the explicit `SpectralStoneDualityExamples.Soberification` and
+`SpectralStoneDualityExamples.LatticeExtensive` roots of the
 `SpectralStoneDualityExamples` target. Following the same cache prerequisite,
 `lake --wfail build SpectralStoneDualityExamples` selects the example target.
-This text records no new build or axiom audit: the applicable checks for a
-changed candidate and its review are tracked by the maintainers separately.
+A successful build alone does not check transitive axiom dependencies. Build
+and complete private-inclusive axiom-audit evidence applies when the relevant
+Lean source, build targets and configuration, resolved dependencies, toolchain
+and checker inputs and required coverage match. A prose-only commit needs no
+repeat proof checks; renew only affected checks for changed inputs or missing
+coverage.
 
 The [API reference](docs/API.md) contains **99 historical native display sites
 from seven leaves**, not a current census of all declarations or modules.
 The later cylinder leaves have [manual cylinder-basis](docs/CompactOpenBasis.md),
 [single-cylinder](docs/LimitCylinderDescent.md) and
 [finite-cylinder](docs/FiniteCylinderDescent.md) supplements. The native output's
-body and [fixed input/output manifest](docs/api-manifest.json) are historical;
-editing this introduction does not update its old hash. The
+body and [fixed input/output manifest](docs/api-manifest.json) describe an
+earlier snapshot: the manifest's API hash does not cover this reference's later
+introduction or the aggregate, Examples and Lake inputs in this checkout. The
 [reproduction notes](docs/README.md) distinguish analyzed and translated
-inputs and explain how to use the older public snapshot rather than run its
-fixed adapter against changed aggregate/Examples files here.
+inputs and show how to use the older public snapshot; the fixed adapter cannot
+certify the changed inputs in this checkout.
 
-Historical cost observations, **not measurements of this documentation update
-or portable limits**: one earlier cache fetch took 95.087 s, a nine-source
-build 14.013 s and a separate public-import client 3.004 s under a 23-GiB
-whole-job cgroup. A distinct cached default build took 15 s under a 15-GiB
-cgroup; its pre-existing cgroup `memory.peak` included cache-download page
-cache and cannot isolate build memory. Native doc-gen `single` steps took
-2.5–3.1 s each and `fromDb` took 1.27 s **excluding setup**. About 7.8 GiB
-of cached dependency storage is a disk observation, not a RAM requirement.
-These receipts used the older internal ideal-completion commit with the same
-dependency tree, not a new fetch or build at the official GitHub pin.
+In an earlier nine-source snapshot, a cache fetch took 95.087 s, a build
+14.013 s and a separate public-import client 3.004 s under a 23-GiB whole-job
+cgroup. A distinct cached default build took 15 s under a 15-GiB cgroup; its
+pre-existing cgroup `memory.peak` included cache-download page cache and cannot
+isolate build memory. Native doc-gen `single` steps took 2.5–3.1 s each and
+`fromDb` took 1.27 s **excluding setup**. About 7.8 GiB of cached dependency
+storage is a disk observation, not a RAM requirement. These historical
+observations are not portable limits: they used an older internal
+ideal-completion commit with the same dependency tree and do not measure a
+fetch or build at the official GitHub pin.
 
 ## Attribution and scope
 

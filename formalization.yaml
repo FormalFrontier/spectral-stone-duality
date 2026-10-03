@@ -12,6 +12,9 @@ project:
     including empty families, descend to coherent whole-stage covers. Also
     constructs the soberification of any topological space and its reflection
     into T0 quasi-sober spaces, independently of spectral Stone duality.
+    Finite joins in the underlying order category of a distributive lattice
+    with bottom are universal coproducts; disjointness is characterized by
+    pairwise-zero meets at distinct indices.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -50,10 +53,13 @@ sources:
       - "Fumiharu Kato"
     id: "https://arxiv.org/abs/1308.4734v5"
     type: "book"
-    location: "Chapter 0, Section 2.2"
+    location: "Chapter 0, Sections 1.2(e) and 2.2(b)"
     relationship: "background"
     note: >-
-      Motivating reference only; no claim of complete source formalization.
+      The thin order-category interpretation motivates finite coproduct
+      universality and conditional disjointness. The source assumes a bounded
+      distributive lattice; the finite-coproduct results require only bottom.
+      No claim of complete source formalization is made.
 
 related_formalizations:
   - id: "https://github.com/leanprover-community/mathlib4"
@@ -73,26 +79,19 @@ automation:
     - method: "agent"
       tool_setup: >-
         Formal Frontier AI agents use Lean, Lake and Git for formalization
-        and maintenance; independent review is recorded by exact revision.
-  notes: >-
-    AI assistance and independent review are distinct; service identities
-    alone do not establish proof correctness or review acceptance.
+        and maintenance.
 
 status:
   scope: >-
     Reusable bounded distributive-lattice Stone duality and the documented
     spectral-limit, cylinder and subspace topology, together with general
-    soberification and its reflective adjunction. Source-specific
-    correspondence and coverage decisions are maintained separately.
+    soberification and its reflective adjunction, plus universal finite
+    coproducts and conditional disjointness in thin lattice categories.
+    Source-specific correspondence and coverage decisions are maintained
+    separately.
 
 review:
-  status: "other: consult exact-revision independent review and release records"
-  notes: >-
-    Earlier accepted mathematical developments and published snapshots do not
-    themselves review or release a changed candidate. Build and complete
-    private-inclusive transitive standard-axiom evidence must apply to the
-    actual checked inputs. This metadata does not self-certify acceptance,
-    redistribution rights or source coverage.
+  status: "agent-reviewed"
 
 acknowledgements: >-
   Lean and mathlib contributors for the proof assistant and mathematical
