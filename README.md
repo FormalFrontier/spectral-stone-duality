@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its thirteen leaves below.
+or select one of its fourteen leaves below.
 
 ## Headline results
 
@@ -38,6 +38,11 @@ or select one of its thirteen leaves below.
   general-topology reflection is separate from the spectral-space
   reconstruction in Stone duality. See [topology](SpectralStoneDuality/Topology/Soberification.lean)
   and [adjunction](SpectralStoneDuality/Topology/Category/Soberification.lean).
+- **Closed points among generizations.** In any `T₀` space, the original point
+  is the unique closed point of its generization subspace `nhdsKer {x}`:
+  [`isClosed_singleton_nhdsKer_iff`](SpectralStoneDuality/Topology/NhdsKer.lean)
+  characterizes every closed singleton in that subspace. No sobriety or
+  spectrality is needed. See [closed generizations](docs/Guide.md#closed-generizations).
 - **Limits and cylinder bases.** Small cofiltered diagrams of spectral spaces
   with **spectral transition maps** have spectral limits and spectral
   projections. Compact-open inverse-image cylinders form a basis for a supplied
@@ -70,6 +75,7 @@ or select one of its thirteen leaves below.
 | [`Subspace`](SpectralStoneDuality/Subspace.lean) | Ambient compact-open lifts and spectral-map detection |
 | [`LimitCylinderDescent`](SpectralStoneDuality/LimitCylinderDescent.lean) | Eventual containment and eventually-full neighborhoods |
 | [`FiniteCylinderDescent`](SpectralStoneDuality/FiniteCylinderDescent.lean) | Coherent finite families and whole-stage covers |
+| [`Topology.NhdsKer`](SpectralStoneDuality/Topology/NhdsKer.lean) | Unique closed point among generizations in a `T₀` space |
 | [`CategoryTheory.Lattice.Extensive`](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean) | Universal finite joins, conditional disjointness and extensive-topology coverings |
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
@@ -85,7 +91,9 @@ exercises the reflection on empty and non-separated spaces, `Prop` and the
 infinite cofinite space. The
 [`SpectralStoneDualityExamples/LatticeExtensive.lean`](SpectralStoneDualityExamples/LatticeExtensive.lean)
 clients cover finite disjoint families, base change and a non-disjoint repeated
-summand. These are separate example modules, not exported by
+summand. The [closed-generization examples](SpectralStoneDualityExamples/NhdsKer.lean)
+contrast the upper-set topology on two points with an indiscrete space.
+These are separate example modules, not exported by
 `SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
 `SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The
 [mathematical guide](docs/Guide.md) gives conventions and proof outlines.
@@ -107,8 +115,9 @@ lake --wfail build
 ```
 
 The default build includes the library, the three existing example roots and
-the explicit `SpectralStoneDualityExamples.Soberification` and
-`SpectralStoneDualityExamples.LatticeExtensive` roots of the
+the explicit `SpectralStoneDualityExamples.Soberification`,
+`SpectralStoneDualityExamples.LatticeExtensive` and
+`SpectralStoneDualityExamples.NhdsKer` roots of the
 `SpectralStoneDualityExamples` target. Following the same cache prerequisite,
 `lake --wfail build SpectralStoneDualityExamples` selects the example target.
 A successful build alone does not check transitive axiom dependencies. Build

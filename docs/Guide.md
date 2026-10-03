@@ -3,13 +3,15 @@
 This is a guide to the *reusable library*, not a source-coverage declaration.
 Start with `import SpectralStoneDuality`; the module-specific imports below are
 public alternatives. The [historical native API](API.md) displays seven original
-leaves; the other three have manual supplements for
+leaves; the cylinder leaves have manual supplements for
 [compact-open cylinder bases](CompactOpenBasis.md),
 [single-cylinder descent](LimitCylinderDescent.md) and
-[finite-cylinder descent](FiniteCylinderDescent.md). The separate Examples
-target has three explicit roots: [duality/limits](../Examples/SpectralStoneDuality.lean),
+[finite-cylinder descent](FiniteCylinderDescent.md). The closed-generizations
+API is described below. The separate Examples target includes
+[duality/limits](../Examples/SpectralStoneDuality.lean),
 [single-cylinder clients](../Examples/LimitCylinderDescent.lean), and
-[finite-cylinder clients](../Examples/FiniteCylinderDescent.lean).
+[finite-cylinder clients](../Examples/FiniteCylinderDescent.lean), alongside
+[closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean).
 
 ## Prime spectra and the open-set convention
 
@@ -126,6 +128,18 @@ nor `Y` compact is assumed. The proof takes a finite ambient basic-open
 subcover of the compact image of the subspace open. If `g : Z → Y` becomes a
 spectral map after composition with `Subtype.val : Y → X`, then
 `isSpectralMap_to_subtype_of_comp` detects spectrality of `g` using that lift.
+
+## Closed generizations
+
+For any topological space `X` and point `x`, Mathlib's `nhdsKer ({x} : Set X)`
+consists of the generizations of `x`. If `X` is `T₀`, then
+`isClosed_singleton_nhdsKer_iff x z` states that the singleton of a point
+`z : nhdsKer {x}` is closed exactly when `(z : X) = x`.
+The corollary `isClosed_singleton_nhdsKer x` proves closedness of the
+original point without requiring a closed singleton in `X`.
+The [upper-set `Fin 2` example](../SpectralStoneDualityExamples/NhdsKer.lean)
+has two generizations, of which only the original is closed; an indiscrete
+two-point space shows why `T₀` matters.
 
 ## Using this guide
 

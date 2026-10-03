@@ -16,6 +16,7 @@ public import SpectralStoneDuality.LimitCylinderDescent
 public import SpectralStoneDuality.FiniteCylinderDescent
 public import SpectralStoneDuality.Topology.Soberification
 public import SpectralStoneDuality.Topology.Category.Soberification
+public import SpectralStoneDuality.Topology.NhdsKer
 public import SpectralStoneDuality.CategoryTheory.Lattice.Extensive
 
 /-!
@@ -34,4 +35,6 @@ the soberification of any topological space and its adjunction with the inclusio
 of `T₀` quasi-sober spaces; these are independent of spectrality. The separately
 built `Examples.SpectralStoneDuality` and `SpectralStoneDualityExamples.Soberification`
 modules demonstrate these imports.
+The `Topology.NhdsKer` leaf identifies the unique closed point in the subspace
+of generizations of a point in any `T₀` space.
 -/
