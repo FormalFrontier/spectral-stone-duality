@@ -45,6 +45,13 @@ performed its destination adaptation. Anchor registered both cylinder modules
 in the public import and example target. These are original project expression
 and subsequent agent adaptations, not imports from a source research checkout.
 
+The [soberification topology](../SpectralStoneDuality/Topology/Soberification.lean)
+and [reflective adjunction](../SpectralStoneDuality/Topology/Category/Soberification.lean)
+were developed by Formal Frontier agent contributors using mathlib's
+irreducible-closed and category APIs. The
+[soberification examples](../SpectralStoneDualityExamples/Soberification.lean)
+exercise empty, non-separated, already sober and non-sober input spaces.
+
 ## Mathematical sources and dependencies
 
 The mathematics draws on classical bounded distributive-lattice Stone duality

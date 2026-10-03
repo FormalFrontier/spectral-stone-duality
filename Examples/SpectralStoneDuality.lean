@@ -4,14 +4,16 @@ Authors: Formal Frontier Agents
 -/
 module
 
-import SpectralStoneDuality
+public import SpectralStoneDuality
 
 /-!
 # Using spectral Stone duality
 
-These stable named private clients use only the aggregate public import. They
-are a separate default build target, not additional library API. They exercise
-the advertised structures and maps without opening private implementations.
+These named clients use only the aggregate public import. The natural-number
+cylinder refinement theorem is public; the other clients are private. This
+separate default build target is not part of the core library aggregate. The
+clients exercise the advertised structures and maps without opening private
+implementations.
 -/
 
 open CategoryTheory CategoryTheory.Limits Order Set TopologicalSpace Topology
@@ -114,7 +116,9 @@ end CompactOpenBasis
 
 section DirectedCompactOpenBasis
 
-private theorem natRefinement (D : Natᵒᵖ ⥤ TopCat.{0}) [HasLimit D]
+/-- Every neighborhood in a natural-number inverse limit of spectral spaces contains a
+compact-open cylinder around the given point. -/
+public theorem natRefinement (D : Natᵒᵖ ⥤ TopCat.{0}) [HasLimit D]
     (hX : ∀ i : Nat, SpectralSpace (D.obj (op i)))
     (hmap : ∀ {a b : Natᵒᵖ} (f : a ⟶ b), IsSpectralMap (D.map f))
     (W : Opens ((limit D : TopCat.{0}))) (x : (limit D : TopCat.{0})) (hx : x ∈ W) :

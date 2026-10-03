@@ -14,6 +14,8 @@ public import SpectralStoneDuality.CompactOpenBasis
 public import SpectralStoneDuality.Subspace
 public import SpectralStoneDuality.LimitCylinderDescent
 public import SpectralStoneDuality.FiniteCylinderDescent
+public import SpectralStoneDuality.Topology.Soberification
+public import SpectralStoneDuality.Topology.Category.Soberification
 
 /-!
 # Spectral Stone duality
@@ -24,5 +26,9 @@ It also exports cofiltered spectral-limit and arbitrary-subspace compact-open AP
 Compact-open cylinders of specified or chosen limits have an `Opens.IsBasis` API.
 Their compact-open/open containments descend to a stage over the same index.
 Finite labelled compact-open covers descend coherently to a cover of an entire stage.
-The separately built `Examples.SpectralStoneDuality` module demonstrates this import.
+The `Topology.Soberification` and `Topology.Category.Soberification` leaves give
+the soberification of any topological space and its adjunction with the inclusion
+of `T₀` quasi-sober spaces; these are independent of spectrality. The separately
+built `Examples.SpectralStoneDuality` and `SpectralStoneDualityExamples.Soberification`
+modules demonstrate these imports.
 -/

@@ -2,8 +2,9 @@
 
 A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
-limits and arbitrary subspaces. Import the whole library with
-`import SpectralStoneDuality` or select one of its ten leaves below.
+limits and arbitrary subspaces. It also provides the soberification of any
+topological space. Import the whole library with `import SpectralStoneDuality`
+or select one of its twelve leaves below.
 
 ## Headline results
 
@@ -20,6 +21,14 @@ limits and arbitrary subspaces. Import the whole library with
   [`SpectralStoneDuality.stoneDuality : BddDistLatᵒᵖ ≌ SpectralCat`](SpectralStoneDuality/Equivalence.lean).
   Its space-side reconstruction uses sobriety; it does not assert a duality for
   arbitrary spaces. See [maps and reconstruction](docs/Guide.md#maps-reconstruction-and-naturality).
+- **Soberification.** For any topological space, the topology on its nonempty
+  irreducible closed subsets yields a `T₀` quasi-sober space. The unit sends
+  a point to its singleton closure; continuous maps into `T₀` quasi-sober
+  spaces extend uniquely, giving a left adjoint to their inclusion in `TopCat`.
+  No separation, compactness or spectrality is required of the input. This
+  general-topology reflection is separate from the spectral-space
+  reconstruction in Stone duality. See [topology](SpectralStoneDuality/Topology/Soberification.lean)
+  and [adjunction](SpectralStoneDuality/Topology/Category/Soberification.lean).
 - **Limits and cylinder bases.** Small cofiltered diagrams of spectral spaces
   with **spectral transition maps** have spectral limits and spectral
   projections. Compact-open inverse-image cylinders form a basis for a supplied
@@ -52,13 +61,20 @@ limits and arbitrary subspaces. Import the whole library with
 | [`Subspace`](SpectralStoneDuality/Subspace.lean) | Ambient compact-open lifts and spectral-map detection |
 | [`LimitCylinderDescent`](SpectralStoneDuality/LimitCylinderDescent.lean) | Eventual containment and eventually-full neighborhoods |
 | [`FiniteCylinderDescent`](SpectralStoneDuality/FiniteCylinderDescent.lean) | Coherent finite families and whole-stage covers |
+| [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
+| [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 
 The [aggregate import](SpectralStoneDuality.lean) publicly re-exports these
-leaves. The three separately built clients are
+leaves. The three example modules are
 [`Examples/SpectralStoneDuality.lean`](Examples/SpectralStoneDuality.lean),
 [`Examples/LimitCylinderDescent.lean`](Examples/LimitCylinderDescent.lean), and
 [`Examples/FiniteCylinderDescent.lean`](Examples/FiniteCylinderDescent.lean).
-They are examples, not additional library interfaces. The
+The separately built
+[`SpectralStoneDualityExamples/Soberification.lean`](SpectralStoneDualityExamples/Soberification.lean)
+exercises the reflection on empty and non-separated spaces, `Prop` and the
+infinite cofinite space. These are separate example modules, not exported by
+`SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
+`SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The
 [mathematical guide](docs/Guide.md) gives conventions and proof outlines.
 
 ## Build and documentation
@@ -77,15 +93,16 @@ lake exe cache get
 lake --wfail build
 ```
 
-The default build includes the library and all three explicit roots of the
+The default build includes the library, the three existing example roots and
+the explicit `SpectralStoneDualityExamples.Soberification` root of the
 `SpectralStoneDualityExamples` target. Following the same cache prerequisite,
 `lake --wfail build SpectralStoneDualityExamples` selects the example target.
 This text records no new build or axiom audit: the applicable checks for a
 changed candidate and its review are tracked by the maintainers separately.
 
 The [API reference](docs/API.md) contains **99 historical native display sites
-from seven leaves**, not a complete census of all declarations or all fourteen
-Lean modules. The later three leaves have [manual cylinder-basis](docs/CompactOpenBasis.md),
+from seven leaves**, not a current census of all declarations or modules.
+The later cylinder leaves have [manual cylinder-basis](docs/CompactOpenBasis.md),
 [single-cylinder](docs/LimitCylinderDescent.md) and
 [finite-cylinder](docs/FiniteCylinderDescent.md) supplements. The native output's
 body and [fixed input/output manifest](docs/api-manifest.json) are historical;
