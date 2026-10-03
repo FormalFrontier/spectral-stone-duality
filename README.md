@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its fourteen leaves below.
+or select one of its fifteen leaves below.
 
 ## Headline results
 
@@ -30,6 +30,12 @@ or select one of its fourteen leaves below.
   topology. This does
   not assert that every finite coproduct is disjoint or that the category is
   `FinitaryExtensive`. See [thin lattices](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean).
+- **Finite preservation and lattice maps.** A functor between the order
+  categories of bounded lattices preserves finite limits and finite colimits
+  exactly when its object map is a bounded lattice homomorphism. The two maps
+  recover each other; no distributivity or shared carrier universe is needed.
+  Empty diagrams detect top and bottom, while binary discrete diagrams detect
+  meets and joins. See [preservation](SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean).
 - **Soberification.** For any topological space, the topology on its nonempty
   irreducible closed subsets yields a `T₀` quasi-sober space. The unit sends
   a point to its singleton closure; continuous maps into `T₀` quasi-sober
@@ -77,6 +83,7 @@ or select one of its fourteen leaves below.
 | [`FiniteCylinderDescent`](SpectralStoneDuality/FiniteCylinderDescent.lean) | Coherent finite families and whole-stage covers |
 | [`Topology.NhdsKer`](SpectralStoneDuality/Topology/NhdsKer.lean) | Unique closed point among generizations in a `T₀` space |
 | [`CategoryTheory.Lattice.Extensive`](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean) | Universal finite joins, conditional disjointness and extensive-topology coverings |
+| [`CategoryTheory.Lattice.Preserves`](SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean) | Finite-(co)limit preservation, bounded lattice maps and their equivalence |
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 
@@ -93,6 +100,9 @@ infinite cofinite space. The
 clients cover finite disjoint families, base change and a non-disjoint repeated
 summand. The [closed-generization examples](SpectralStoneDualityExamples/NhdsKer.lean)
 contrast the upper-set topology on two points with an indiscrete space.
+The [finite-preservation examples](SpectralStoneDualityExamples/LatticePreserves.lean)
+test identity, a nonconstant Boolean-square projection, the one-element lattice,
+and constant maps that preserve binary operations but fail a nullary law.
 These are separate example modules, not exported by
 `SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
 `SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The
@@ -116,7 +126,8 @@ lake --wfail build
 
 The default build includes the library, the three existing example roots and
 the explicit `SpectralStoneDualityExamples.Soberification`,
-`SpectralStoneDualityExamples.LatticeExtensive` and
+`SpectralStoneDualityExamples.LatticeExtensive`,
+`SpectralStoneDualityExamples.LatticePreserves` and
 `SpectralStoneDualityExamples.NhdsKer` roots of the
 `SpectralStoneDualityExamples` target. Following the same cache prerequisite,
 `lake --wfail build SpectralStoneDualityExamples` selects the example target.

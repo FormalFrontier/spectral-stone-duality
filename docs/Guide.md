@@ -7,10 +7,14 @@ leaves; the cylinder leaves have manual supplements for
 [compact-open cylinder bases](CompactOpenBasis.md),
 [single-cylinder descent](LimitCylinderDescent.md) and
 [finite-cylinder descent](FiniteCylinderDescent.md). The closed-generizations
-API is described below. The separate Examples target includes
+and finite-preservation APIs are described below. The
+`SpectralStoneDualityExamples` target includes seven roots:
 [duality/limits](../Examples/SpectralStoneDuality.lean),
-[single-cylinder clients](../Examples/LimitCylinderDescent.lean), and
-[finite-cylinder clients](../Examples/FiniteCylinderDescent.lean), alongside
+[single-cylinder clients](../Examples/LimitCylinderDescent.lean),
+[finite-cylinder clients](../Examples/FiniteCylinderDescent.lean),
+[soberification examples](../SpectralStoneDualityExamples/Soberification.lean),
+[thin-lattice coproduct examples](../SpectralStoneDualityExamples/LatticeExtensive.lean),
+[finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean) and
 [closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean).
 
 ## Prime spectra and the open-set convention
@@ -65,6 +69,34 @@ essential**. `spaceSpectrumHomeomorph` and `spaceUnitIso` provide the space-side
 homeomorphism and natural isomorphism. `stoneDuality` packages the two functors
 and their isomorphisms into `BddDistLatᵒᵖ ≌ SpectralCat`. It does not apply to
 arbitrary non-sober spaces or assert a Boolean/Stone-space equivalence.
+
+## Finite preservation in order categories
+
+The [`CategoryTheory.Lattice.Preserves`](../SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean)
+module concerns functors between the **element-order categories** of two bounded
+lattices, not functors of `BddDistLat`. With independent carrier universes,
+`Functor.map_top_of_preservesFiniteLimits` and
+`Functor.map_inf_of_preservesFiniteLimits` recover the top and binary meet laws
+from preservation of finite limits. Dually,
+`Functor.map_bot_of_preservesFiniteColimits` and
+`Functor.map_sup_of_preservesFiniteColimits` recover bottom and binary join.
+The nullary theorems only require partial orders with top/bottom, and the
+binary theorems only require the corresponding semilattices.
+
+On bounded lattices, `Functor.toBoundedLatticeHom` constructs the map with
+object function `F.obj`; `Functor.toBoundedLatticeHom_apply` simplifies
+application. `Functor.toBoundedLatticeHom_toFunctor` recovers the functor,
+`BoundedLatticeHom.toFunctor_toBoundedLatticeHom` recovers the homomorphism,
+and `BoundedLatticeHom.equivFiniteLimitColimitPreservingFunctor` packages the
+two directions. Mathlib provides the forward finite-preservation instances
+for the functor of a bounded homomorphism. The proof uses preserved terminal
+and initial objects for the nullary laws and preserved binary fans/cofans
+for meets/joins, without adding top/bottom to the binary lemmas. Identity,
+nonconstant Boolean-square projection and `Fin 1` instantiate the API;
+constant-top and constant-bottom examples distinguish the nullary laws.
+These results require no distributivity or nontriviality; they neither
+construct (co)limits in the category of lattice *objects* nor assert a
+source-specific categorical classification.
 
 ## Cofiltered limits and subspaces
 

@@ -17,6 +17,9 @@ project:
     Finite joins in the underlying order category of a distributive lattice
     with bottom are universal coproducts; disjointness is characterized by
     pairwise-zero meets at distinct indices.
+    Functors between thin order categories of bounded lattices preserve finite
+    limits and colimits exactly when their object maps are bounded lattice
+    homomorphisms, without distributivity or shared carrier universe.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -61,6 +64,8 @@ sources:
       The thin order-category interpretation motivates finite coproduct
       universality and conditional disjointness. The source assumes a bounded
       distributive lattice; the finite-coproduct results require only bottom.
+      Its finite-operation preservation motivates the more general bounded
+      lattice-map equivalence, which does not require distributivity.
       No claim of complete source formalization is made.
 
 related_formalizations:
@@ -91,6 +96,9 @@ status:
     coproducts and conditional disjointness in thin lattice categories.
     The original point is the unique closed point among its generizations
     in a T0 space.
+    Finite-limit- and finite-colimit-preserving functors between thin bounded
+    lattice categories correspond to bounded lattice homomorphisms; the
+    binary preservation laws also hold for the corresponding semilattices.
     Source-specific correspondence and coverage decisions are maintained
     separately.
 
