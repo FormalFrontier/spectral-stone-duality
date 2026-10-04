@@ -17,6 +17,7 @@ public import SpectralStoneDuality.FiniteCylinderDescent
 public import SpectralStoneDuality.Topology.Soberification
 public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
+public import SpectralStoneDuality.Topology.Finite
 public import SpectralStoneDuality.Topology.NhdsKer
 public import SpectralStoneDuality.CategoryTheory.Lattice.Extensive
 public import SpectralStoneDuality.CategoryTheory.Lattice.Preserves
@@ -41,6 +42,9 @@ built `Examples.SpectralStoneDuality` and `SpectralStoneDualityExamples.Soberifi
 modules demonstrate these imports.
 The `Topology.Cofinite` leaf characterizes quasi-sobriety of a cofinite space by
 finiteness of its underlying type, including the empty case.
+The `Topology.Finite` leaf proves that every finite irreducible set contains a generic
+point of its closure; every finite topological space is therefore quasi-sober, without
+a separation assumption.
 The `Topology.NhdsKer` leaf identifies the unique closed point in the subspace
 of generizations of a point in any `T₀` space.
 -/

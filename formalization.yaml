@@ -12,6 +12,9 @@ project:
     including empty families, descend to coherent whole-stage covers. Also
     constructs the soberification of any topological space and its reflection
     into T0 quasi-sober spaces, independently of spectral Stone duality.
+    Every finite irreducible subset of any topological space contains a generic
+    point of its closure, so every finite topological space is quasi-sober,
+    without a separation or nonemptiness assumption.
     In T0 spaces, the original point is the unique closed point of its
     generization subspace, without a spectrality assumption.
     Finite joins in the underlying order category of a distributive lattice

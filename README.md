@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its sixteen leaves below.
+or select one of its seventeen leaves below.
 
 ## Headline results
 
@@ -44,6 +44,11 @@ or select one of its sixteen leaves below.
   general-topology reflection is separate from the spectral-space
   reconstruction in Stone duality. See [topology](SpectralStoneDuality/Topology/Soberification.lean)
   and [adjunction](SpectralStoneDuality/Topology/Category/Soberification.lean).
+- **Finite quasi-sobriety.** Every finite irreducible subset of any topological
+  space contains a generic point of its closure. In particular, every finite
+  topological space is quasi-sober, including the empty space and spaces that
+  are not `T₀`; sobriety additionally requires `T₀`. See
+  [finite topology](SpectralStoneDuality/Topology/Finite.lean).
 - **Cofinite quasi-sobriety.** `CofiniteTopology.quasiSober_iff_finite X`
   characterizes quasi-sobriety by `Finite X`, without a nonemptiness
   hypothesis: empty and finite cofinite spaces are sober, whereas an infinite
@@ -90,6 +95,7 @@ or select one of its sixteen leaves below.
 | [`CategoryTheory.Lattice.Preserves`](SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean) | Finite-(co)limit preservation, bounded lattice maps and their equivalence |
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
+| [`Topology.Finite`](SpectralStoneDuality/Topology/Finite.lean) | Generic points of finite irreducible sets; finite-space quasi-sobriety |
 | [`Topology.Cofinite`](SpectralStoneDuality/Topology/Cofinite.lean) | Cofinite quasi-sobriety iff finiteness, infinite obstruction |
 
 The [aggregate import](SpectralStoneDuality.lean) publicly re-exports these
@@ -110,6 +116,9 @@ test identity, a nonconstant Boolean-square projection, the one-element lattice,
 and constant maps that preserve binary operations but fail a nullary law.
 The [cofinite examples](SpectralStoneDualityExamples/Cofinite.lean) test the
 empty space, discrete two-point space, and infinite irreducible Nat space.
+The [finite-space examples](SpectralStoneDualityExamples/FiniteSobriety.lean)
+contrast the existing discrete-space route with finite quasi-sobriety on `Prop`
+and indiscrete `Bool`, and test the infinite cofinite obstruction.
 These are separate example modules, not exported by
 `SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
 `SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The
@@ -136,7 +145,8 @@ the explicit `SpectralStoneDualityExamples.Soberification`,
 `SpectralStoneDualityExamples.LatticeExtensive`,
 `SpectralStoneDualityExamples.LatticePreserves`,
 `SpectralStoneDualityExamples.NhdsKer` and
-`SpectralStoneDualityExamples.Cofinite` roots of the
+`SpectralStoneDualityExamples.Cofinite` and
+`SpectralStoneDualityExamples.FiniteSobriety` roots of the
 `SpectralStoneDualityExamples` target. Following the same cache prerequisite,
 `lake --wfail build SpectralStoneDualityExamples` selects the example target.
 A successful build alone does not check transitive axiom dependencies. Build

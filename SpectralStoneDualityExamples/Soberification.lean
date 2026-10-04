@@ -6,6 +6,7 @@ module
 
 public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
+public import SpectralStoneDuality.Topology.Finite
 
 /-!
 # Boundary examples for soberification
@@ -58,56 +59,12 @@ private theorem closure_true : closure ({True} : Set Prop) = Set.univ := by
     exact (specializes_iff_mem_closure).1
       ((specializes_iff_nhds).2 (by rw [nhds_false]; exact le_top))
 
-private theorem closure_false : closure ({False} : Set Prop) = {False} := by
-  have hset : ({False} : Set Prop) = ({True} : Set Prop)ᶜ := by
-    ext proposition
-    by_cases hp : proposition
-    · rw [prop_eq_true_of proposition hp]
-      simp
-    · rw [prop_eq_false_of_not proposition hp]
-      simp
-  exact (hset ▸ isOpen_singleton_true.isClosed_compl).closure_eq
-
 private instance : T0Space Prop := by
   refine (t0Space_iff_inseparable Prop).2 ?_
   intro proposition other h
   apply propext
   simpa using (inseparable_iff_forall_isOpen.1 h)
     ({True} : Set Prop) isOpen_singleton_true
-
-private instance : QuasiSober Prop where
-  sober {S} hIrred hClosed := by
-    by_cases hTrue : True ∈ S
-    · refine ⟨True, ?_⟩
-      have hSubset : closure ({True} : Set Prop) ⊆ S :=
-        closure_minimal (Set.singleton_subset_iff.mpr hTrue) hClosed
-      rw [IsGenericPoint, closure_true]
-      rw [closure_true] at hSubset
-      exact Set.Subset.antisymm hSubset (Set.subset_univ _)
-    · refine ⟨False, ?_⟩
-      have hSubset : S ⊆ ({False} : Set Prop) := by
-        intro proposition hMember
-        have hp : ¬ proposition := by
-          intro hp
-          apply hTrue
-          rw [← prop_eq_true_of proposition hp]
-          exact hMember
-        simp [prop_eq_false_of_not proposition hp]
-      obtain ⟨proposition, hMember⟩ := hIrred.nonempty
-      have hp : ¬ proposition := by
-        intro hp
-        apply hTrue
-        rw [← prop_eq_true_of proposition hp]
-        exact hMember
-      have hFalse : False ∈ S := by
-        simpa only [prop_eq_false_of_not proposition hp] using hMember
-      have hS : S = ({False} : Set Prop) := by
-        apply Set.Subset.antisymm hSubset
-        intro proposition hMember
-        have hEq : proposition = False := Set.mem_singleton_iff.mp hMember
-        rwa [hEq]
-      rw [IsGenericPoint, closure_false]
-      exact hS.symm
 
 example : Function.Surjective (unit Prop) := (unitHomeomorph Prop).surjective
 

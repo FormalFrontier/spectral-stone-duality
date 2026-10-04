@@ -7,16 +7,17 @@ leaves; the cylinder leaves have manual supplements for
 [compact-open cylinder bases](CompactOpenBasis.md),
 [single-cylinder descent](LimitCylinderDescent.md) and
 [finite-cylinder descent](FiniteCylinderDescent.md). The closed-generizations,
-finite-preservation and cofinite APIs are described below. The single
-`SpectralStoneDualityExamples` library includes eight roots:
+finite-preservation, finite quasi-sobriety and cofinite APIs are described below.
+The single `SpectralStoneDualityExamples` library includes nine roots:
 [duality/limits](../Examples/SpectralStoneDuality.lean),
 [single-cylinder clients](../Examples/LimitCylinderDescent.lean),
 [finite-cylinder clients](../Examples/FiniteCylinderDescent.lean),
 [soberification examples](../SpectralStoneDualityExamples/Soberification.lean),
 [thin-lattice coproduct examples](../SpectralStoneDualityExamples/LatticeExtensive.lean),
 [finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean),
-[closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean) and
-[cofinite examples](../SpectralStoneDualityExamples/Cofinite.lean).
+[closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean),
+[cofinite examples](../SpectralStoneDualityExamples/Cofinite.lean) and
+[finite-space examples](../SpectralStoneDualityExamples/FiniteSobriety.lean).
 
 ## Prime spectra and the open-set convention
 
@@ -161,6 +162,19 @@ nor `Y` compact is assumed. The proof takes a finite ambient basic-open
 subcover of the compact image of the subspace open. If `g : Z → Y` becomes a
 spectral map after composition with `Subtype.val : Y → X`, then
 `isSpectralMap_to_subtype_of_comp` detects spectrality of `g` using that lift.
+
+## Finite irreducible sets and quasi-sobriety
+
+For any topology, a finite irreducible subset contains a generic point of its
+closure: `IsIrreducible.exists_isGenericPoint_closure_of_finite`. Cover the set
+by the finitely many closed singleton closures and use irreducibility to find
+one that contains the whole set. For closed sets, use
+`IsIrreducible.exists_isGenericPoint_of_finite`; every finite space has a
+`QuasiSober` instance, without a separation or nonemptiness assumption.
+Quasi-sobriety alone does not imply `T₀`: in the indiscrete two-point space,
+both points are generic for the whole space. The
+[examples](../SpectralStoneDualityExamples/FiniteSobriety.lean) also exhibit
+the non-`T₁` space `Prop` and an infinite cofinite obstruction.
 
 ## Cofinite spaces and quasi-sobriety
 
