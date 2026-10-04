@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its nineteen leaves below.
+or select one of its twenty leaves below.
 
 ## Headline results
 
@@ -29,8 +29,10 @@ or select one of its nineteen leaves below.
   is `T₀`. It is surjective when compact opens form a basis and the space is
   compact, quasi-separated and quasi-sober; this does not require `T₀`.
   Thus [`spaceHomeomorph`](SpectralStoneDuality/FiniteCoordinates.lean) identifies
-  any spectral space with its compatible finite patterns. See the
-  [finite-coordinate guide](docs/Guide.md#finite-compact-open-coordinates).
+  any spectral space with its compatible finite patterns. The compatible-family
+  cone is limiting for any topological space, and the point-evaluation cone is
+  limiting for spectral spaces; see [finite-coordinate limits](SpectralStoneDuality/FiniteCoordinates/Limits.lean)
+  and the [finite-coordinate guide](docs/Guide.md#finite-compact-open-coordinates).
 - **Thin-lattice finite coproducts.** In the order category of a distributive
   lattice with bottom, finite joins are universal coproducts without requiring
   a top element. In any lattice with bottom, a finite coproduct is disjoint
@@ -101,6 +103,7 @@ or select one of its nineteen leaves below.
 | [`Category`](SpectralStoneDuality/Category.lean) | `SpectralCat` with spectral-map morphisms and both functors |
 | [`Reconstruction`](SpectralStoneDuality/Reconstruction.lean) | `spaceToSpectrum`, `spaceSpectrumHomeomorph`, `spaceUnitIso` |
 | [`FiniteCoordinates`](SpectralStoneDuality/FiniteCoordinates.lean) | Realized finite Sierpiński coordinates, restrictions and spectral-space homeomorphism |
+| [`FiniteCoordinates.Limits`](SpectralStoneDuality/FiniteCoordinates/Limits.lean) | Compatible-family limit cones for all spaces and evaluation limit cones for spectral spaces |
 | [`Equivalence`](SpectralStoneDuality/Equivalence.lean) | `stoneDuality` |
 | [`Limits`](SpectralStoneDuality/Limits.lean) | Cofiltered spectral limits, projections and set bases |
 | [`CompactOpenBasis`](SpectralStoneDuality/CompactOpenBasis.lean) | Open-cylinder bases for actual cones and chosen limits |
@@ -143,6 +146,9 @@ space, and a compact subset of an infinite discrete space.
 The [finite-coordinate examples](SpectralStoneDualityExamples/FiniteCoordinates.lean)
 include empty and singleton spaces, Sierpiński patterns, a non-`T₀` surjectivity
 case, nonquotient finite stages and strict three-point refinements.
+The [finite-coordinate limit examples](SpectralStoneDualityExamples/FiniteCoordinateLimits.lean)
+test empty and non-`T₀` boundaries and identify canonical lifts for indiscrete
+two-point and spectral Sierpiński spaces.
 These are separate example modules, not exported by
 `SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
 `SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The

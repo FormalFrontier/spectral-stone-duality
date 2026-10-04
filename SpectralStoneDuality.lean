@@ -20,6 +20,7 @@ public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
 public import SpectralStoneDuality.Topology.Finite
 public import SpectralStoneDuality.FiniteCoordinates
+public import SpectralStoneDuality.FiniteCoordinates.Limits
 public import SpectralStoneDuality.Topology.NhdsKer
 public import SpectralStoneDuality.CategoryTheory.Lattice.Extensive
 public import SpectralStoneDuality.CategoryTheory.Lattice.Preserves
