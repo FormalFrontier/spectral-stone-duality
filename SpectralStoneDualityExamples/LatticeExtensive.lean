@@ -17,6 +17,13 @@ give a nontrivial disjoint coproduct, while repeating top at distinct indices
 does not. Finite distributivity cannot be removed from universality: in the
 five-element diamond, distinct atoms `a`, `b`, `c` have `a ⊓ b = ⊥` and
 `a ⊔ b = ⊤`, but `c ⊓ a ⊔ c ⊓ b = ⊥ ≠ c`.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(b), for the conditional finite-sum observation.
+- SGA 4, Tome I, Exposé II, Definition 4.5, for disjoint coproduct terminology;
+  Mathlib, `CategoryTheory.Extensive`, for its formalization.
 -/
 
 @[expose] public section

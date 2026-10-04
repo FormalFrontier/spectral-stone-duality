@@ -19,6 +19,13 @@ Inverse images of compact opens along the components of any specified limiting
 cone form an `Opens.IsBasis`. The chosen-limit version uses the actual `limit.π`
 maps, and the directed version uses stages indexed by a nonempty directed
 preorder. No nonemptiness of the stage spaces or the limit is needed.
+
+## References
+
+- Mathlib, `Topology.Category.TopCat.Limits.Cofiltered` and
+  `Topology.Spectral.Basic`, for the cofiltered-limit basis theorem and
+  compact-open stage bases. The specified-cone and chosen-limit open-cylinder
+  interfaces refine this existing formalization.
 -/
 
 open CategoryTheory CategoryTheory.Limits TopologicalSpace Opposite

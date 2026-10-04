@@ -26,6 +26,19 @@ equation is `IsLimit.map_π`.
 For a cofiltered-or-empty diagram with a specified object, surjective or closed
 spectral transition maps give the corresponding property of the projection
 from any limiting cone to that object.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(c), Theorem 2.2.13(1)–(3) and Corollary 2.2.14. These
+  statements generalize directed systems to small cofiltered categories and
+  use supplied limiting cones; the projection conclusions do not require
+  nonempty stages. The spectral-map proof uses a finite compact-open cylinder
+  cover, while the surjective and closed proofs use constructible closed
+  fibers instead of the source's spectral-subspace/fiber lemmas.
+- Mathlib, `CategoryTheory.Limits.ConcreteCategory.Basic` and
+  `CategoryTheory.Filtered.Final`, for induced cone maps and cofinality;
+  `Topology.Spectral.ConstructibleTopology`, for the constructible approach.
 -/
 
 open CategoryTheory CategoryTheory.Limits TopologicalSpace
@@ -158,7 +171,8 @@ private theorem closure_eq_iInter_coneProjections (hC : IsLimit C)
     exact ⟨z, hWU hzV, hzA⟩
 
 /-- The map induced by an objectwise spectral natural transformation of
-cofiltered spectral diagrams is spectral. -/
+cofiltered spectral diagrams is spectral. This generalizes Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, Theorem 2.2.13(1), to supplied cones. -/
 theorem isSpectralMap_isLimit_map
     (hC : IsLimit C) (hD : IsLimit D)
     (hF : ∀ j, SpectralSpace (F.obj j))
@@ -198,7 +212,8 @@ theorem isSpectralMap_isLimit_map
 
 /-- An objectwise surjective spectral natural transformation induces a
 surjection of cofiltered limits. No spectrality is required of the target
-diagram's transition maps. -/
+diagram's transition maps. This strengthens the corresponding directed-system
+statement in Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.13(2). -/
 theorem surjective_isLimit_map
     (hC : IsLimit C) (hD : IsLimit D)
     (hF : ∀ j, SpectralSpace (F.obj j))
@@ -244,7 +259,8 @@ theorem surjective_isLimit_map
 
 /-- An objectwise closed spectral natural transformation induces a closed
 map of cofiltered limits. No spectrality is required of the target diagram's
-transition maps. -/
+transition maps. This strengthens the corresponding directed-system statement
+in Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.13(3). -/
 theorem isClosedMap_isLimit_map
     (hC : IsLimit C) (hD : IsLimit D)
     (hF : ∀ j, SpectralSpace (F.obj j))
@@ -376,7 +392,8 @@ private theorem tailMap_eq_projection (j : J) [IsConnected (Over j)] :
       hsource, hcomponent] using hfac
   exact (Category.comp_id _).symm.trans (hnormalized.trans (Category.comp_id _))
 
-/-- A projection from a limiting cone of spectral spaces is surjective when
+/-- Generalizing Fujiwara--Kato, *Foundations of Rigid Geometry I*, Corollary 2.2.14,
+a projection from a limiting cone of spectral spaces is surjective when
 all transition maps are spectral and surjective. -/
 theorem surjective_isLimit_projection
     (hC : IsLimit C) (hF : ∀ i, SpectralSpace (F.obj i))
@@ -392,7 +409,8 @@ theorem surjective_isLimit_projection
     (fun X ↦ hF X.left) (fun _ ↦ hF j) (fun g ↦ hFmap g.left)
     (fun X ↦ hFmap X.hom) (fun X ↦ hsurj X.hom)
 
-/-- A projection from a limiting cone of spectral spaces is closed when
+/-- Generalizing Fujiwara--Kato, *Foundations of Rigid Geometry I*, Corollary 2.2.14,
+a projection from a limiting cone of spectral spaces is closed when
 all transition maps are spectral and closed. Surjectivity is not assumed. -/
 theorem isClosedMap_isLimit_projection
     (hC : IsLimit C) (hF : ∀ i, SpectralSpace (F.obj i))

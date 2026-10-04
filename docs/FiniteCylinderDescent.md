@@ -46,27 +46,23 @@ targets; applying parent cylinder descent to `univ` and the finite union
 forces the cover to equal the entire later stage.
 
 The [single-cylinder module](LimitCylinderDescent.md) supplies the containment
-and eventually-full arguments. This library pins Lean `v4.34.0-rc2`, mathlib
-`83abb3e776bdefcbc447a1e44d0debe4010039e5`, and the officially published
-`ideal-completion` commit `001e3b7508184ecd51e0d86177cb1d54508bf59d`.
-No incubator or source research checkout is a library dependency. These
-results do not supply a sheaf gluing or section-colimit `IsIso` endpoint.
+and eventually-full arguments. Mathlib supplies the finite compact-open
+subcover and cofiltered-refinement formalizations used here. The finite
+subcover and common-stage argument follows the technique in Fujiwara and
+Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5, Chapter 0,
+§2.2(c), Proposition 2.2.9; their proposition does not state the labelled
+whole-stage-cover theorem. These results do not supply a sheaf gluing or
+section-colimit `IsIso` endpoint.
 
 ## Origin and scope
 
-The private single-cylinder finite-subcover, common-stage, pullback-union and
-cone-triangle proofs and finite labelled common-stage selection **closely
-adapt original project Lean proof expression** by Anchor (source maintainer),
-not merely its mathematical ideas. A collaborating Formal Frontier agent
-assembled the source-independent finite-family interfaces, coherent
-`wideCospan` argument, whole-stage cover assembly, four clients and this
-manual guide. A separate contributor adapted the proof modules for the
-library; Anchor registered the public import and third Examples root.
-[Credits](CREDITS.md) distinguish these original and adapted expressions
-from mathlib and ideal-completion results. No source research or book assets
-are bundled or imported as a dependency.
+The single-cylinder finite-subcover, common-stage, pullback-union and
+cone-triangle Lean proofs and finite labelled selection closely adapt
+Anchor's original project expression. Other Formal Frontier contributors
+developed the finite-family interfaces, coherent `wideCospan` argument and
+whole-stage cover. The [credits](CREDITS.md) distinguish this project
+expression from Mathlib's formalization and Fujiwara–Kato's mathematical
+technique. No book asset or excerpt is included.
 
-These statements include empty label families and potentially empty stages.
-Neither a sheaf gluing theorem nor full Fujiwara–Kato source correspondence
-follows. Exact-revision checking, independent review and release evidence are
-separate from this explanatory guide.
+These statements include empty label families and potentially empty stages;
+they do not prove a sheaf gluing theorem.

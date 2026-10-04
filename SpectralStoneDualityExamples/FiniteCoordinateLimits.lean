@@ -12,6 +12,13 @@ public import SpectralStoneDuality.FiniteCoordinates.Limits
 Empty, Sierpiński, and indiscrete spaces give boundary cases for finite-stage evaluations
 without using any limiting property. The universal-lift examples for the indiscrete and
 Sierpiński spaces apply the proved limiting properties.
+
+## References
+
+- Mathlib, `Topology.Category.TopCat.Limits.Basic`, for limiting cones and
+  the TopCat comparison used by the finite-coordinate examples. The
+  examples instantiate the library's finite-coordinate construction, not
+  a published ring-spectrum representation.
 -/
 
 @[expose] public section

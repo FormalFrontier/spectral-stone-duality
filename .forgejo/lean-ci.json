@@ -6,7 +6,9 @@
       "path": ".",
       "targets": [
         "SpectralStoneDuality",
-        "SpectralStoneDualityExamples"
+        "SpectralStoneDualityExamples",
+        "SpectralStoneDuality.Topology.ConstructibleSubspace",
+        "SpectralStoneDualityExamples.ConstructibleSubspace"
       ]
     }
   ],

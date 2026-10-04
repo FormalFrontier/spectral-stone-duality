@@ -15,6 +15,17 @@ public import Mathlib.Topology.Specialization
 A finite collection of compact opens determines the realized membership patterns in a product
 of Sierpiński spaces. These stages carry the subspace topology, not the quotient topology of
 the evaluation map. Compatible patterns form a subspace of the product of all finite stages.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(a), Remark 2.2.4(2), describes Hochster's ring-spectrum
+  representation. That description motivates these finite spectral
+  approximations; the original Hochster paper is not used here. This
+  finite-coordinate reconstruction constructs no ring.
+- Mathlib, `Topology.ContinuousMap.T0Sierpinski`, `Topology.Sober` and
+  `Topology.Spectral.Basic`, for Sierpiński coordinates, generic points and
+  compact-open bases.
 -/
 
 @[expose] public section

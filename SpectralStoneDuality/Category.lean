@@ -16,6 +16,13 @@ pulling back compact opens. The principal-compact-open identification is
 natural and supplies the lattice-side isomorphism `latticeUnitIso`.
 The space-side reconstruction and the assembled equivalence are in the
 `Reconstruction` and `Equivalence` modules.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(b), Theorem 2.2.8(1)–(2).
+- Mathlib, `Order.Category.BddDistLat` and `Topology.Spectral.Basic`, for the
+  bounded-lattice category and spectral-map/compact-open formalization.
 -/
 
 public section
@@ -105,7 +112,8 @@ def compactOpenComap {X Y : SpectralCat} (f : X ⟶ Y) :
       (TopologicalSpace.CompactOpens X) :=
   spectralMapCompactOpenComap f.hom
 
-/-- The prime-spectrum functor from bounded distributive lattices, contravariantly. -/
+/-- The prime-spectrum functor from bounded distributive lattices, contravariantly;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.8(1). -/
 @[expose]
 noncomputable def spectrumFunctor :
     CategoryTheory.Functor BddDistLatᵒᵖ SpectralCat where
@@ -169,12 +177,14 @@ theorem compactOpenOrderIso_symm_naturality
       PrimeIdealSpectrum.basicOpen (Order.Ideal.principal a)
   exact (PrimeIdealSpectrum.spectrumComap_preimage_basicOpen_principal f.hom a).symm
 
-/-- The lattice-side component of Stone duality. -/
+/-- The lattice-side component of Stone duality in Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, Theorem 2.2.8(1)–(2). -/
 noncomputable def latticeUnitComponent (A : BddDistLatᵒᵖ) :
     A ≅ (spectrumFunctor ⋙ compactOpenFunctor).obj A :=
   (BddDistLat.Iso.mk (PrimeIdealSpectrum.compactOpenOrderIso (A := A.unop))).symm.op
 
-/-- The natural lattice-side unit `A ≅ QCOuv(Spec A)` in the opposite category. -/
+/-- The natural lattice-side unit `A ≅ QCOuv(Spec A)` in the opposite category;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.8(1)–(2). -/
 noncomputable def latticeUnitIso :
     𝟭 BddDistLatᵒᵖ ≅ spectrumFunctor ⋙ compactOpenFunctor :=
   NatIso.ofComponents latticeUnitComponent fun {X Y} f ↦ by

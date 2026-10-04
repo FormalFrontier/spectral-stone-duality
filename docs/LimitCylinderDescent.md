@@ -56,17 +56,16 @@ not a prerequisite or an additional dependency of this API.
 
 ## Origin and scope
 
-The compact locally closed, closed-embedding/quasiseparation and counterexample
-set/diagram/map/cone proofs **closely adapt original project Lean expression**
-by Anchor (source maintainer). A collaborating Formal Frontier agent assembled
-the reusable actual-cone `hC`, chosen-limit and eventually-full interfaces,
-clients and this guide; a separate contributor adapted the paths and namespaces
-for this library without changing the mathematical proof payloads. Anchor
-registered the public import and example root. This is substantive expression
-reuse, not merely mathematical inspiration. See the [credits](CREDITS.md) for
-project origin and third-party attribution; no source-book excerpt or source
-research checkout is imported.
+The compact locally closed and counterexample-diagram Lean proofs closely
+adapt original project expression by Anchor. Other Formal Frontier
+contributors developed the supplied-cone, chosen-limit and eventually-full
+interfaces. The compact locally closed subspace argument draws on Fujiwara
+and Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5, Chapter 0,
+§2.2(a), Proposition 2.2.3; the eventual-cylinder criterion is a distinct
+result, not that proposition. Mathlib supplies the cofiltered-limit and
+over-category APIs used in the proof. See the [credits](CREDITS.md) for
+the distinction between project Lean expression and prior formalizations;
+no source-book excerpt is included.
 
-The results allow empty stages and nonsurjective arrows and do not establish a
-source-coverage milestone or a sheaf-section theorem. Review, proof-integrity
-and release evidence apply to exact candidate revisions, not to this guide.
+The results allow empty stages and nonsurjective arrows and do not establish
+a sheaf-section theorem.

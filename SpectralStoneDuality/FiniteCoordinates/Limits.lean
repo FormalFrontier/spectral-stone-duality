@@ -15,6 +15,14 @@ Finite families of compact opens form a diagram of realized Sierpiński patterns
 `F ⊆ G` induces a restriction from the stage at `G` to the stage at `F`. Compatible families
 and point evaluations give cones over this diagram. Compatible families form a limit cone
 for any topological space; point evaluations form a limit cone for spectral spaces.
+
+## References
+
+- Mathlib, `Topology.Category.TopCat.Limits.Basic` and
+  `CategoryTheory.Filtered.Basic`, for concrete limits and the cofiltered
+  finite-stage index. The limiting-cone constructions use the finite-coordinate
+  reconstruction in `SpectralStoneDuality.FiniteCoordinates`; they do not
+  assert a ring-spectrum representation.
 -/
 
 @[expose] public section

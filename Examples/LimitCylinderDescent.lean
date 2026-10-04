@@ -15,6 +15,14 @@ set_option warningAsError true
 
 These named theorems exercise the public API for a supplied limiting cone and
 for the chosen limit. Neither client assumes nonempty stages or surjective maps.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(a), Proposition 2.2.3, for the compact locally closed
+  subspaces used in the descent proof, not for the new cylinder criterion.
+- Mathlib, `CategoryTheory.Filtered.Final`, for the over-category
+  initiality used by the library theorem.
 -/
 
 open CategoryTheory CategoryTheory.Limits Set TopologicalSpace

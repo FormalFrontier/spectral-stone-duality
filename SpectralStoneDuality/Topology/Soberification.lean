@@ -12,6 +12,15 @@ public import Mathlib.Topology.Sober
 The points of the soberification are Mathlib's nonempty irreducible closed subsets.
 An open subset consists of those points meeting a given open subset of the original space.
 The unit sends a point to the closure of its singleton.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.1(b), Proposition 2.1.3 and the following construction,
+  for the sober reflection and irreducible-closed space. The proofs here
+  develop the open-intersection topology and universal extension directly;
+  they do not follow the source's cited EGA proof.
+- Mathlib, `Topology.Sober`, for irreducible closed subsets and generic points.
 -/
 
 @[expose] public section
@@ -294,7 +303,8 @@ theorem opensOrderIso_symm_apply (U : Opens (IrreducibleCloseds X)) :
       ⟨(unit X) ⁻¹' (U : Set _), U.isOpen.preimage (unit X).continuous⟩ :=
   rfl
 
-/-- Soberification is `T₀`, whether or not `X` is separated. -/
+/-- Soberification is `T₀`, whether or not `X` is separated;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Proposition 2.1.3. -/
 instance instT0Space (X : Type u) [TopologicalSpace X] :
     T0Space (IrreducibleCloseds X) := by
   apply (t0Space_iff_inseparable _).mpr
@@ -309,7 +319,9 @@ instance instT0Space (X : Type u) [TopologicalSpace X] :
   · exact (mem_closedSet (F : Set X) G).mp
       ((Set.ext_iff.mp h G).mpr ((mem_closedSet (G : Set X) G).mpr Set.Subset.rfl))
 
-/-- Every irreducible closed subset of the soberification has a generic point. -/
+/-- Every irreducible closed subset of the soberification has a generic point;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Proposition 2.1.3.
+The proof uses the closed-set description of the open-intersection topology. -/
 instance instQuasiSober (X : Type u) [TopologicalSpace X] :
     QuasiSober (IrreducibleCloseds X) := by
   constructor
@@ -445,7 +457,9 @@ theorem map_unit (f : C(X, Y)) (x : X) :
   rw [closure_image_closure f.continuous, image_singleton]
 
 /-- Extend a map to a sober space by sending each irreducible closed subset to the
-generic point of the closure of its image. -/
+generic point of the closure of its image. This realizes the extension in
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Proposition 2.1.3,
+via the open-intersection characterization, not the proof cited there. -/
 noncomputable def extend [QuasiSober Y] [T0Space Y] (f : C(X, Y)) :
     C(IrreducibleCloseds X, Y) :=
   ⟨fun F => (map f f.continuous F).isIrreducible.genericPoint, by

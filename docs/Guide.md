@@ -77,6 +77,11 @@ homeomorphism and natural isomorphism. `stoneDuality` packages the two functors
 and their isomorphisms into `BddDistLatᵒᵖ ≌ SpectralCat`. It does not apply to
 arbitrary non-sober spaces or assert a Boolean/Stone-space equivalence.
 
+This realizes the bounded-lattice spectral duality of Fujiwara and Kato,
+*Foundations of Rigid Geometry I*, arXiv:1308.4734v5, Chapter 0, §2.2(b),
+Theorem 2.2.8, using Mathlib's prime ideals and spectral topology and
+Ideal Completion's compact-principal theorem.
+
 ## Finite compact-open coordinates
 
 `FiniteCoordinates.Stage F` consists of the **realized** compact-open membership
@@ -98,6 +103,10 @@ coordinate define a closed intersection `C`. Every true compact open meets
 and the compact-open basis make `C` irreducible. A generic point of `C`
 recovers every coordinate. Under `SpectralSpace X`, `spaceHomeomorph X`
 packages the resulting bijective inducing map as `X ≃ₜ Family X`.
+The finite spectral approximations are motivated by the representation
+question in Fujiwara–Kato, Remark 2.2.4(2); they do not establish its
+ring-spectrum assertion. The Sierpiński coordinate and generic-point APIs
+are provided by Mathlib.
 
 ## Finite preservation in order categories
 
@@ -126,6 +135,9 @@ constant-top and constant-bottom examples distinguish the nullary laws.
 These results require no distributivity or nontriviality; they neither
 construct (co)limits in the category of lattice *objects* nor assert a
 source-specific categorical classification.
+The distributive bounded special case occurs in Fujiwara–Kato, §2.2(b);
+the Lean proof extends it to arbitrary bounded lattices and uses Mathlib's
+finite-(co)limit preservation instances.
 
 ## Cofiltered limits and subspaces
 
@@ -139,6 +151,9 @@ limit. `nonempty_limit_of_spectral` additionally requires
 from spectrality. The general helper
 `IsSpectralMap.continuous_constructible` permits independent source and target
 universes.
+This generalizes Fujiwara–Kato, Theorem 2.2.10: its directed-system
+statement uses compact-open lattice colimits, whereas this proof compares
+constructible topologies through Mathlib's limit APIs.
 
 For compactness, the proof equips the diagram with constructible topologies,
 obtains a compact Hausdorff compatible-section limit, and forgets the finer
@@ -154,6 +169,8 @@ transition maps are surjective, and closed when all spectral transition maps
 are closed. The latter does not require surjectivity. These projection results
 allow a cofiltered-or-empty index category because the selected stage supplies
 an object; they assume no nonempty stages or Hausdorff spaces.
+These generalize Fujiwara–Kato, Theorem 2.2.13 and Corollary 2.2.14,
+with supplied categorical cones and the stated weaker map hypotheses.
 
 `CompactOpenBasis` adapts the native cofiltered set basis to an `Opens.IsBasis` of
 compact-open cylinders. For an arbitrary specified `C : Cone D` with `IsLimit C`,
@@ -208,6 +225,30 @@ compact. The cylinder-descent proof uses these results for compact locally
 closed counterexample sets. See the [examples](../SpectralStoneDualityExamples/LocallyClosed.lean)
 for empty, non-`T₀`, noninjective and noncompact-ambient boundaries; none of the
 three conclusions alone implies sobriety.
+This strengthens Fujiwara–Kato, Proposition 2.2.3, by removing ambient
+compactness; it does not infer sobriety from the three conclusions.
+
+## Soberification
+
+For any space `X`, `IrreducibleCloseds X` consists of nonempty irreducible
+closed subsets with opens detected by nonempty intersection with opens of
+`X`. The unit sends `x` to the closure of `{x}`; maps into `T₀` quasi-sober
+spaces extend uniquely, yielding a reflection in `TopCat`. Fujiwara–Kato,
+§2.1(b), Proposition 2.1.3 states the sober reflection. The proof here
+develops the open-set and extension argument directly with Mathlib's
+irreducible-closed API, rather than following the source's cited EGA proof.
+
+The [constructible-subspace topology](../SpectralStoneDuality/Topology/ConstructibleSubspace.lean)
+uses `IsClosed[constructibleTopology X] S`, not the narrower predicate
+`IsConstructible S`. For spectral `X`, it gives `SpectralSpace S` and a spectral
+inclusion `S → X`; inclusion into any containing subspace follows by
+`isSpectralMap_to_subtype_of_comp`. A family `F` needs only
+`∀ U ∈ F, ∃ V ∈ F, IsOpen V ∧ IsCompact V ∧ V ⊆ U` to make `⋂₀ F`
+spectral; no openness assumption on the other members is needed. The compact-open
+neighborhoods of `x` intersect to `nhdsKer {x}`, whose points `y` satisfy
+`y ⤳ x`. The [examples](../SpectralStoneDualityExamples/ConstructibleSubspace.lean)
+show that constructible closedness does not require generization stability,
+and that an infinite compact-open intersection need not be open.
 
 ## Finite irreducible sets and quasi-sobriety
 
@@ -235,6 +276,8 @@ each singleton is just that singleton. The corollary
 `[Infinite X]`. The [examples](../SpectralStoneDualityExamples/Cofinite.lean)
 test the empty, two-point and Nat cases independently of the separate
 soberification-unit nonsurjectivity example.
+The infinite obstruction occurs in Fujiwara–Kato, Exercise 0.2.1;
+the iff theorem also proves the finite and empty directions.
 
 ## Closed generizations
 
@@ -247,17 +290,13 @@ original point without requiring a closed singleton in `X`.
 The [upper-set `Fin 2` example](../SpectralStoneDualityExamples/NhdsKer.lean)
 has two generizations, of which only the original is closed; an indiscrete
 two-point space shows why `T₀` matters.
+The closed-generization observation is from Fujiwara–Kato, §2.1(a),
+with the same contextual `T₀` assumption, using Mathlib's `nhdsKer` formalization.
 
 ## Using this guide
 
-The root [README](../README.md) gives the exact toolchain, private dependency
-prerequisite and build commands. [API.md](API.md) displays frozen native doc-gen4
-headers of seven leaves, not the three manual supplements, self-contained
-proof terms or a complete raw declaration census.
-The [API reproduction contract](README.md) explains revision bindings and
-data-only tests on its matching historical snapshot. The original example root
-has private clients; the single- and finite-cylinder roots have named public
-test theorems, not additional library interfaces. All three are configured
-for the default build. Historical proof and native-display counts do not
-certify the current tree; exact-revision checks and review are recorded
-separately. This guide makes no source-coverage decision.
+The root [README](../README.md) gives the build instructions and
+[bibliography](../README.md#references). [API.md](API.md) displays a
+historical subset of the library API; the cylinder APIs are described in
+their manual supplements. Example roots give usable clients, not additional
+interfaces of the core library.

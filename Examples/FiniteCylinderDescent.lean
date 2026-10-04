@@ -15,6 +15,14 @@ set_option warningAsError true
 
 These named clients use the public family API with a supplied actual limiting
 cone. No client assumes the sought stage, arrows, or descended opens.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(c), Proposition 2.2.9, for the compact-open descent
+  argument underlying the library's stronger finite-family interface.
+- Mathlib, `Topology.Compactness.Bases` and `CategoryTheory.Filtered.Basic`,
+  for finite subcovers and cofiltered cones.
 -/
 
 open CategoryTheory CategoryTheory.Limits Set TopologicalSpace

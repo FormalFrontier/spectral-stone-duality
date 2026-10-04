@@ -14,6 +14,13 @@ public import SpectralStoneDuality.Topology.Finite
 An empty space has no irreducible closed subsets. An indiscrete two-point space has a
 noninjective unit, whereas the unit for an infinite cofinite space embeds its points but
 misses an irreducible closed subset.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.1(b), Proposition 2.1.3, for sober reflection;
+  Exercise 0.2.1 for the infinite-cofinite non-sober example.
+- Mathlib, `Topology.Sober`, for irreducible closed subsets.
 -/
 
 @[expose] public section

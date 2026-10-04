@@ -20,6 +20,16 @@ For a cofiltered diagram of spectral spaces with spectral transition maps,
 inclusion of a compact-open cylinder in an open cylinder over an actual
 limiting cone already holds over some stage. No nonemptiness or surjectivity
 condition is imposed on either the stages or the limit.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(a), Proposition 2.2.3, for compact locally closed subspaces.
+  The cylinder-containment equivalence is a separate generalization for
+  arbitrary supplied limiting cones, not a numbered theorem there.
+- Mathlib, `CategoryTheory.Filtered.Final` and
+  `Topology.Category.TopCat.Limits.Cofiltered`, for initiality of the
+  over-category and limit-cone machinery.
 -/
 
 open CategoryTheory CategoryTheory.Limits Set TopologicalSpace Topology

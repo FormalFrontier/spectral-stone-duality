@@ -22,6 +22,17 @@ maps are spectral. The proof compares the ordinary topological limit with the
 compact Hausdorff limit formed from the constructible topologies. It also exposes
 compactness and spectrality of the limit projections and a compact-open cylinder
 basis for the limit.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(c), Proposition 2.2.9 and Theorem 2.2.10. Here directed
+  systems and their limits are treated in the more general cofiltered setting;
+  the proof uses constructible topologies rather than the source's colimit
+  of compact-open lattices.
+- Mathlib, `Topology.Spectral.ConstructibleTopology` and
+  `Topology.Category.TopCat.Limits.Cofiltered`, for the constructible topology
+  and concrete cofiltered-limit machinery.
 -/
 
 open CategoryTheory CategoryTheory.Limits Set TopologicalSpace Topology
@@ -359,7 +370,8 @@ theorem isCompact_inter_preimage_limitProjections {J : Type v} [SmallCategory J]
     (continuous_fromConstructibleLimit F (fun _ ↦ inferInstance) hmap)
 
 /-- Every canonical projection from the limit of a spectral diagram is a
-spectral map. -/
+spectral map. This extends the directed-system assertion of Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, Theorem 2.2.10(1). -/
 theorem isSpectralMap_limitProjection {J : Type v} [SmallCategory J]
     (F : J ⥤ TopCat.{max v u})
     (hX : ∀ j, SpectralSpace (F.obj j))
@@ -530,7 +542,10 @@ theorem quasiSober_limit_of_spectral {J : Type v} [SmallCategory J]
       intro U hUopen hyU
       exact (hx_open U hUopen).mpr ⟨y, hyS, hyU⟩
 
-/-- A small cofiltered limit of spectral spaces along spectral maps is spectral. -/
+/-- A small cofiltered limit of spectral spaces along spectral maps is spectral.
+This generalizes the directed-system statement of Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, Theorem 2.2.10(1); the proof compares
+constructible topologies rather than following its lattice-colimit argument. -/
 theorem spectralSpace_limit_of_spectral {J : Type v} [SmallCategory J]
     [IsCofiltered J]
     (F : J ⥤ TopCat.{max v u})
@@ -543,7 +558,9 @@ theorem spectralSpace_limit_of_spectral {J : Type v} [SmallCategory J]
   toQuasiSeparatedSpace := quasiSeparatedSpace_limit_of_spectral F hX hmap
   toPrespectralSpace := prespectralSpace_limit_of_spectral F hX hmap
 
-/-- A small cofiltered limit of nonempty spectral spaces along spectral maps is nonempty. -/
+/-- A small cofiltered limit of nonempty spectral spaces along spectral maps is nonempty.
+This extends the directed-system statement of Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, Theorem 2.2.10(2). -/
 theorem nonempty_limit_of_spectral {J : Type v} [SmallCategory J] [IsCofiltered J]
     (F : J ⥤ TopCat.{max v u})
     (hX : ∀ j, SpectralSpace (F.obj j))

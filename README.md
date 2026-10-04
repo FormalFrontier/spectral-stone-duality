@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its twenty-one leaves below.
+or select one of its twenty-two leaves below.
 
 ## Headline results
 
@@ -106,6 +106,14 @@ or select one of its twenty-one leaves below.
   is prespectral, compact and quasi-separated, even when the ambient space is
   not compact. These conclusions do not assert sobriety. See
   [locally closed topology](SpectralStoneDuality/Topology/LocallyClosed.lean).
+- **Constructibly closed spectral subspaces.** A constructibly closed subset of
+  a spectral space is spectral in the original subspace topology and includes
+  spectrally into the ambient space or any containing subspace. Arbitrary
+  compact-open intersections, including cofinal compact-open families, and
+  generization subspaces `nhdsKer {x}` are instances. The members of a cofinal
+  family need not all be open. See
+  [constructibly closed subspaces](SpectralStoneDuality/Topology/ConstructibleSubspace.lean)
+  and [examples](SpectralStoneDualityExamples/ConstructibleSubspace.lean).
 
 ## Modules and examples
 
@@ -123,6 +131,7 @@ or select one of its twenty-one leaves below.
 | [`CompactOpenBasis`](SpectralStoneDuality/CompactOpenBasis.lean) | Open-cylinder bases for actual cones and chosen limits |
 | [`Subspace`](SpectralStoneDuality/Subspace.lean) | Ambient compact-open lifts and spectral-map detection |
 | [`Topology.LocallyClosed`](SpectralStoneDuality/Topology/LocallyClosed.lean) | Inducing spectral maps and compact locally closed subspaces |
+| [`Topology.ConstructibleSubspace`](SpectralStoneDuality/Topology/ConstructibleSubspace.lean) | Constructibly closed spectral subspaces and compact-open intersections |
 | [`LimitCylinderDescent`](SpectralStoneDuality/LimitCylinderDescent.lean) | Eventual containment and eventually-full neighborhoods |
 | [`FiniteCylinderDescent`](SpectralStoneDuality/FiniteCylinderDescent.lean) | Coherent finite families and whole-stage covers |
 | [`Topology.NhdsKer`](SpectralStoneDuality/Topology/NhdsKer.lean) | Unique closed point among generizations in a `T₀` space |
@@ -157,6 +166,11 @@ and indiscrete `Bool`, and test the infinite cofinite obstruction.
 The [locally closed examples](SpectralStoneDualityExamples/LocallyClosed.lean)
 test empty and proper finite subspaces, a noninjective inducing map on a non-`T₀`
 space, and a compact subset of an infinite discrete space.
+The [constructible-subspace examples](SpectralStoneDualityExamples/ConstructibleSubspace.lean)
+include empty and whole subspaces and a proper constructibly closed subset of
+the non-Hausdorff two-point upper-set space that is not generization-stable.
+In an infinite Boolean product, compact-open cylinders have a non-open
+intersection.
 The [finite-coordinate examples](SpectralStoneDualityExamples/FiniteCoordinates.lean)
 include empty and singleton spaces, Sierpiński patterns, a non-`T₀` surjectivity
 case, nonquotient finite stages and strict three-point refinements.
@@ -206,7 +220,7 @@ The later cylinder leaves have [manual cylinder-basis](docs/CompactOpenBasis.md)
 [finite-cylinder](docs/FiniteCylinderDescent.md) supplements. The native output's
 body and [fixed input/output manifest](docs/api-manifest.json) describe an
 earlier snapshot: the manifest's API hash does not cover this reference's later
-introduction or the aggregate, Examples and Lake inputs in this checkout. The
+introduction or the aggregate, Examples, Lake and Lean docstrings in this checkout. The
 [reproduction notes](docs/README.md) distinguish analyzed and translated
 inputs and show how to use the older public snapshot; the fixed adapter cannot
 certify the changed inputs in this checkout.
@@ -222,18 +236,42 @@ observations are not portable limits: they used an older internal
 ideal-completion commit with the same dependency tree and do not measure a
 fetch or build at the official GitHub pin.
 
-## Attribution and scope
+## References
 
-Authors: Formal Frontier Agents. Original project contributions are licensed
-under [Apache-2.0](LICENSE). This collective authorship does not identify a
-copyright holder or suggest endorsement by the source authors. Lean and mathlib
-provide foundational order, topology and category APIs; the separately
-maintained ideal-completion library provides ideal-completion results.
-[Credits and provenance](docs/CREDITS.md) distinguish original Anchor
-expression, subsequent project adaptations and independent dependency authors.
+- Kazuhiro Fujiwara and Fumiharu Kato, *Foundations of Rigid Geometry I*,
+  [arXiv:1308.4734v5](https://arxiv.org/abs/1308.4734v5) (2017), Chapter 0,
+  §1.2(e), §2.1(a)–(b), §2.2(a)–(c), and Exercise 0.2.1. In particular, the
+  soberification construction (Proposition 2.1.3), compact locally closed
+  subspaces (Proposition 2.2.3), Stone duality (Theorem 2.2.8), compact-open
+  descent (Proposition 2.2.9), spectral limits and maps (Theorems 2.2.10 and
+  2.2.13, Corollary 2.2.14), and generization subspaces (Lemma 2.2.15 and
+  Corollary 2.2.16) are distinct passages. Numbering refers to the 2017
+  arXiv v5, **not** the differently paginated 2018 EMS printing. The module
+  docs identify the results used and where their statements or proofs differ.
+- A. Grothendieck and J. Dieudonné, *Éléments de géométrie algébrique I*
+  (new edition), 0, §2.9, is cited by Fujiwara–Kato for their soberification
+  proof. It was not consulted or followed for the Lean proof here.
+- [Mathlib](https://github.com/leanprover-community/mathlib4), especially
+  its order ideals, spectral and sober topology, constructible topology,
+  cofiltered `TopCat` limits and category-of-lattices APIs. These are prior
+  formalizations and proof tools used throughout, not original contributions
+  of this library; the pinned version is in [`lakefile.toml`](lakefile.toml).
+- Formal Frontier Agents, [*Ideal Completion*](https://github.com/FormalFrontier/ideal-completion),
+  for the order-ideal frame and compact-principal theorems used in the prime
+  spectrum construction. Its separate published pin is in [`lakefile.toml`](lakefile.toml).
+- M. Artin, A. Grothendieck and J.-L. Verdier (eds.), [*Théorie des topos et
+  cohomologie étale des schémas* (SGA 4), Tome I](https://library.slmath.org/nonmsri/sga/sga/pdf/sga4-1.pdf),
+  Exposé II, Definition 4.5, for the terminology of universally disjoint
+  coproducts, not the lattice proofs in this library.
 
-Fujiwara and Kato, *Foundations of Rigid Geometry I*,
-[arXiv:1308.4734v5](https://arxiv.org/abs/1308.4734v5), Chapter 0, §2.2,
-is a motivating reference, not a claim of full source formalization. No source
-PDF or excerpt is bundled. Coverage and source-specific correspondence belong
-in the source repository, not in this reusable library.
+## Credits and license
+
+Authors: Formal Frontier Agents. AI agents developed the original Lean proofs,
+examples and exposition; Anchor contributed the initial spectrum and limit
+proofs and the project expression adapted for cylinder descent. [Detailed
+credits](docs/CREDITS.md) distinguish those contributions from prior
+formalizations and mathematical sources. This collective credit does not
+identify a copyright holder or suggest endorsement by the cited authors.
+Original project contributions are distributed under [Apache-2.0](LICENSE);
+dependency authors retain their own notices. No source PDF, scan or excerpt
+is included, and citation is not a license to reproduce source expression.

@@ -14,6 +14,14 @@ Empty spaces have empty stages and no compatible families; singletons have singl
 A single coordinate on a discrete two-point space retains the Sierpiński topology, not
 the discrete quotient topology. Strict refinements of three-point coordinates retain
 the first coordinate while forgetting the others.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(a), Remark 2.2.4(2), for the representation question
+  motivating finite spectral approximations, not for these boundary tests.
+- Mathlib, `Topology.ContinuousMap.T0Sierpinski` and `Topology.Spectral.Basic`,
+  for the formal coordinate topology and compact opens.
 -/
 
 @[expose] public section

@@ -19,6 +19,15 @@ Finite families of compact opens of an actual limiting cone descend together to
 one stage. Finite containments of compact-open cylinders into open cylinders
 also hold together at one stage, with coherent arrows in a cofiltered category.
 These facts give a finite, compact-open whole-stage cover respecting target opens.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(c), Proposition 2.2.9, for the finite-subcover and common-stage
+  argument behind compact-open descent. The labelled finite-family and
+  whole-stage covering statements are stronger interfaces, not source claims.
+- Mathlib, `Topology.Compactness.Bases` and `CategoryTheory.Filtered.Basic`,
+  for finite compact-open subcovers and coherent cofiltered refinements.
 -/
 
 open CategoryTheory CategoryTheory.Limits Set TopologicalSpace

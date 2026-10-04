@@ -22,6 +22,16 @@ These are functors between the order categories of lattice elements, not
 functors between categories whose objects are lattices.
 Distributivity in the motivating special case is unnecessary for this
 finite-(co)limit characterization.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §1.2(e) and §2.2(b), for the order-category convention and the
+  finite-(co)limit description of maps of bounded distributive lattices.
+  The characterization here works without distributivity.
+- Mathlib, `CategoryTheory.Limits.Preserves.Lattice` and
+  `CategoryTheory.Limits.Preorder`, for the forward preservation instances
+  and finite-diagram descriptions used in the converse.
 -/
 
 @[expose] public section
@@ -110,7 +120,9 @@ theorem toFunctor_toBoundedLatticeHom (f : BoundedLatticeHom A B) :
   rfl
 
 /-- Bounded lattice homomorphisms correspond to functors of their order
-categories preserving finite limits and finite colimits. -/
+categories preserving finite limits and finite colimits. This generalizes the
+bounded distributive-lattice statement in Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, §2.2(b), without distributivity. -/
 def equivFiniteLimitColimitPreservingFunctor :
     BoundedLatticeHom A B ≃
       {F : A ⥤ B // PreservesFiniteLimits F ∧ PreservesFiniteColimits F} where

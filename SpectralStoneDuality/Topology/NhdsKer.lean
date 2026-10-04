@@ -12,6 +12,14 @@ public import Mathlib.Topology.Separation.Basic
 
 In a `T₀` space, the original point is the only closed point of the subspace
 `nhdsKer {x}` of its generizations. No spectrality or sobriety is needed.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.1(a), for the closed-point observation on generizations,
+  with its contextual `T₀` assumption retained explicitly.
+- Mathlib, `Topology.NhdsKer` and `Topology.Separation.Basic`, for
+  generizations and specialization.
 -/
 
 @[expose] public section
@@ -21,7 +29,9 @@ open Set TopologicalSpace
 universe u
 
 /-- In a `T₀` space, a point of the generization subspace of `x` is closed precisely
-when it is `x`. -/
+when it is `x`. This is the observation in Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, §2.1(a), using the same contextual
+`T₀` assumption. -/
 theorem isClosed_singleton_nhdsKer_iff {X : Type u} [TopologicalSpace X]
     [T0Space X] (x : X) (z : nhdsKer ({x} : Set X)) :
     IsClosed ({z} : Set (nhdsKer ({x} : Set X))) ↔ (z : X) = x := by

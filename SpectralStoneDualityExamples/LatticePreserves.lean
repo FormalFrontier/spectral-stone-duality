@@ -17,6 +17,14 @@ finite-preservation instances follow from Mathlib independently of the
 construction of a bounded lattice homomorphism from a functor.
 The Boolean square carries its order category, rather than the product
 category structure on two copies of the Boolean order category.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(b), for finite-(co)limit preservation by maps of bounded
+  distributive lattices; the example API does not assume distributivity.
+- Mathlib, `CategoryTheory.Limits.Preserves.Lattice`, for the forward
+  preservation instances used by the examples.
 -/
 
 @[expose] public section

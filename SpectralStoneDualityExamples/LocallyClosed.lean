@@ -16,6 +16,14 @@ infinite discrete space shows that ambient compactness is unnecessary.
 
 The explicitly named applications of the compact locally closed lemmas use
 those results; the finiteness, noninjectivity, and separation checks do not.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(a), Proposition 2.2.3. The examples also test the
+  library's weaker ambient compactness and separation assumptions.
+- Mathlib, `Topology.LocallyClosed` and `Topology.Separation.Basic`, for
+  the formal predicates and subspace instances.
 -/
 
 @[expose] public section

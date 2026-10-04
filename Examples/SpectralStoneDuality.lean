@@ -14,6 +14,14 @@ cylinder refinement theorem is public; the other clients are private. This
 separate default build target is not part of the core library aggregate. The
 clients exercise the advertised structures and maps without opening private
 implementations.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(b)–(c), for the Stone duality and spectral-limit results
+  instantiated here.
+- Mathlib's spectral-space and categorical-limit APIs, and Formal Frontier
+  Agents, *Ideal Completion*, supply the formal foundations used by the library.
 -/
 
 open CategoryTheory CategoryTheory.Limits Order Set TopologicalSpace Topology

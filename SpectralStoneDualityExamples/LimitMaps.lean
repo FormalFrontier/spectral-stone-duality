@@ -26,6 +26,15 @@ Nonconstant two-stage diagrams illustrate a surjective but noninjective
 projection from a finite product and a closed but nonsurjective projection
 from a closed-point inclusion into the Sierpiński space. Their transition
 properties and compatible points are checked separately.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(c), Theorem 2.2.13 and Corollary 2.2.14, for the
+  projective-limit map and projection conclusions instantiated here.
+- Mathlib, `CategoryTheory.Limits.ConcreteCategory.Basic` and
+  `Topology.Order.LowerUpperTopology`, for the categorical map and
+  Sierpiński-space instances.
 -/
 
 open CategoryTheory CategoryTheory.Limits TopologicalSpace Set

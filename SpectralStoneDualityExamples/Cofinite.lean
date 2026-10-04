@@ -11,6 +11,13 @@ public import SpectralStoneDuality.Topology.Cofinite
 
 The empty and two-point cofinite spaces are sober; an infinite cofinite space is `T₁`
 and irreducible but not quasi-sober.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, Exercise 0.2.1, for the infinite cofinite example.
+- Mathlib, `Topology.Sober` and `Topology.Constructions`, for the cofinite
+  and quasi-sobriety formalization.
 -/
 
 @[expose] public section

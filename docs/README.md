@@ -18,9 +18,10 @@ API. See the [mathematical guide](Guide.md) and [credits](CREDITS.md).
 
 The historical reference records native names, kinds, visible header tokens,
 source docstrings and source ranges. A field and its constructor may share an
-enclosing source range. The seven original leaf sources and toolchain are
-byte-identical between the native analysis and the current tree. The aggregate,
-Examples and Lake configuration inputs have since changed; see the
+enclosing source range. The seven original leaf sources and toolchain matched
+the native analysis in the older source snapshot; the current leaves now have
+expanded documentation and are **not byte-identical** to that input. The aggregate,
+Examples and Lake configuration inputs have also changed; see the
 [aggregate](../SpectralStoneDuality.lean) for its imports and
 [`lakefile.toml`](../lakefile.toml) for the example roots. The manifest's
 historical release inputs and its `api_sha256` refer to the **earlier snapshot**,
@@ -63,9 +64,11 @@ not ship the native HTML website, JS, styles, fonts, search or dependency
 documentation, browser rendering or full dependency-site coverage. Historical
 full-revision GitHub source URLs are retained as native input records; their
 reachability in an independent public lineage is not established. The
-historical `[Source]` links resolve within this tree for the original seven
-leaves, whose source bytes and native ranges remain unchanged; the three
-cylinder leaves have manual supplements instead of native display records.
+historical `[Source]` links name files in this tree, but their line ranges
+belong to the earlier source snapshot: new module references and docstrings
+shift line numbers. Search a declaration name in the current Lean file for
+its updated documentation. The three cylinder leaves have manual supplements
+instead of native display records.
 
 ## Reproduce native input and generated output
 
@@ -73,9 +76,9 @@ To reproduce the **historical generated API and its original whole-file hash**,
 use an unchanged checkout of the older public snapshot
 `698de8ace0c572cf3766529aa3edcede548e9848`, not this later checkout.
 Its nine source/toolchain bytes and translated Lake configuration match the
-fixed manifest. The aggregate, Examples and Lake inputs, as well as the API
-introduction, differ in this checkout. `generate_api.py --check` cannot certify
-this file or tree using the older manifest. In the historical checkout, use the
+fixed manifest. The aggregate, Examples and Lake inputs, the leaf docstrings,
+and the API introduction differ in this checkout. `generate_api.py --check`
+cannot certify this file or tree using the older manifest. In the historical checkout, use the
 nine authenticated historical `declaration-data-*.bmp` records from the retained native
 generation evidence (obtain that evidence from the maintainer). They are not
 bundled website assets. No development ancestry or dependency cache is needed

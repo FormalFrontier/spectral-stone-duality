@@ -21,6 +21,14 @@ together with prime separation and generic points, a spectral-space structure.
 
 Specialization is prime-ideal inclusion, or equivalently reverse inclusion of
 the complementary prime filters. No nontriviality assumption on `A` is required.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(b), Definitions 2.2.6–2.2.7 and Theorem 2.2.8(1).
+- Mathlib, `Order.PrimeIdeal`, `Order.PrimeSeparator` and `Topology.Spectral.Basic`;
+  Formal Frontier Agents, *Ideal Completion*, for the order-ideal frame and
+  compact-principal identification used here.
 -/
 
 public section
@@ -35,7 +43,8 @@ namespace SpectralStoneDuality
 
 variable {A : Type u} [DistribLattice A] [BoundedOrder A]
 
-/-- The prime-ideal spectrum of a bounded distributive lattice. -/
+/-- The prime-ideal spectrum of a bounded distributive lattice, in the sense of
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, §2.2(b), Definition 2.2.7. -/
 abbrev PrimeIdealSpectrum (A : Type u) [DistribLattice A] [BoundedOrder A] :=
   {P : Order.Ideal A // P.IsPrime}
 
@@ -284,7 +293,8 @@ private theorem idealToOpen_surjective : Function.Surjective (idealToOpen (A := 
   apply TopologicalSpace.Opens.ext
   exact hI
 
-/-- The order isomorphism `Id(A) ≃ Ouv(Spec A)`, sending `I` to `D(I)`. -/
+/-- The order isomorphism `Id(A) ≃ Ouv(Spec A)`, sending `I` to `D(I)`;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.8(1). -/
 noncomputable def idealOpenOrderIso :
     Order.Ideal A ≃o TopologicalSpace.Opens (PrimeIdealSpectrum A) :=
   OrderIso.ofSurjective idealToOpenEmbedding idealToOpen_surjective
@@ -314,7 +324,9 @@ private theorem isCompactElement_orderIso_iff
     have hsource : IsCompactElement (e.symm (e a)) := by simpa using ha
     exact isCompactElement_of_orderIso_image e.symm hsource
 
-/-- A basic open `D(I)` is quasi-compact exactly when `I` is principal. -/
+/-- A basic open `D(I)` is quasi-compact exactly when `I` is principal;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.8(1),
+using the compact-principal theorem from *Ideal Completion*. -/
 theorem isCompact_basicOpen_iff (I : Order.Ideal A) :
     IsCompact (basicOpen I) ↔ ∃ a : A, I = Order.Ideal.principal a := by
   change IsCompact ((idealToOpen I : TopologicalSpace.Opens (PrimeIdealSpectrum A)) :
@@ -487,7 +499,8 @@ instance instQuasiSober : QuasiSober (PrimeIdealSpectrum A) where
   sober hZ hZclosed := ⟨irreducibleGenericPoint hZ,
     irreducibleGenericPoint_isGeneric hZ hZclosed⟩
 
-/-- The prime-ideal spectrum of a bounded distributive lattice is spectral. -/
+/-- The prime-ideal spectrum of a bounded distributive lattice is spectral;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.8(1). -/
 instance instSpectralSpace : SpectralSpace (PrimeIdealSpectrum A) where
 
 end PrimeIdealSpectrum

@@ -14,6 +14,7 @@ public import SpectralStoneDuality.LimitMaps
 public import SpectralStoneDuality.CompactOpenBasis
 public import SpectralStoneDuality.Subspace
 public import SpectralStoneDuality.Topology.LocallyClosed
+public import SpectralStoneDuality.Topology.ConstructibleSubspace
 public import SpectralStoneDuality.LimitCylinderDescent
 public import SpectralStoneDuality.FiniteCylinderDescent
 public import SpectralStoneDuality.Topology.Soberification
@@ -56,4 +57,15 @@ of generizations of a point in any `T₀` space.
 The `Topology.LocallyClosed` leaf gives retrocompactness and prespectral,
 compact, quasi-separated subspaces for compact locally closed subsets of
 prespectral quasi-separated spaces, without ambient compactness.
+The `Topology.ConstructibleSubspace` leaf treats constructibly closed spectral
+subspaces, cofinal compact-open intersections, and generization subspaces.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §§2.1–2.2, for soberification, spectral spaces, Stone duality,
+  compact locally closed subspaces and projective limits. The specialized
+  leaves identify exact propositions and distinguish strengthened statements.
+- Mathlib's order, topology and category libraries, and Formal Frontier Agents,
+  *Ideal Completion*, provide the prior formalization used by the leaves.
 -/

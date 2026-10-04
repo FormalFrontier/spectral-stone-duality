@@ -15,6 +15,13 @@ spectral map `Spec B → Spec A`. The identity, composition and basic-open
 preimage laws make this action usable without unfolding the ideal construction.
 `compactOpenOrderIso` identifies `A` with the compact opens of its spectrum,
 sending `a` to the open of primes not containing `a`.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(b), Theorem 2.2.8(1)–(2).
+- Mathlib, `Order.PrimeIdeal`, `Topology.Spectral.Hom` and its bounded-lattice
+  homomorphism API; Formal Frontier Agents, *Ideal Completion*, for principal ideals.
 -/
 
 public section
@@ -155,7 +162,8 @@ private theorem principalCompactOpen_surjective :
   apply TopologicalSpace.CompactOpens.ext
   exact hIU
 
-/-- The order isomorphism `A ≃ QCOuv(Spec A)`. -/
+/-- The order isomorphism `A ≃ QCOuv(Spec A)` from Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, Theorem 2.2.8(1). -/
 @[expose]
 noncomputable def compactOpenOrderIso :
     A ≃o TopologicalSpace.CompactOpens (PrimeIdealSpectrum A) :=

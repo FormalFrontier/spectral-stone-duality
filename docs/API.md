@@ -16,13 +16,16 @@ literal noncomputable modifiers, are retained; whitespace alone is normalized.
 Native pretty-printing uses each source namespace, notation and type inference;
 consult the linked source for suppressed inferred types and universe conventions.
 These displayed fragments are not promised to elaborate alone in a fresh namespace.
-Source links are relative to this same checkout.
+Source links name files in this checkout, but line anchors and displayed
+docstrings belong to the historical native input. Consult each declaration
+in the current Lean source for its updated references and documentation;
+the [current bibliography](../README.md#references) covers the cited sources.
 
 The [manifest](api-manifest.json) binds the historical analyzed and
 release-translated inputs and the original whole-file API digest. Its hash does
-**not** cover this later introduction or the aggregate, Examples and Lake
-inputs in this checkout. The historical generated entries begin at the first
-module heading below and retain their original source ranges and headers.
+**not** cover this later introduction or the aggregate, Examples, Lake and
+updated Lean docstrings in this checkout. The historical generated entries
+begin at the first module heading below and retain their original ranges and headers.
 See [generation instructions](README.md) and the [mathematical guide](Guide.md).
 Where no source docstring exists, a separately authored **API note** is labeled explicitly.
 

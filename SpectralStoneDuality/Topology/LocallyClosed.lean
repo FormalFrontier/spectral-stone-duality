@@ -17,6 +17,14 @@ retrocompact and have compact, prespectral, quasi-separated subspace topologies.
 Unlike the corresponding result for coherent ambient spaces, these conclusions
 do not require the ambient space to be compact. Neither they nor the definition
 of coherence require separation or sobriety.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(a), Proposition 2.2.3. The compact locally closed statements
+  here weaken its compact-ambient-space assumption and do not claim sobriety.
+- Mathlib, `Topology.Constructible` and `Topology.LocallyClosed`, for the
+  locally closed and retrocompact predicates and compact-open basis lemmas.
 -/
 
 @[expose] public section
@@ -51,7 +59,8 @@ theorem Topology.IsInducing.quasiSeparatedSpace_of_isSpectralMap
   exact hfs.isCompact_preimage_of_isOpen (hU.1.inter hV.1)
     (hU.2.inter_of_isOpen hV.2 hU.1 hV.1)
 
-/-- A compact locally closed subset of a prespectral quasi-separated space is
+/-- Generalizing Fujiwara--Kato, *Foundations of Rigid Geometry I*,
+Proposition 2.2.3, a compact locally closed subset of a prespectral quasi-separated space is
 retrocompact; the ambient space need not be compact. Compactness allows the open
 factor in a locally closed presentation to be replaced by a compact open one. -/
 theorem IsCompact.isRetrocompact_of_isLocallyClosed
@@ -73,7 +82,8 @@ theorem IsCompact.isRetrocompact_of_isLocallyClosed
   simpa [inter_assoc, inter_left_comm, inter_comm] using
     hWVcompact.inter_right hCclosed
 
-/-- A compact locally closed subspace of a prespectral quasi-separated space is
+/-- Generalizing Fujiwara--Kato, *Foundations of Rigid Geometry I*,
+Proposition 2.2.3, a compact locally closed subspace of a prespectral quasi-separated space is
 itself prespectral, compact and quasi-separated, without requiring a compact
 ambient space. These three conditions do not assert sobriety. -/
 theorem IsLocallyClosed.subtype_prespectral_compact_quasiSeparated

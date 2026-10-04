@@ -3,13 +3,11 @@
 This supplement documents the eight public declarations in
 [`SpectralStoneDuality.CompactOpenBasis`](../SpectralStoneDuality/CompactOpenBasis.lean).
 Import that module directly, or `import SpectralStoneDuality` for the aggregate
-public API. This module was added **after** the frozen seven-leaf native doc-gen4
-input; none of its names occurs in the 99 native display records in
-[`API.md`](API.md) or the historical [`api-manifest.json`](api-manifest.json).
-The declarations here are documented manually, not newly generated doc-gen4
-records. The [API reproduction notes](README.md) explain why the historical
-manifest does not enumerate this module; use the imports above for its actual
-interfaces rather than inferring an absence from native display counts.
+public API. The [historical API display](API.md) does not list these
+declarations; use this manual guide and the Lean module for their interfaces.
+Its proof follows Mathlib's cofiltered-limit set-basis formalization, with
+compact-open stage bases supplied by Mathlib's spectral-space API; it is a
+new `Opens.IsBasis` interface, not a claimed statement from Fujiwara–Kato.
 
 ## Specified cofiltered limiting cone
 

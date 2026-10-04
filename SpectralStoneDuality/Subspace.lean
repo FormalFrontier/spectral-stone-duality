@@ -17,6 +17,11 @@ set_option warningAsError true
 This file lifts compact open subsets of an arbitrary subspace to compact open
 subsets of an ambient space with a compact-open basis. As an application, it
 detects spectrality of a map to a subspace after composing with the inclusion.
+
+## References
+
+- Mathlib, `Topology.Compactness.Bases` and `Topology.Spectral.Basic`, for
+  compact-open bases and spectral-map predicates used in the lifting proof.
 -/
 
 open Function Set TopologicalSpace

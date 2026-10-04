@@ -13,6 +13,14 @@ public import Mathlib.Topology.WithTopology
 
 A cofinite space is quasi-sober exactly when its underlying type is finite. Cofinite spaces
 are `T₁`, so this also characterizes their sobriety, including the empty space.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, Exercise 0.2.1, for the infinite-cofinite-space obstruction;
+  the finite/empty characterization here is stronger than that example.
+- Mathlib, `Topology.Sober` and `Topology.Constructions`, for quasi-sobriety
+  and the cofinite topology.
 -/
 
 @[expose] public section
@@ -24,7 +32,9 @@ universe u
 
 namespace CofiniteTopology
 
-/-- A cofinite space is quasi-sober if and only if its underlying type is finite. -/
+/-- A cofinite space is quasi-sober if and only if its underlying type is finite.
+The infinite direction specializes Fujiwara--Kato, *Foundations of Rigid Geometry I*,
+Exercise 0.2.1; the converse includes the empty case. -/
 theorem quasiSober_iff_finite (X : Type u) :
     QuasiSober (CofiniteTopology X) ↔ Finite X := by
   constructor
@@ -45,7 +55,8 @@ theorem quasiSober_iff_finite (X : Type u) :
     let : DiscreteTopology (CofiniteTopology X) := inferInstance
     infer_instance
 
-/-- An infinite cofinite space is not quasi-sober. -/
+/-- An infinite cofinite space is not quasi-sober; compare the non-sober
+example in Fujiwara--Kato, *Foundations of Rigid Geometry I*, Exercise 0.2.1. -/
 theorem not_quasiSober (X : Type u) [Infinite X] :
     ¬ QuasiSober (CofiniteTopology X) := by
   intro h

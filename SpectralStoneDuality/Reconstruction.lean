@@ -14,6 +14,14 @@ a prime ideal cuts out a nonempty irreducible closed set; sobriety provides its
 unique generic point. `spaceSpectrumHomeomorph` packages the resulting
 homeomorphism, and `spaceUnitIso` expresses its naturality in spectral maps.
 This reconstructs spectral spaces, not arbitrary non-sober spaces.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.2(b), Theorem 2.2.8(2). The generic-point construction here
+  realizes its quasi-inverse for spectral spaces.
+- Mathlib, `Topology.Sober` and `Topology.Spectral.Basic`, for generic points,
+  sobriety and compact opens.
 -/
 
 public section
@@ -256,7 +264,8 @@ theorem isOpenMap_spaceToSpectrum (X : SpectralCat) : IsOpenMap (spaceToSpectrum
   rw [spaceToSpectrum_image_compactOpen]
   exact isOpen_basicOpen _
 
-/-- A spectral space is homeomorphic to the prime spectrum of its compact-open lattice. -/
+/-- A spectral space is homeomorphic to the prime spectrum of its compact-open lattice;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.8(2). -/
 noncomputable def spaceSpectrumHomeomorph (X : SpectralCat) :
     X ≃ₜ PrimeIdealSpectrum (TopologicalSpace.CompactOpens X) :=
   (spaceSpectrumEquiv X).toHomeomorphOfContinuousOpen
@@ -280,7 +289,8 @@ noncomputable def spaceUnitComponent (X : SpectralCat) :
     X ≅ (compactOpenFunctor ⋙ spectrumFunctor).obj X :=
   SpectralCat.isoMk (spaceSpectrumHomeomorph X)
 
-/-- Naturality of the space-side reconstruction `X ≅ Spec(QCOuv X)`. -/
+/-- Naturality of the space-side reconstruction `X ≅ Spec(QCOuv X)`;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Theorem 2.2.8(2). -/
 noncomputable def spaceUnitIso :
     𝟭 SpectralCat ≅ compactOpenFunctor ⋙ spectrumFunctor :=
   NatIso.ofComponents spaceUnitComponent fun {X Y} f ↦ by

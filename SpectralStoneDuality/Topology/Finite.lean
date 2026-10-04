@@ -14,6 +14,12 @@ Every finite irreducible subset of a topological space contains a generic point 
 closure. Consequently, every finite topological space is quasi-sober, without any
 separation or nonemptiness assumption. Every finite T₀ topological space is spectral,
 including the empty space.
+
+## References
+
+- Mathlib, `Topology.Sober` and `Topology.Spectral.Basic`, for the formalized
+  generic-point, quasi-sobriety and spectral-space notions. The finite-set
+  generic-point argument is supplied here, rather than imported as a theorem.
 -/
 
 @[expose] public section

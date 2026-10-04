@@ -14,6 +14,13 @@ public import Mathlib.Topology.Separation.Hausdorff
 
 The finite-space result includes empty, discrete, Sierpiński and indiscrete spaces.
 An infinite cofinite space shows that finiteness cannot be removed in general.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, Exercise 0.2.1, for the infinite-cofinite boundary example.
+- Mathlib, `Topology.Sober` and `Topology.Order`, for quasi-sobriety
+  and finite-space topologies.
 -/
 
 @[expose] public section

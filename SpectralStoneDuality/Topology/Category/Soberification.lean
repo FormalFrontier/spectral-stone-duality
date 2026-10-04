@@ -14,6 +14,13 @@ public import Mathlib.CategoryTheory.Adjunction.Basic
 
 The full subcategory of `T₀` quasi-sober spaces is reflective in `TopCat`. The reflector
 takes a space to its irreducible closed subsets with the topology of open intersections.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.1(b), Proposition 2.1.3, for the sober reflection.
+- Mathlib, `Topology.Sober` and `CategoryTheory.Adjunction.Basic`, for
+  irreducible closed subsets and the categorical adjunction interface.
 -/
 
 @[expose] public section
@@ -100,7 +107,9 @@ theorem soberificationHomEquiv_symm_apply (X : TopCat.{u}) (Y : SoberTopCat.{u})
       @IrreducibleCloseds.extend X Y.obj _ _ Y.property.2 Y.property.1 f.hom :=
   rfl
 
-/-- Soberification is left adjoint to inclusion of sober spaces. -/
+/-- Soberification is left adjoint to inclusion of sober spaces;
+Fujiwara--Kato, *Foundations of Rigid Geometry I*, Proposition 2.1.3.
+The proof uses the open-set characterization of the irreducible-closed topology. -/
 noncomputable def soberificationAdjunction : soberification.{u} ⊣ soberInclusion :=
   Adjunction.mkOfHomEquiv {
     homEquiv := soberificationHomEquiv

@@ -13,6 +13,13 @@ public import Mathlib.Topology.Order.UpperLowerSetTopology
 In the upper-set topology on `Fin 2`, both points lie in the generization
 subspace of the bottom point, but only the bottom point is closed there.
 For indiscrete `Bool`, the original singleton need not be closed without `T₀`.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §2.1(a), for the closed-generization observation.
+- Mathlib, `Topology.NhdsKer` and `Topology.Order.UpperLowerSetTopology`,
+  for specialization and the upper-set example.
 -/
 
 @[expose] public section

@@ -25,6 +25,19 @@ square itself is stated under only `SemilatticeInf`.
 The site consumer concerns the extensive topology on the thin category of
 elements, not a topology on the category of lattice objects. Nothing here
 asserts that all finite coproducts are disjoint or van Kampen.
+
+## References
+
+- K. Fujiwara and F. Kato, *Foundations of Rigid Geometry I*, arXiv:1308.4734v5,
+  Chapter 0, §1.2(e) and §2.2(b), for order-category conventions and the
+  conditional universality of disjoint finite sums. The present results also
+  cover arbitrary finite joins and lattices without top.
+- M. Artin, A. Grothendieck and J.-L. Verdier (eds.), *Théorie des topos et
+  cohomologie étale des schémas* (SGA 4), Tome I, Exposé II, Definition 4.5,
+  for the terminology of universally disjoint sums, not for the proofs here.
+- Mathlib, `CategoryTheory.Extensive`, `CategoryTheory.Limits.Lattice` and
+  `CategoryTheory.Sites.Coherent.ExtensiveTopology`, for the categorical
+  pullback, disjointness and covering-sieve interfaces.
 -/
 
 @[expose] public section
@@ -53,7 +66,9 @@ instance hasPullbacksOfInclusions_of_lattice (A : Type u) [Lattice A] :
   hasPullbackInl f := (isPullback_inf coprod.inl f).hasPullback
 
 /-- Finite coproducts in the order category of a distributive lattice with bottom
-are universal; no top element or nontriviality assumption is needed. -/
+are universal; no top element or nontriviality assumption is needed. This
+extends the conditional disjoint-sum assertion in Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, §2.2(b). -/
 instance finitaryPreExtensive_of_distribLattice (A : Type u) [DistribLattice A]
     [OrderBot A] : FinitaryPreExtensive A := by
   refine ⟨?_⟩
@@ -101,7 +116,9 @@ theorem coproductDisjoint_iff_pairwise_inf_eq_bot {A : Type u} [Lattice A] [Orde
       exact ⟨fun _ _ _ => Subsingleton.elim _ _⟩
 
 attribute [local instance] Fintype.ofFinite in
-/-- A disjoint finite coproduct remains a disjoint coproduct after base change
+/-- Generalizing the conditional finite-sum observation in Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, §2.2(b), a disjoint finite coproduct remains
+a disjoint coproduct after base change
 along an order arrow. The pulled-back summands are the meets with its domain. -/
 theorem coproductDisjoint_baseChange {A : Type u} [DistribLattice A] [OrderBot A]
     {ι : Type v} [Finite ι] (X : ι → A) [CoproductDisjoint X]
