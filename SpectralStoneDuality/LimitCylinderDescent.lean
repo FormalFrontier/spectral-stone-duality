@@ -6,9 +6,8 @@ module
 
 public import SpectralStoneDuality.Limits
 public import SpectralStoneDuality.Subspace
+public import SpectralStoneDuality.Topology.LocallyClosed
 public import Mathlib.CategoryTheory.Filtered.Final
-public import Mathlib.Topology.Constructible
-public import Mathlib.Topology.LocallyClosed
 
 public section
 
@@ -32,92 +31,16 @@ noncomputable section
 
 namespace SpectralStoneDuality
 
-private theorem compactLocallyClosed_retrocompact {X : Type u}
-    [TopologicalSpace X] [PrespectralSpace X] [QuasiSeparatedSpace X]
-    {Z : Set X} (hZcompact : IsCompact Z) (hZlocal : IsLocallyClosed Z) :
-    IsRetrocompact Z := by
-  obtain ⟨U, C, hUopen, hCclosed, rfl⟩ := hZlocal
-  obtain ⟨W, hWcompact, hWopen, hZW, hWU⟩ :=
-    PrespectralSpace.exists_isCompact_and_isOpen_between
-      hZcompact hUopen inter_subset_left
-  have hEq : U ∩ C = W ∩ C := by
-    apply subset_antisymm
-    · exact fun _x hx ↦ ⟨hZW hx, hx.2⟩
-    · exact fun _x hx ↦ ⟨hWU hx.1, hx.2⟩
-  rw [hEq]
-  intro V hVcompact hVopen
-  have hWVcompact : IsCompact (W ∩ V) :=
-    hWcompact.inter_of_isOpen hVcompact hWopen hVopen
-  simpa [inter_assoc, inter_left_comm, inter_comm] using
-    hWVcompact.inter_right hCclosed
-
-private theorem quasiSeparated_of_closedEmbedding {X Y : Type u}
-    [TopologicalSpace X] [TopologicalSpace Y]
-    [PrespectralSpace Y] [QuasiSeparatedSpace Y]
-    {f : X → Y} (hf : IsClosedEmbedding f) : QuasiSeparatedSpace X := by
-  constructor
-  intro A B hAopen hAcompact hBopen hBcompact
-  obtain ⟨A', hA'open, hA'pre⟩ := hf.isInducing.isOpen_iff.mp hAopen
-  obtain ⟨B', hB'open, hB'pre⟩ := hf.isInducing.isOpen_iff.mp hBopen
-  have hAimcompact : IsCompact (f '' A) := hAcompact.image hf.continuous
-  have hBimcompact : IsCompact (f '' B) := hBcompact.image hf.continuous
-  obtain ⟨WA, hWAcompact, hWAopen, hAimWA, hWAA'⟩ :=
-    PrespectralSpace.exists_isCompact_and_isOpen_between
-      hAimcompact hA'open (by
-        rintro _y ⟨x, hx, rfl⟩
-        exact show x ∈ f ⁻¹' A' from hA'pre.symm ▸ hx)
-  obtain ⟨WB, hWBcompact, hWBopen, hBimWB, hWBB'⟩ :=
-    PrespectralSpace.exists_isCompact_and_isOpen_between
-      hBimcompact hB'open (by
-        rintro _y ⟨x, hx, rfl⟩
-        exact show x ∈ f ⁻¹' B' from hB'pre.symm ▸ hx)
-  have hAim : f '' A = range f ∩ WA := by
-    apply subset_antisymm
-    · intro y hy
-      exact ⟨Set.image_subset_range _ _ hy, hAimWA hy⟩
-    · rintro y ⟨⟨x, rfl⟩, hxWA⟩
-      exact ⟨x, hA'pre ▸ hWAA' hxWA, rfl⟩
-  have hBim : f '' B = range f ∩ WB := by
-    apply subset_antisymm
-    · intro y hy
-      exact ⟨Set.image_subset_range _ _ hy, hBimWB hy⟩
-    · rintro y ⟨⟨x, rfl⟩, hxWB⟩
-      exact ⟨x, hB'pre ▸ hWBB' hxWB, rfl⟩
-  rw [hf.isEmbedding.isCompact_iff, Set.image_inter hf.injective, hAim, hBim]
-  have hWcompact : IsCompact (WA ∩ WB) :=
-    hWAcompact.inter_of_isOpen hWBcompact hWAopen hWBopen
-  simpa [inter_assoc, inter_left_comm, inter_comm] using
-    hWcompact.inter_left hf.isClosed_range
-
 private theorem compactLocallyClosed_spectral {X : Type u}
     [TopologicalSpace X] [SpectralSpace X] {Z : Set X}
     (hZcompact : IsCompact Z) (hZlocal : IsLocallyClosed Z) :
     SpectralSpace Z := by
-  have hZretro : IsRetrocompact Z :=
-    compactLocallyClosed_retrocompact hZcompact hZlocal
-  let _ : PrespectralSpace Z :=
-    PrespectralSpace.of_isInducing Subtype.val .subtypeVal
-      (IsRetrocompact_iff_isSpectralMap_subtypeVal.mp hZretro)
-  let _ : CompactSpace Z := isCompact_iff_compactSpace.mp hZcompact
+  obtain ⟨hZpre, hZcompactSpace, hZqs⟩ :=
+    hZlocal.subtype_prespectral_compact_quasiSeparated hZcompact
+  let _ : PrespectralSpace Z := hZpre
+  let _ : CompactSpace Z := hZcompactSpace
+  let _ : QuasiSeparatedSpace Z := hZqs
   obtain ⟨U, C, hUopen, hCclosed, hZeq⟩ := hZlocal
-  have hZU : Z ⊆ U := hZeq.symm ▸ inter_subset_left
-  obtain ⟨W, _hWcompact, hWopen, hZW, hWU⟩ :=
-    PrespectralSpace.exists_isCompact_and_isOpen_between hZcompact hUopen hZU
-  let _ : PrespectralSpace W := hWopen.isOpenEmbedding_subtypeVal.prespectralSpace
-  let _ : QuasiSeparatedSpace W :=
-    hWopen.isOpenEmbedding_subtypeVal.quasiSeparatedSpace
-  have hZclosedW : IsClosed (W ↓∩ Z) := by
-    convert hCclosed.preimage continuous_subtype_val using 1
-    ext x
-    simp only [mem_preimage]
-    constructor
-    · intro hx
-      exact (hZeq ▸ hx).2
-    · intro hxC
-      exact hZeq.symm ▸ ⟨hWU x.property, hxC⟩
-  let _ : QuasiSeparatedSpace Z :=
-    quasiSeparated_of_closedEmbedding
-      (Topology.IsClosedEmbedding.inclusion hZW hZclosedW)
   let _ : QuasiSober U := hUopen.isOpenEmbedding_subtypeVal.quasiSober
   have hSober : QuasiSober Z := by
     rw [hZeq]
@@ -208,7 +131,7 @@ private theorem counterexampleMap_spectral
   have hIncl : IsSpectralMap
       ((Subtype.val : counterexampleSet F i U V X → F.obj X.left)) :=
     IsRetrocompact_iff_isSpectralMap_subtypeVal.mp
-      (compactLocallyClosed_retrocompact hZX.1 hZX.2)
+      (hZX.1.isRetrocompact_of_isLocallyClosed hZX.2)
   apply SpectralStoneDuality.isSpectralMap_to_subtype_of_comp
   change IsSpectralMap ((F.map f.left) ∘
     (Subtype.val : counterexampleSet F i U V X → F.obj X.left))

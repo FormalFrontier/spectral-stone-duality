@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its seventeen leaves below.
+or select one of its eighteen leaves below.
 
 ## Headline results
 
@@ -75,6 +75,12 @@ or select one of its seventeen leaves below.
   gluing. See [subspaces](SpectralStoneDuality/Subspace.lean),
   [single-cylinder descent](docs/LimitCylinderDescent.md) and
   [finite-cylinder descent](docs/FiniteCylinderDescent.md).
+- **Compact locally closed subspaces.** Inducing spectral maps into prespectral
+  quasi-separated spaces preserve quasi-separatedness without injectivity.
+  A compact locally closed subset is retrocompact, and its ordinary subtype
+  is prespectral, compact and quasi-separated, even when the ambient space is
+  not compact. These conclusions do not assert sobriety. See
+  [locally closed topology](SpectralStoneDuality/Topology/LocallyClosed.lean).
 
 ## Modules and examples
 
@@ -88,6 +94,7 @@ or select one of its seventeen leaves below.
 | [`Limits`](SpectralStoneDuality/Limits.lean) | Cofiltered spectral limits, projections and set bases |
 | [`CompactOpenBasis`](SpectralStoneDuality/CompactOpenBasis.lean) | Open-cylinder bases for actual cones and chosen limits |
 | [`Subspace`](SpectralStoneDuality/Subspace.lean) | Ambient compact-open lifts and spectral-map detection |
+| [`Topology.LocallyClosed`](SpectralStoneDuality/Topology/LocallyClosed.lean) | Inducing spectral maps and compact locally closed subspaces |
 | [`LimitCylinderDescent`](SpectralStoneDuality/LimitCylinderDescent.lean) | Eventual containment and eventually-full neighborhoods |
 | [`FiniteCylinderDescent`](SpectralStoneDuality/FiniteCylinderDescent.lean) | Coherent finite families and whole-stage covers |
 | [`Topology.NhdsKer`](SpectralStoneDuality/Topology/NhdsKer.lean) | Unique closed point among generizations in a `T₀` space |
@@ -119,6 +126,9 @@ empty space, discrete two-point space, and infinite irreducible Nat space.
 The [finite-space examples](SpectralStoneDualityExamples/FiniteSobriety.lean)
 contrast the existing discrete-space route with finite quasi-sobriety on `Prop`
 and indiscrete `Bool`, and test the infinite cofinite obstruction.
+The [locally closed examples](SpectralStoneDualityExamples/LocallyClosed.lean)
+test empty and proper finite subspaces, a noninjective inducing map on a non-`T₀`
+space, and a compact subset of an infinite discrete space.
 These are separate example modules, not exported by
 `SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
 `SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The

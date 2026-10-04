@@ -12,6 +12,7 @@ public import SpectralStoneDuality.Equivalence
 public import SpectralStoneDuality.Limits
 public import SpectralStoneDuality.CompactOpenBasis
 public import SpectralStoneDuality.Subspace
+public import SpectralStoneDuality.Topology.LocallyClosed
 public import SpectralStoneDuality.LimitCylinderDescent
 public import SpectralStoneDuality.FiniteCylinderDescent
 public import SpectralStoneDuality.Topology.Soberification
@@ -47,4 +48,7 @@ point of its closure; every finite topological space is therefore quasi-sober, w
 a separation assumption.
 The `Topology.NhdsKer` leaf identifies the unique closed point in the subspace
 of generizations of a point in any `T₀` space.
+The `Topology.LocallyClosed` leaf gives retrocompactness and prespectral,
+compact, quasi-separated subspaces for compact locally closed subsets of
+prespectral quasi-separated spaces, without ambient compactness.
 -/

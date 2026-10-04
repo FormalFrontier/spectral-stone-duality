@@ -10,7 +10,10 @@ project:
     bases and descent over actual limits, and compact-open lifting from
     arbitrary subspaces of prespectral spaces. Finite labelled families,
     including empty families, descend to coherent whole-stage covers. Also
-    constructs the soberification of any topological space and its reflection
+    proves retrocompactness and prespectral, compact, quasi-separated subtype
+    topology for compact locally closed subsets of prespectral quasi-separated
+    spaces, without ambient compactness. These results do not assert sobriety.
+    It also constructs the soberification of any topological space and its reflection
     into T0 quasi-sober spaces, independently of spectral Stone duality.
     Every finite irreducible subset of any topological space contains a generic
     point of its closure, so every finite topological space is quasi-sober,
@@ -69,7 +72,7 @@ sources:
       - "Fumiharu Kato"
     id: "https://arxiv.org/abs/1308.4734v5"
     type: "book"
-    location: "Chapter 0, Sections 1.2(e) and 2.2(b)"
+    location: "Chapter 0, Sections 1.2(e), 2.2(a) and 2.2(b)"
     relationship: "background"
     note: >-
       The thin order-category interpretation motivates finite coproduct
@@ -77,6 +80,9 @@ sources:
       distributive lattice; the finite-coproduct results require only bottom.
       Its finite-operation preservation motivates the more general bounded
       lattice-map equivalence, which does not require distributivity.
+      Its compact locally closed subspace result assumes a compact ambient
+      space; the prespectral quasi-separated formulation here omits that
+      assumption and does not assert sobriety.
       No claim of complete source formalization is made.
 
 related_formalizations:
@@ -102,7 +108,9 @@ automation:
 status:
   scope: >-
     Reusable bounded distributive-lattice Stone duality and the documented
-    spectral-limit, cylinder and subspace topology, together with general
+    spectral-limit, cylinder and subspace topology, including retrocompactness
+    and compact locally closed subspaces of prespectral quasi-separated spaces
+    without ambient compactness or sobriety claims, together with general
     soberification and its reflective adjunction, plus universal finite
     coproducts and conditional disjointness in thin lattice categories.
     The original point is the unique closed point among its generizations

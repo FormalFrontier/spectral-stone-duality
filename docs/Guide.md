@@ -163,6 +163,18 @@ subcover of the compact image of the subspace open. If `g : Z → Y` becomes a
 spectral map after composition with `Subtype.val : Y → X`, then
 `isSpectralMap_to_subtype_of_comp` detects spectrality of `g` using that lift.
 
+The [locally closed topology](../SpectralStoneDuality/Topology/LocallyClosed.lean)
+shows that an inducing spectral map into a prespectral quasi-separated space
+has quasi-separated source, without injectivity. In a prespectral
+quasi-separated ambient space, a compact locally closed subset is retrocompact:
+replace the open factor of its open-closed presentation with a compact open
+containing the subset, then intersect with compact opens. Its ordinary subtype
+is prespectral, compact and quasi-separated, even if the ambient space is not
+compact. The cylinder-descent proof uses these results for compact locally
+closed counterexample sets. See the [examples](../SpectralStoneDualityExamples/LocallyClosed.lean)
+for empty, non-`T₀`, noninjective and noncompact-ambient boundaries; none of the
+three conclusions alone implies sobriety.
+
 ## Finite irreducible sets and quasi-sobriety
 
 For any topology, a finite irreducible subset contains a generic point of its
