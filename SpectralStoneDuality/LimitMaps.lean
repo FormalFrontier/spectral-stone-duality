@@ -7,6 +7,8 @@ module
 public import SpectralStoneDuality.Limits
 public import SpectralStoneDuality.CompactOpenBasis
 public import Mathlib.Topology.Compactness.Bases
+public import Mathlib.CategoryTheory.Filtered.Final
+public import Mathlib.CategoryTheory.Limits.Connected
 import Mathlib.CategoryTheory.Limits.ConcreteCategory.Basic
 
 public section
@@ -20,6 +22,10 @@ For natural transformations of small cofiltered diagrams of spectral spaces,
 spectrality, surjectivity, and closedness pass to the induced map of arbitrary
 limiting cones. The induced map is Mathlib's `IsLimit.map`; its projection
 equation is `IsLimit.map_π`.
+
+For a cofiltered-or-empty diagram with a specified object, surjective or closed
+spectral transition maps give the corresponding property of the projection
+from any limiting cone to that object.
 -/
 
 open CategoryTheory CategoryTheory.Limits TopologicalSpace
@@ -335,5 +341,71 @@ theorem isClosedMap_isLimit_map
       exact hfac.trans ((congrArg (f.app j) (hxcoord j)).trans (hz j).2)
   rw [himage]
   exact isClosed_iInter fun j ↦ (hDjclosed j).preimage (D.π.app j).hom.continuous
+
+end SpectralStoneDuality
+
+namespace SpectralStoneDuality
+
+variable {J : Type v} [SmallCategory J] [IsCofilteredOrEmpty J]
+    (F : J ⥤ TopCat.{max v u}) (C : Cone F)
+
+private def tailToStage (j : J) :
+    Over.forget j ⋙ F ⟶ (Functor.const (Over j)).obj (F.obj j) where
+  app X := F.map X.hom
+  naturality _ _ g := by
+    dsimp
+    rw [← F.map_comp, g.w]
+    simp
+
+set_option backward.isDefEq.respectTransparency.types false in
+omit [IsCofilteredOrEmpty J] in
+private theorem tailMap_eq_projection (j : J) [IsConnected (Over j)] :
+    (isLimitConstCone (Over j) (F.obj j)).map
+      (C.whisker (Over.forget j)) (tailToStage F j) = C.π.app j := by
+  let identityStage : Over j := Over.mk (𝟙 j)
+  have hcomponent : (tailToStage F j).app identityStage = 𝟙 (F.obj j) := by
+    change F.map (𝟙 j) = 𝟙 (F.obj j)
+    exact F.map_id j
+  have hsource : (C.whisker (Over.forget j)).π.app identityStage = C.π.app j := rfl
+  have hfac := IsLimit.map_π (C.whisker (Over.forget j))
+    (isLimitConstCone (Over j) (F.obj j)) (tailToStage F j) identityStage
+  have hnormalized : (isLimitConstCone (Over j) (F.obj j)).map
+      (C.whisker (Over.forget j)) (tailToStage F j) ≫ 𝟙 (F.obj j) =
+        C.π.app j ≫ 𝟙 (F.obj j) := by
+    simpa only [constCone, Functor.const_obj_obj, NatTrans.id_app,
+      hsource, hcomponent] using hfac
+  exact (Category.comp_id _).symm.trans (hnormalized.trans (Category.comp_id _))
+
+/-- A projection from a limiting cone of spectral spaces is surjective when
+all transition maps are spectral and surjective. -/
+theorem surjective_isLimit_projection
+    (hC : IsLimit C) (hF : ∀ i, SpectralSpace (F.obj i))
+    (hFmap : ∀ {i k : J} (g : i ⟶ k), IsSpectralMap (F.map g))
+    (hsurj : ∀ {i k : J} (g : i ⟶ k), Function.Surjective (F.map g))
+    (j : J) : Function.Surjective (C.π.app j) := by
+  let _ : IsConnected (Over j) := IsCofiltered.isConnected _
+  have hTail : IsLimit (C.whisker (Over.forget j)) :=
+    (Functor.Initial.isLimitWhiskerEquiv (Over.forget j) C).symm hC
+  rw [← tailMap_eq_projection F C j]
+  exact surjective_isLimit_map (tailToStage F j) (C.whisker (Over.forget j))
+    (constCone (Over j) (F.obj j)) hTail (isLimitConstCone (Over j) (F.obj j))
+    (fun X ↦ hF X.left) (fun _ ↦ hF j) (fun g ↦ hFmap g.left)
+    (fun X ↦ hFmap X.hom) (fun X ↦ hsurj X.hom)
+
+/-- A projection from a limiting cone of spectral spaces is closed when
+all transition maps are spectral and closed. Surjectivity is not assumed. -/
+theorem isClosedMap_isLimit_projection
+    (hC : IsLimit C) (hF : ∀ i, SpectralSpace (F.obj i))
+    (hFmap : ∀ {i k : J} (g : i ⟶ k), IsSpectralMap (F.map g))
+    (hclosed : ∀ {i k : J} (g : i ⟶ k), IsClosedMap (F.map g))
+    (j : J) : IsClosedMap (C.π.app j) := by
+  let _ : IsConnected (Over j) := IsCofiltered.isConnected _
+  have hTail : IsLimit (C.whisker (Over.forget j)) :=
+    (Functor.Initial.isLimitWhiskerEquiv (Over.forget j) C).symm hC
+  rw [← tailMap_eq_projection F C j]
+  exact isClosedMap_isLimit_map (tailToStage F j) (C.whisker (Over.forget j))
+    (constCone (Over j) (F.obj j)) hTail (isLimitConstCone (Over j) (F.obj j))
+    (fun X ↦ hF X.left) (fun _ ↦ hF j) (fun g ↦ hFmap g.left)
+    (fun X ↦ hFmap X.hom) (fun X ↦ hclosed X.hom)
 
 end SpectralStoneDuality

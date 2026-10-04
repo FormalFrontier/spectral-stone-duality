@@ -7,6 +7,7 @@ module
 public import SpectralStoneDuality.LimitMaps
 public import SpectralStoneDuality.Topology.Finite
 public import Mathlib.Topology.Order.LowerUpperTopology
+import Mathlib.CategoryTheory.ComposableArrows.Basic
 
 @[expose] public section
 
@@ -20,6 +21,11 @@ product onto a two-point space, a noninjective collapse of the Sierpiński space
 and a closed nonsurjective inclusion of its closed point. The induced maps are
 also checked independently through their projections before applying the
 general limit-map theorems.
+
+Nonconstant two-stage diagrams illustrate a surjective but noninjective
+projection from a finite product and a closed but nonsurjective projection
+from a closed-point inclusion into the Sierpiński space. Their transition
+properties and compatible points are checked separately.
 -/
 
 open CategoryTheory CategoryTheory.Limits TopologicalSpace Set
@@ -411,5 +417,152 @@ example : IsClosedMap
     singleton_stages_spectral stages_spectral
     singleton_maps_spectral closedPoint_spectral
     (fun _ ↦ closedPoint_isClosedMap)
+
+/-- Two stages joined by the first-factor projection, rather than a constant diagram. -/
+private abbrev productProjectionDiagram : Fin 2 ⥤ TopCat :=
+  ComposableArrows.mk₁ first
+
+/-- Two stages joined by the closed-point inclusion into the Sierpiński space. -/
+private abbrev closedPointDiagram : Fin 2 ⥤ TopCat :=
+  ComposableArrows.mk₁ closedPoint
+
+private theorem productProjection_stages_spectral :
+    ∀ index, SpectralSpace (productProjectionDiagram.obj index) := by
+  intro index
+  fin_cases index
+  · change SpectralSpace (Fin 2 × Fin 2)
+    infer_instance
+  · change SpectralSpace (Fin 2)
+    infer_instance
+
+private theorem productProjection_maps_spectral :
+    ∀ {source target : Fin 2} (arrow : source ⟶ target),
+      IsSpectralMap (productProjectionDiagram.map arrow) := by
+  intro source target arrow
+  fin_cases source <;> fin_cases target
+  · exact isSpectralMap_id
+  · change IsSpectralMap (Prod.fst : Fin 2 × Fin 2 → Fin 2)
+    exact spectral_of_finite continuous_fst
+  · exact (by decide : ¬ (1 : Fin 2) ≤ 0) (leOfHom arrow) |>.elim
+  · exact isSpectralMap_id
+
+private theorem productProjection_maps_surjective :
+    ∀ {source target : Fin 2} (arrow : source ⟶ target),
+      Function.Surjective (productProjectionDiagram.map arrow) := by
+  intro source target arrow
+  fin_cases source <;> fin_cases target
+  · exact Function.surjective_id
+  · intro value
+    exact ⟨(value, 0), rfl⟩
+  · exact (by decide : ¬ (1 : Fin 2) ≤ 0) (leOfHom arrow) |>.elim
+  · exact Function.surjective_id
+
+private abbrev productProjectionPoint (value : Fin 2 × Fin 2) :
+    (TopCat.limitCone productProjectionDiagram).pt :=
+  ⟨(fun | ⟨0, _⟩ => value | ⟨1, _⟩ => value.1), by
+    intro source target arrow
+    fin_cases source <;> fin_cases target
+    · rfl
+    · rfl
+    · exact (by decide : ¬ (1 : Fin 2) ≤ 0) (leOfHom arrow) |>.elim
+    · rfl⟩
+
+private theorem productProjectionPoint_zero_ne_one :
+    productProjectionPoint (0, 0) ≠ productProjectionPoint (0, 1) := by
+  intro heq
+  have hstage := congrArg
+    (fun point : (TopCat.limitCone productProjectionDiagram).pt ↦
+      (point.1 (0 : Fin 2)).2) heq
+  exact Fin.zero_ne_one hstage
+
+private theorem productProjection_projection_eq
+    (point : (TopCat.limitCone productProjectionDiagram).pt) :
+    ((TopCat.limitCone productProjectionDiagram).π.app (1 : Fin 2)) point =
+      (point.1 (0 : Fin 2)).1 := by
+  have h := point.2 (homOfLE (by decide : (0 : Fin 2) ≤ 1))
+  change (point.1 (0 : Fin 2)).1 = point.1 (1 : Fin 2) at h
+  exact h.symm
+
+example : ((TopCat.limitCone productProjectionDiagram).π.app (1 : Fin 2))
+    (productProjectionPoint (0, 0)) =
+      ((TopCat.limitCone productProjectionDiagram).π.app (1 : Fin 2))
+        (productProjectionPoint (0, 1)) := by
+  rw [productProjection_projection_eq, productProjection_projection_eq]
+
+example : ¬ Function.Injective
+    ((TopCat.limitCone productProjectionDiagram).π.app (1 : Fin 2)) := by
+  intro hinjective
+  exact productProjectionPoint_zero_ne_one (hinjective rfl)
+
+example : Function.Surjective
+    ((TopCat.limitCone productProjectionDiagram).π.app (1 : Fin 2)) :=
+  SpectralStoneDuality.surjective_isLimit_projection productProjectionDiagram
+    (TopCat.limitCone productProjectionDiagram)
+    (TopCat.limitConeIsLimit productProjectionDiagram)
+    productProjection_stages_spectral productProjection_maps_spectral
+    productProjection_maps_surjective (1 : Fin 2)
+
+private theorem closedPointDiagram_stages_spectral :
+    ∀ index, SpectralSpace (closedPointDiagram.obj index) := by
+  intro index
+  fin_cases index
+  · change SpectralSpace PUnit
+    infer_instance
+  · change SpectralSpace Prop
+    infer_instance
+
+private theorem closedPointDiagram_maps_spectral :
+    ∀ {source target : Fin 2} (arrow : source ⟶ target),
+      IsSpectralMap (closedPointDiagram.map arrow) := by
+  intro source target arrow
+  fin_cases source <;> fin_cases target
+  · exact isSpectralMap_id
+  · change IsSpectralMap (fun (_ : PUnit) ↦ False)
+    exact spectral_of_finite continuous_const
+  · exact (by decide : ¬ (1 : Fin 2) ≤ 0) (leOfHom arrow) |>.elim
+  · exact isSpectralMap_id
+
+private theorem closedPointDiagram_maps_closed :
+    ∀ {source target : Fin 2} (arrow : source ⟶ target),
+      IsClosedMap (closedPointDiagram.map arrow) := by
+  intro source target arrow
+  fin_cases source <;> fin_cases target
+  · exact IsClosedMap.id
+  · exact closedPoint_isClosedMap
+  · exact (by decide : ¬ (1 : Fin 2) ≤ 0) (leOfHom arrow) |>.elim
+  · exact IsClosedMap.id
+
+private abbrev closedPointDiagramPoint : (TopCat.limitCone closedPointDiagram).pt :=
+  ⟨(fun | ⟨0, _⟩ => PUnit.unit | ⟨1, _⟩ => False), by
+    intro source target arrow
+    fin_cases source <;> fin_cases target
+    · rfl
+    · rfl
+    · exact (by decide : ¬ (1 : Fin 2) ≤ 0) (leOfHom arrow) |>.elim
+    · rfl⟩
+
+example : Nonempty (TopCat.limitCone closedPointDiagram).pt :=
+  ⟨closedPointDiagramPoint⟩
+
+private theorem closedPointDiagram_projection_eq
+    (point : (TopCat.limitCone closedPointDiagram).pt) :
+    ((TopCat.limitCone closedPointDiagram).π.app (1 : Fin 2)) point = False := by
+  have h := point.2 (homOfLE (by decide : (0 : Fin 2) ≤ 1))
+  change False = point.1 (1 : Fin 2) at h
+  exact h.symm
+
+example : ¬ Function.Surjective
+    ((TopCat.limitCone closedPointDiagram).π.app (1 : Fin 2)) := by
+  intro hsurj
+  obtain ⟨point, hpoint⟩ := hsurj True
+  exact Eq.mpr ((closedPointDiagram_projection_eq point).symm.trans hpoint) True.intro
+
+example : IsClosedMap
+    ((TopCat.limitCone closedPointDiagram).π.app (1 : Fin 2)) :=
+  SpectralStoneDuality.isClosedMap_isLimit_projection closedPointDiagram
+    (TopCat.limitCone closedPointDiagram)
+    (TopCat.limitConeIsLimit closedPointDiagram)
+    closedPointDiagram_stages_spectral closedPointDiagram_maps_spectral
+    closedPointDiagram_maps_closed (1 : Fin 2)
 
 end SpectralStoneDualityExamples.LimitMaps

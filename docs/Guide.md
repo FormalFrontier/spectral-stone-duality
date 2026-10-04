@@ -148,6 +148,13 @@ Sobriety is checked by taking generic points of closures of the projected
 irreducible closed subset and proving their compatibility. Refer to the
 linked statements for the exact size and topology parameters.
 
+The [limit-map theorems](../SpectralStoneDuality/LimitMaps.lean) also show that
+the projection of any supplied limiting cone is surjective when all spectral
+transition maps are surjective, and closed when all spectral transition maps
+are closed. The latter does not require surjectivity. These projection results
+allow a cofiltered-or-empty index category because the selected stage supplies
+an object; they assume no nonempty stages or Hausdorff spaces.
+
 `CompactOpenBasis` adapts the native cofiltered set basis to an `Opens.IsBasis` of
 compact-open cylinders. For an arbitrary specified `C : Cone D` with `IsLimit C`,
 it uses `C.π.app`; for a chosen limit it uses the literal `limit.π D`.

@@ -85,6 +85,10 @@ or select one of its twenty-one leaves below.
   (`surjective_isLimit_map`), and closed when each component is a closed map
   (`isClosedMap_isLimit_map`). Surjectivity and closedness do not require spectral
   target transitions; no result assumes nonempty stages or Hausdorff spaces.
+  If the spectral transition maps themselves are surjective or closed, respectively,
+  each projection of a supplied limiting cone is surjective
+  (`surjective_isLimit_projection`) or closed (`isClosedMap_isLimit_projection`).
+  The closed-projection result does not require surjective transitions.
   See [limit maps](SpectralStoneDuality/LimitMaps.lean).
 - **Subspaces and descent.** A compact open of *any* subspace of a prespectral
   space lifts to an ambient compact open; closedness is unnecessary. A map to
