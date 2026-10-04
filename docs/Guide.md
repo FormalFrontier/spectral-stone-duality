@@ -18,9 +18,11 @@ The single `SpectralStoneDualityExamples` library includes these roots:
 [finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean),
 [closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean),
 [cofinite examples](../SpectralStoneDualityExamples/Cofinite.lean),
-[finite-space examples](../SpectralStoneDualityExamples/FiniteSobriety.lean) and
-[locally closed examples](../SpectralStoneDualityExamples/LocallyClosed.lean), and
-[finite-coordinate examples](../SpectralStoneDualityExamples/FiniteCoordinates.lean).
+[finite-space examples](../SpectralStoneDualityExamples/FiniteSobriety.lean),
+[locally closed examples](../SpectralStoneDualityExamples/LocallyClosed.lean),
+[finite-coordinate examples](../SpectralStoneDualityExamples/FiniteCoordinates.lean),
+[finite-coordinate limit examples](../SpectralStoneDualityExamples/FiniteCoordinateLimits.lean),
+and [limit-map examples](../SpectralStoneDualityExamples/LimitMaps.lean).
 
 ## Prime spectra and the open-set convention
 

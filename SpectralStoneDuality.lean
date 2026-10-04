@@ -10,6 +10,7 @@ public import SpectralStoneDuality.Category
 public import SpectralStoneDuality.Reconstruction
 public import SpectralStoneDuality.Equivalence
 public import SpectralStoneDuality.Limits
+public import SpectralStoneDuality.LimitMaps
 public import SpectralStoneDuality.CompactOpenBasis
 public import SpectralStoneDuality.Subspace
 public import SpectralStoneDuality.Topology.LocallyClosed

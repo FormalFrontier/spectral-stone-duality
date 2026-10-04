@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its twenty leaves below.
+or select one of its twenty-one leaves below.
 
 ## Headline results
 
@@ -77,6 +77,15 @@ or select one of its twenty leaves below.
   additionally assumes every stage nonempty; the basis results do not.
   See [limits](SpectralStoneDuality/Limits.lean) and the
   [cylinder-basis supplement](docs/CompactOpenBasis.md).
+- **Maps of cofiltered spectral limits.** Given a natural transformation of
+  small cofiltered diagrams with spectral source and target stages, spectral
+  source transitions, spectral component maps, and arbitrary supplied `IsLimit`
+  cones, the induced map is spectral when target transitions are spectral
+  (`isSpectralMap_isLimit_map`), surjective when each component is surjective
+  (`surjective_isLimit_map`), and closed when each component is a closed map
+  (`isClosedMap_isLimit_map`). Surjectivity and closedness do not require spectral
+  target transitions; no result assumes nonempty stages or Hausdorff spaces.
+  See [limit maps](SpectralStoneDuality/LimitMaps.lean).
 - **Subspaces and descent.** A compact open of *any* subspace of a prespectral
   space lifts to an ambient compact open; closedness is unnecessary. A map to
   that subspace is spectral when its composite with the inclusion is spectral.
@@ -106,6 +115,7 @@ or select one of its twenty leaves below.
 | [`FiniteCoordinates.Limits`](SpectralStoneDuality/FiniteCoordinates/Limits.lean) | Compatible-family limit cones for all spaces and evaluation limit cones for spectral spaces |
 | [`Equivalence`](SpectralStoneDuality/Equivalence.lean) | `stoneDuality` |
 | [`Limits`](SpectralStoneDuality/Limits.lean) | Cofiltered spectral limits, projections and set bases |
+| [`LimitMaps`](SpectralStoneDuality/LimitMaps.lean) | Spectral, surjective and closed maps of supplied cofiltered limit cones |
 | [`CompactOpenBasis`](SpectralStoneDuality/CompactOpenBasis.lean) | Open-cylinder bases for actual cones and chosen limits |
 | [`Subspace`](SpectralStoneDuality/Subspace.lean) | Ambient compact-open lifts and spectral-map detection |
 | [`Topology.LocallyClosed`](SpectralStoneDuality/Topology/LocallyClosed.lean) | Inducing spectral maps and compact locally closed subspaces |
@@ -149,6 +159,10 @@ case, nonquotient finite stages and strict three-point refinements.
 The [finite-coordinate limit examples](SpectralStoneDualityExamples/FiniteCoordinateLimits.lean)
 test empty and non-`T₀` boundaries and identify canonical lifts for indiscrete
 two-point and spectral Sierpiński spaces.
+The [limit-map examples](SpectralStoneDualityExamples/LimitMaps.lean) exercise
+the induced-map theorems on finite spectral stages, including a surjection onto
+a two-point space, a nonsurjective closed-point map into non-Hausdorff
+Sierpiński space, and an empty-domain boundary.
 These are separate example modules, not exported by
 `SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
 `SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The

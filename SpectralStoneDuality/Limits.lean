@@ -103,6 +103,7 @@ theorem continuous_constructibleToOriginal (X : Type u) [TopologicalSpace X]
   exact ⟨U, hUs, hUcompact.isOpen_constructibleTopology_of_isOpen hUopen, hxU⟩
 
 /-- Replace every object and map of a spectral diagram by its constructible topology. -/
+@[expose]
 def constructibleDiagram {J : Type v} [SmallCategory J]
     (F : J ⥤ TopCat.{max v u})
     (hmap : ∀ {i j : J} (f : i ⟶ j), IsSpectralMap (F.map f)) :
@@ -138,6 +139,16 @@ def constructibleDiagram {J : Type v} [SmallCategory J]
       F.map g (F.map f (WithTopology.ofTopology x))
     rw [F.map_comp]
     rfl
+
+/-- A constructible diagram map applies the original map to the underlying point. -/
+@[simp]
+theorem constructibleDiagram_map_apply {J : Type v} [SmallCategory J]
+    (F : J ⥤ TopCat.{max v u})
+    (hmap : ∀ {i j : J} (g : i ⟶ j), IsSpectralMap (F.map g))
+    {i j : J} (g : i ⟶ j) (z : (constructibleDiagram F hmap).obj i) :
+    (constructibleDiagram F hmap).map g z =
+      WithTopology.toTopology (constructibleTopology (F.obj j))
+        (F.map g (WithTopology.ofTopology z)) := rfl
 
 /-- The constructible version of a spectral diagram has a compact Hausdorff
 limit. This is the compactness input for the original-topology limit. -/
@@ -176,6 +187,7 @@ theorem compactSpace_constructibleLimit {J : Type v} [SmallCategory J]
   · exact continuous_apply j
 
 /-- Forget the constructible topologies on a compatible section. -/
+@[expose]
 def fromConstructibleLimit {J : Type v} [SmallCategory J]
     (F : J ⥤ TopCat.{max v u})
     (hmap : ∀ {i j : J} (f : i ⟶ j), IsSpectralMap (F.map f)) :
@@ -184,6 +196,15 @@ def fromConstructibleLimit {J : Type v} [SmallCategory J]
   ⟨fun j ↦ WithTopology.ofTopology (x.1 j), by
     intro i j f
     exact congrArg WithTopology.ofTopology (x.2 f)⟩
+
+/-- Forgetting the constructible topology preserves every coordinate of a limit section. -/
+@[simp]
+theorem fromConstructibleLimit_apply {J : Type v} [SmallCategory J]
+    (F : J ⥤ TopCat.{max v u})
+    (hmap : ∀ {i j : J} (f : i ⟶ j), IsSpectralMap (F.map f))
+    (z : (TopCat.limitCone (constructibleDiagram F hmap)).pt) (j : J) :
+    (fromConstructibleLimit F hmap z).1 j = WithTopology.ofTopology (z.1 j) :=
+  rfl
 
 theorem continuous_fromConstructibleLimit {J : Type v} [SmallCategory J]
     (F : J ⥤ TopCat.{max v u})
