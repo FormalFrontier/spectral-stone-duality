@@ -8,7 +8,8 @@ leaves; the cylinder leaves have manual supplements for
 [single-cylinder descent](LimitCylinderDescent.md) and
 [finite-cylinder descent](FiniteCylinderDescent.md). The closed-generizations,
 finite-preservation, finite quasi-sobriety and cofinite APIs are described below.
-The single `SpectralStoneDualityExamples` library includes nine roots:
+The finite compact-open reconstruction API is described below as well.
+The single `SpectralStoneDualityExamples` library includes these roots:
 [duality/limits](../Examples/SpectralStoneDuality.lean),
 [single-cylinder clients](../Examples/LimitCylinderDescent.lean),
 [finite-cylinder clients](../Examples/FiniteCylinderDescent.lean),
@@ -16,8 +17,10 @@ The single `SpectralStoneDualityExamples` library includes nine roots:
 [thin-lattice coproduct examples](../SpectralStoneDualityExamples/LatticeExtensive.lean),
 [finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean),
 [closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean),
-[cofinite examples](../SpectralStoneDualityExamples/Cofinite.lean) and
-[finite-space examples](../SpectralStoneDualityExamples/FiniteSobriety.lean).
+[cofinite examples](../SpectralStoneDualityExamples/Cofinite.lean),
+[finite-space examples](../SpectralStoneDualityExamples/FiniteSobriety.lean) and
+[locally closed examples](../SpectralStoneDualityExamples/LocallyClosed.lean), and
+[finite-coordinate examples](../SpectralStoneDualityExamples/FiniteCoordinates.lean).
 
 ## Prime spectra and the open-set convention
 
@@ -71,6 +74,28 @@ essential**. `spaceSpectrumHomeomorph` and `spaceUnitIso` provide the space-side
 homeomorphism and natural isomorphism. `stoneDuality` packages the two functors
 and their isomorphisms into `BddDistLatᵒᵖ ≌ SpectralCat`. It does not apply to
 arbitrary non-sober spaces or assert a Boolean/Stone-space equivalence.
+
+## Finite compact-open coordinates
+
+`FiniteCoordinates.Stage F` consists of the **realized** compact-open membership
+patterns on a finite family `F`, with the subspace topology inherited from a
+product of Sierpiński `Prop` spaces. It is finite and spectral. Coordinate
+opens, the continuous surjection `point F`, and the continuous surjective
+`restrict` maps give concrete refinements even for the empty space. These
+stages do **not** generally carry the quotient topology of `point F`: one
+coordinate of a discrete two-point space already gives a counterexample.
+
+`FiniteCoordinates.Family X` is the compatible product subtype. The forward
+map `toFamily` is continuous; `inducing_toFamily` uses the singleton-coordinate
+cylinders and the compact-open basis to recover the topology. `injective_toFamily`
+then adds `T0Space X`. Surjectivity needs `CompactSpace X`,
+`QuasiSeparatedSpace X`, `PrespectralSpace X` and `QuasiSober X`, but **not**
+`T0Space X`. For a compatible family, the compact opens with false singleton
+coordinate define a closed intersection `C`. Every true compact open meets
+`C` by finite-stage realization and compactness; the finite-stage meet law
+and the compact-open basis make `C` irreducible. A generic point of `C`
+recovers every coordinate. Under `SpectralSpace X`, `spaceHomeomorph X`
+packages the resulting bijective inducing map as `X ≃ₜ Family X`.
 
 ## Finite preservation in order categories
 

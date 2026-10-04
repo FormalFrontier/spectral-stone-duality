@@ -5,13 +5,15 @@ Authors: Formal Frontier Agents
 module
 
 public import Mathlib.Topology.Sober
+public import Mathlib.Topology.Spectral.Basic
 
 /-!
-# Generic points of finite irreducible sets
+# Generic points and spectral finite spaces
 
 Every finite irreducible subset of a topological space contains a generic point of its
 closure. Consequently, every finite topological space is quasi-sober, without any
-separation or nonemptiness assumption.
+separation or nonemptiness assumption. Every finite T₀ topological space is spectral,
+including the empty space.
 -/
 
 @[expose] public section
@@ -57,3 +59,12 @@ instance (priority := 90) instQuasiSoberOfFinite
   sober hs hclosed := by
     obtain ⟨x, _, hx⟩ := hs.exists_isGenericPoint_of_finite (Set.toFinite _) hclosed
     exact ⟨x, hx⟩
+
+/-- A finite T₀ topological space is spectral, including the empty space. -/
+instance (priority := 90) instSpectralSpaceOfFinite
+    (X : Type u) [TopologicalSpace X] [Finite X] [T0Space X] : SpectralSpace X where
+  __ := (inferInstance : T0Space X)
+  __ := (inferInstance : CompactSpace X)
+  __ := (inferInstance : QuasiSober X)
+  __ := (inferInstance : QuasiSeparatedSpace X)
+  __ := (inferInstance : PrespectralSpace X)

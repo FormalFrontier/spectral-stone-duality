@@ -19,6 +19,7 @@ public import SpectralStoneDuality.Topology.Soberification
 public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
 public import SpectralStoneDuality.Topology.Finite
+public import SpectralStoneDuality.FiniteCoordinates
 public import SpectralStoneDuality.Topology.NhdsKer
 public import SpectralStoneDuality.CategoryTheory.Lattice.Extensive
 public import SpectralStoneDuality.CategoryTheory.Lattice.Preserves
@@ -46,6 +47,8 @@ finiteness of its underlying type, including the empty case.
 The `Topology.Finite` leaf proves that every finite irreducible set contains a generic
 point of its closure; every finite topological space is therefore quasi-sober, without
 a separation assumption.
+The `FiniteCoordinates` leaf reconstructs a spectral space from compatible realized
+Sierpiński membership patterns at its finite families of compact opens.
 The `Topology.NhdsKer` leaf identifies the unique closed point in the subspace
 of generizations of a point in any `T₀` space.
 The `Topology.LocallyClosed` leaf gives retrocompactness and prespectral,

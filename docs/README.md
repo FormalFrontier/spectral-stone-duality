@@ -10,7 +10,7 @@ supplements: [compact-open cylinder bases](CompactOpenBasis.md) (eight public
 declarations), [single-cylinder descent](LimitCylinderDescent.md) (three
 theorems) and [finite-cylinder descent](FiniteCylinderDescent.md) (three
 producer theorems). The lattice, finite-preservation, soberification,
-finite-topology, cofinite and closed-generizations leaves are linked from the
+finite-topology, finite-coordinate, cofinite and closed-generizations leaves are linked from the
 [library README](../README.md);
 none of these later leaves has native display records in this reference.
 Their import-only clients are not additional public
