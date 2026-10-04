@@ -5,6 +5,7 @@ Authors: Formal Frontier Agents
 module
 
 public import SpectralStoneDuality.Topology.Category.Soberification
+public import SpectralStoneDuality.Topology.Cofinite
 
 /-!
 # Boundary examples for soberification
@@ -187,21 +188,8 @@ example : ¬ Function.Surjective (unit (CofiniteTopology ℕ)) := by
     trivial
   exact Nat.zero_ne_one (CofiniteTopology.of.injective (hzero.trans hone.symm))
 
-example : ¬ QuasiSober (CofiniteTopology ℕ) := by
-  intro hqs
-  obtain ⟨x, hx⟩ := QuasiSober.sober
-    (IrreducibleSpace.isIrreducible_univ (CofiniteTopology ℕ)) isClosed_univ
-  have hsingleton : ({x} : Set (CofiniteTopology ℕ)) = Set.univ := by
-    simpa only [isClosed_singleton.closure_eq] using hx.def
-  have hzero : CofiniteTopology.of 0 = x := by
-    have := congrArg (fun S : Set (CofiniteTopology ℕ) => CofiniteTopology.of 0 ∈ S)
-      hsingleton
-    simpa using this
-  have hone : CofiniteTopology.of 1 = x := by
-    have := congrArg (fun S : Set (CofiniteTopology ℕ) => CofiniteTopology.of 1 ∈ S)
-      hsingleton
-    simpa using this
-  exact Nat.zero_ne_one (CofiniteTopology.of.injective (hzero.trans hone.symm))
+example : ¬ QuasiSober (CofiniteTopology ℕ) :=
+  CofiniteTopology.not_quasiSober ℕ
 
 universe u v w
 

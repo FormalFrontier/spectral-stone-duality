@@ -6,16 +6,17 @@ public alternatives. The [historical native API](API.md) displays seven original
 leaves; the cylinder leaves have manual supplements for
 [compact-open cylinder bases](CompactOpenBasis.md),
 [single-cylinder descent](LimitCylinderDescent.md) and
-[finite-cylinder descent](FiniteCylinderDescent.md). The closed-generizations
-and finite-preservation APIs are described below. The
-`SpectralStoneDualityExamples` target includes seven roots:
+[finite-cylinder descent](FiniteCylinderDescent.md). The closed-generizations,
+finite-preservation and cofinite APIs are described below. The single
+`SpectralStoneDualityExamples` library includes eight roots:
 [duality/limits](../Examples/SpectralStoneDuality.lean),
 [single-cylinder clients](../Examples/LimitCylinderDescent.lean),
 [finite-cylinder clients](../Examples/FiniteCylinderDescent.lean),
 [soberification examples](../SpectralStoneDualityExamples/Soberification.lean),
 [thin-lattice coproduct examples](../SpectralStoneDualityExamples/LatticeExtensive.lean),
-[finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean) and
-[closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean).
+[finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean),
+[closed-generization examples](../SpectralStoneDualityExamples/NhdsKer.lean) and
+[cofinite examples](../SpectralStoneDualityExamples/Cofinite.lean).
 
 ## Prime spectra and the open-set convention
 
@@ -160,6 +161,20 @@ nor `Y` compact is assumed. The proof takes a finite ambient basic-open
 subcover of the compact image of the subspace open. If `g : Z → Y` becomes a
 spectral map after composition with `Subtype.val : Y → X`, then
 `isSpectralMap_to_subtype_of_comp` detects spectrality of `g` using that lift.
+
+## Cofinite spaces and quasi-sobriety
+
+The [cofinite topology](../SpectralStoneDuality/Topology/Cofinite.lean) is
+quasi-sober exactly when the underlying type is finite:
+`CofiniteTopology.quasiSober_iff_finite X` works for any universe and includes
+the empty type. Finite cofinite spaces are discrete, hence quasi-sober; their
+`T₁` property makes them sober. For an infinite type, the whole cofinite space
+is a nonempty irreducible closed set. It has no generic point: the closure of
+each singleton is just that singleton. The corollary
+`CofiniteTopology.not_quasiSober X` packages this obstruction under
+`[Infinite X]`. The [examples](../SpectralStoneDualityExamples/Cofinite.lean)
+test the empty, two-point and Nat cases independently of the separate
+soberification-unit nonsurjectivity example.
 
 ## Closed generizations
 

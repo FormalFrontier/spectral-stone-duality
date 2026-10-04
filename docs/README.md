@@ -9,7 +9,7 @@ not omitted accidentally. Thirty-eight authored notes are explicitly labelled
 supplements: [compact-open cylinder bases](CompactOpenBasis.md) (eight public
 declarations), [single-cylinder descent](LimitCylinderDescent.md) (three
 theorems) and [finite-cylinder descent](FiniteCylinderDescent.md) (three
-producer theorems). The lattice, finite-preservation, soberification and
+producer theorems). The lattice, finite-preservation, soberification, cofinite and
 closed-generizations leaves are linked from the [library README](../README.md);
 none of these later leaves has native display records in this reference.
 Their import-only clients are not additional public

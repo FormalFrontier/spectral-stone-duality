@@ -20,6 +20,8 @@ project:
     Functors between thin order categories of bounded lattices preserve finite
     limits and colimits exactly when their object maps are bounded lattice
     homomorphisms, without distributivity or shared carrier universe.
+    A cofinite space is quasi-sober exactly when its underlying type is finite,
+    including the empty space.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -52,6 +54,12 @@ sources:
       of every topological space; the unit and categorical adjunction impose
       no separation or spectrality condition on the input. This general-topology
       result is separate from reconstruction of spectral spaces.
+  - title: "Cofinite quasi-sobriety"
+    type: "folklore"
+    relationship: "independently-proves"
+    note: >-
+      Finite cofinite spaces, including the empty space, are sober; infinite
+      cofinite spaces are irreducible and T1 but lack a generic point.
   - title: "Foundations of Rigid Geometry I"
     authors:
       - "Kazuhiro Fujiwara"
@@ -99,6 +107,8 @@ status:
     Finite-limit- and finite-colimit-preserving functors between thin bounded
     lattice categories correspond to bounded lattice homomorphisms; the
     binary preservation laws also hold for the corresponding semilattices.
+    Cofinite topology is quasi-sober precisely on finite underlying types,
+    with no nonemptiness assumption.
     Source-specific correspondence and coverage decisions are maintained
     separately.
 

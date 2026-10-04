@@ -5,8 +5,7 @@ Apache-2.0 notices and are distributed under the [project license](../LICENSE).
 This collective credit does not identify a copyright holder, confer rights in
 third-party material or imply endorsement by the authors of a mathematical
 reference. Contributor origins below distinguish original expression from
-project adaptations; exact internal donor and review records are retained
-separately from these public reader-facing credits.
+project adaptations.
 
 ## Lean development
 
