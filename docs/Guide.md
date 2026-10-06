@@ -238,6 +238,8 @@ spaces extend uniquely, yielding a reflection in `TopCat`. Fujiwara–Kato,
 develops the open-set and extension argument directly with Mathlib's
 irreducible-closed API, rather than following the source's cited EGA proof.
 
+## Constructibly closed spectral subspaces
+
 The [constructible-subspace topology](../SpectralStoneDuality/Topology/ConstructibleSubspace.lean)
 uses `IsClosed[constructibleTopology X] S`, not the narrower predicate
 `IsConstructible S`. For spectral `X`, it gives `SpectralSpace S` and a spectral
