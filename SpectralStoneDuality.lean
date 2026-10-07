@@ -22,6 +22,7 @@ public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
 public import SpectralStoneDuality.Topology.Finite
 public import SpectralStoneDuality.Topology.GenericPointRemoval
+public import SpectralStoneDuality.Topology.SubspaceStrictSpecializations
 public import SpectralStoneDuality.FiniteCoordinates
 public import SpectralStoneDuality.FiniteCoordinates.Limits
 public import SpectralStoneDuality.Topology.NhdsKer
@@ -54,6 +55,8 @@ a separation assumption.
 The `Topology.GenericPoint` and `Topology.GenericPointRemoval` leaves define an
 independent fork and its discrete-boundary four-map square for removing selected
 generic points from an Alexandrov space.
+The `Topology.SubspaceStrictSpecializations` leaf relates ambient strict
+specializations to that boundary in a closed subspace without a `T₀` assumption.
 The `FiniteCoordinates` leaf reconstructs a spectral space from compatible realized
 Sierpiński membership patterns at its finite families of compact opens.
 The `Topology.NhdsKer` leaf identifies the unique closed point in the subspace

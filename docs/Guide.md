@@ -13,6 +13,7 @@ The single `SpectralStoneDualityExamples` library includes these roots:
 [duality/limits](../Examples/SpectralStoneDuality.lean),
 [single-cylinder clients](../Examples/LimitCylinderDescent.lean),
 [finite-cylinder clients](../Examples/FiniteCylinderDescent.lean),
+[generic-point removal examples](../SpectralStoneDualityExamples/GenericPointRemoval.lean),
 [soberification examples](../SpectralStoneDualityExamples/Soberification.lean),
 [thin-lattice coproduct examples](../SpectralStoneDualityExamples/LatticeExtensive.lean),
 [finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean),
@@ -20,6 +21,7 @@ The single `SpectralStoneDualityExamples` library includes these roots:
 [cofinite examples](../SpectralStoneDualityExamples/Cofinite.lean),
 [finite-space examples](../SpectralStoneDualityExamples/FiniteSobriety.lean),
 [locally closed examples](../SpectralStoneDualityExamples/LocallyClosed.lean),
+[constructible-subspace examples](../SpectralStoneDualityExamples/ConstructibleSubspace.lean),
 [finite-coordinate examples](../SpectralStoneDualityExamples/FiniteCoordinates.lean),
 [finite-coordinate limit examples](../SpectralStoneDualityExamples/FiniteCoordinateLimits.lean),
 and [limit-map examples](../SpectralStoneDualityExamples/LimitMaps.lean).

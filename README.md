@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its twenty-four leaves below.
+or select one of its twenty-five leaves below.
 
 ## Headline results
 
@@ -79,6 +79,14 @@ or select one of its twenty-four leaves below.
   continuous maps glue uniquely. Neither a finite-space representation nor a
   ring- or scheme-level pushout is asserted. See
   [generic-point removal](SpectralStoneDuality/Topology/GenericPointRemoval.lean).
+- **Closed-subspace strict specializations.** If all ambient specializations of
+  a selected point lie in a subspace and the selected points there have no
+  other generizations, the ambient strict indices agree with the subspace
+  strict-incidence indices, preserving both endpoints. Closed subspaces give
+  the containment condition. Finite containing subspaces bound the ambient
+  indices without a selected-point assumption; an Alexandrov subspace makes
+  the selected points relatively open. No `T₀` assumption is needed. See
+  [subspace strict specializations](SpectralStoneDuality/Topology/SubspaceStrictSpecializations.lean).
 - **Limits and cylinder bases.** Small cofiltered diagrams of spectral spaces
   with **spectral transition maps** have spectral limits and spectral
   projections. Compact-open inverse-image cylinders form a basis for a supplied
@@ -151,6 +159,7 @@ or select one of its twenty-four leaves below.
 | [`Topology.Finite`](SpectralStoneDuality/Topology/Finite.lean) | Generic points of finite irreducible sets; finite-space quasi-sobriety |
 | [`Topology.GenericPoint`](SpectralStoneDuality/Topology/GenericPoint.lean) | Independent generic point with arbitrary closed-point indices |
 | [`Topology.GenericPointRemoval`](SpectralStoneDuality/Topology/GenericPointRemoval.lean) | Discrete labelled specialization boundary, four-map square and Alexandrov pushout criterion |
+| [`Topology.SubspaceStrictSpecializations`](SpectralStoneDuality/Topology/SubspaceStrictSpecializations.lean) | Ambient strict indices in a closed subspace, point equations and selected-point openness |
 | [`Topology.Cofinite`](SpectralStoneDuality/Topology/Cofinite.lean) | Cofinite quasi-sobriety iff finiteness, infinite obstruction |
 
 The [aggregate import](SpectralStoneDuality.lean) publicly re-exports these
@@ -162,6 +171,9 @@ The separately built
 [`SpectralStoneDualityExamples/GenericPointRemoval.lean`](SpectralStoneDualityExamples/GenericPointRemoval.lean)
 compares discrete incidence boundaries with non-discrete complements and
 exhibits a noninjective gluing map.
+The [subspace specialization examples](SpectralStoneDualityExamples/SubspaceStrictSpecializations.lean)
+compare ambient and relative boundaries in a proper closed component of a
+non-`T₀` space and give independent containment and genericity obstructions.
 The separately built
 [`SpectralStoneDualityExamples/Soberification.lean`](SpectralStoneDualityExamples/Soberification.lean)
 exercises the reflection on empty and non-separated spaces, `Prop` and the
