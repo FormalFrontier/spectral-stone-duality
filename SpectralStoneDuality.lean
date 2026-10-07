@@ -55,6 +55,8 @@ a separation assumption.
 The `Topology.GenericPoint` and `Topology.GenericPointRemoval` leaves define an
 independent fork and its discrete-boundary four-map square for removing selected
 generic points from an Alexandrov space.
+Index equivalences relabel the independent fork's closed points while fixing
+its generic point.
 The `Topology.SubspaceStrictSpecializations` leaf relates ambient strict
 specializations to that boundary in a closed subspace without a `T₀` assumption.
 The `FiniteCoordinates` leaf reconstructs a spectral space from compatible realized

@@ -157,7 +157,7 @@ or select one of its twenty-five leaves below.
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 | [`Topology.Finite`](SpectralStoneDuality/Topology/Finite.lean) | Generic points of finite irreducible sets; finite-space quasi-sobriety |
-| [`Topology.GenericPoint`](SpectralStoneDuality/Topology/GenericPoint.lean) | Independent generic point with arbitrary closed-point indices |
+| [`Topology.GenericPoint`](SpectralStoneDuality/Topology/GenericPoint.lean) | Independent generic point with arbitrary closed-point indices and reindexing by equivalence |
 | [`Topology.GenericPointRemoval`](SpectralStoneDuality/Topology/GenericPointRemoval.lean) | Discrete labelled specialization boundary, four-map square and Alexandrov pushout criterion |
 | [`Topology.SubspaceStrictSpecializations`](SpectralStoneDuality/Topology/SubspaceStrictSpecializations.lean) | Ambient strict indices in a closed subspace, point equations and selected-point openness |
 | [`Topology.Cofinite`](SpectralStoneDuality/Topology/Cofinite.lean) | Cofinite quasi-sobriety iff finiteness, infinite obstruction |
@@ -171,6 +171,10 @@ The separately built
 [`SpectralStoneDualityExamples/GenericPointRemoval.lean`](SpectralStoneDualityExamples/GenericPointRemoval.lean)
 compares discrete incidence boundaries with non-discrete complements and
 exhibits a noninjective gluing map.
+The [generic-point reindexing examples](SpectralStoneDualityExamples/GenericPointReindex.lean)
+test empty, singleton, two-point permutation and universe-lifted closed-point
+indices. These points belong to the independent fork, not to a topology
+inherited by any ambient endpoint set.
 The [subspace specialization examples](SpectralStoneDualityExamples/SubspaceStrictSpecializations.lean)
 compare ambient and relative boundaries in a proper closed component of a
 non-`T₀` space and give independent containment and genericity obstructions.

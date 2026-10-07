@@ -6,6 +6,7 @@ module
 
 public import Mathlib.Topology.AlexandrovDiscrete
 public import Mathlib.Topology.Order.UpperLowerSetTopology
+public import Mathlib.Topology.Homeomorph.Defs
 
 /-!
 # A generic point with independent closed specializations
@@ -16,6 +17,8 @@ finite. Its internal order has `generic ≤ closed i` and its opens are lower
 sets. This internal order is opposite to the order on `Specialization`:
 `Specialization.toEquiv_le_toEquiv` identifies the latter with the convention
 that specializations lie *below* their generizations.
+An equivalence of index types relabels the independent closed points while
+fixing the generic point.
 
 ## References
 
@@ -33,7 +36,7 @@ that specializations lie *below* their generizations.
 set_option autoImplicit false
 set_option relaxedAutoImplicit false
 
-universe v w
+universe u v w
 
 namespace Topology
 
@@ -132,6 +135,73 @@ theorem continuous_of_specializes {Y : Type w} [TopologicalSpace Y]
     cases x with
     | generic => exact hx
     | closed i => exact (specializes_iff_forall_open.mp (hf i)) s hs hx
+
+/-- Relabel the closed points of an independent generic-point fork by an
+equivalence; the generic point stays fixed. -/
+def reindex {κ : Type u} (e : ι ≃ κ) : WithGenericPoint ι ≃ₜ WithGenericPoint κ where
+  toEquiv := {
+    toFun := fun x => match x with
+      | .generic => .generic
+      | .closed i => .closed (e i)
+    invFun := fun x => match x with
+      | .generic => .generic
+      | .closed j => .closed (e.symm j)
+    left_inv := by
+      intro x
+      cases x with
+      | generic => rfl
+      | closed i => simp
+    right_inv := by
+      intro x
+      cases x with
+      | generic => rfl
+      | closed j => simp
+  }
+  continuous_toFun := by
+    apply continuous_of_specializes
+    intro i
+    exact generic_specializes (e i)
+  continuous_invFun := by
+    apply continuous_of_specializes
+    intro j
+    exact generic_specializes (e.symm j)
+
+@[simp]
+theorem reindex_apply_generic {κ : Type u} (e : ι ≃ κ) :
+    reindex e .generic = .generic := rfl
+
+@[simp]
+theorem reindex_apply_closed {κ : Type u} (e : ι ≃ κ) (i : ι) :
+    reindex e (.closed i) = .closed (e i) := rfl
+
+@[simp]
+theorem reindex_symm_apply_generic {κ : Type u} (e : ι ≃ κ) :
+    (reindex e).symm .generic = .generic := rfl
+
+@[simp]
+theorem reindex_symm_apply_closed {κ : Type u} (e : ι ≃ κ) (j : κ) :
+    (reindex e).symm (.closed j) = .closed (e.symm j) := rfl
+
+/-- Reindexing by the identity equivalence is the identity homeomorphism. -/
+@[simp]
+theorem reindex_refl :
+    reindex (Equiv.refl ι) = Homeomorph.refl (WithGenericPoint ι) := by
+  ext x
+  cases x <;> rfl
+
+/-- Successive relabellings agree with relabelling by the composite equivalence. -/
+@[simp]
+theorem reindex_trans {κ : Type u} {τ : Type w} (e : ι ≃ κ) (f : κ ≃ τ) :
+    reindex (e.trans f) = (reindex e).trans (reindex f) := by
+  ext x
+  cases x <;> rfl
+
+/-- Inverse relabelling agrees with the inverse homeomorphism. -/
+@[simp]
+theorem reindex_symm {κ : Type u} (e : ι ≃ κ) :
+    reindex e.symm = (reindex e).symm := by
+  ext x
+  cases x <;> rfl
 
 end WithGenericPoint
 

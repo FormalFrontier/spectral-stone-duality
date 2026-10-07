@@ -14,6 +14,8 @@ The single `SpectralStoneDualityExamples` library includes these roots:
 [single-cylinder clients](../Examples/LimitCylinderDescent.lean),
 [finite-cylinder clients](../Examples/FiniteCylinderDescent.lean),
 [generic-point removal examples](../SpectralStoneDualityExamples/GenericPointRemoval.lean),
+[generic-point reindexing examples](../SpectralStoneDualityExamples/GenericPointReindex.lean),
+[subspace specialization examples](../SpectralStoneDualityExamples/SubspaceStrictSpecializations.lean),
 [soberification examples](../SpectralStoneDualityExamples/Soberification.lean),
 [thin-lattice coproduct examples](../SpectralStoneDualityExamples/LatticeExtensive.lean),
 [finite-preservation examples](../SpectralStoneDualityExamples/LatticePreserves.lean),
