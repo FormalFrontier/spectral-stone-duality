@@ -21,6 +21,7 @@ public import SpectralStoneDuality.Topology.Soberification
 public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
 public import SpectralStoneDuality.Topology.Finite
+public import SpectralStoneDuality.Topology.GenericPointRemoval
 public import SpectralStoneDuality.FiniteCoordinates
 public import SpectralStoneDuality.FiniteCoordinates.Limits
 public import SpectralStoneDuality.Topology.NhdsKer
@@ -50,6 +51,9 @@ finiteness of its underlying type, including the empty case.
 The `Topology.Finite` leaf proves that every finite irreducible set contains a generic
 point of its closure; every finite topological space is therefore quasi-sober, without
 a separation assumption.
+The `Topology.GenericPoint` and `Topology.GenericPointRemoval` leaves define an
+independent fork and its discrete-boundary four-map square for removing selected
+generic points from an Alexandrov space.
 The `FiniteCoordinates` leaf reconstructs a spectral space from compatible realized
 Sierpiński membership patterns at its finite families of compact opens.
 The `Topology.NhdsKer` leaf identifies the unique closed point in the subspace

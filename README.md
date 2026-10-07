@@ -4,7 +4,7 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its twenty-two leaves below.
+or select one of its twenty-four leaves below.
 
 ## Headline results
 
@@ -70,6 +70,15 @@ or select one of its twenty-two leaves below.
   [`isClosed_singleton_nhdsKer_iff`](SpectralStoneDuality/Topology/NhdsKer.lean)
   characterizes every closed singleton in that subspace. No sobriety or
   spectrality is needed. See [closed generizations](docs/Guide.md#closed-generizations).
+- **Generic-point removal.** In an Alexandrov space, select any set of points
+  each with no other generizations (including indistinguishable ones). The
+  discrete boundary labelled by strict specialization incidences maps to a sum
+  of independent generic-point forks and to the complementary subspace; together
+  these form a four-map pushout in `TopCat`. Openness and continuity on the
+  original space are detected on the forks and complement, and compatible
+  continuous maps glue uniquely. Neither a finite-space representation nor a
+  ring- or scheme-level pushout is asserted. See
+  [generic-point removal](SpectralStoneDuality/Topology/GenericPointRemoval.lean).
 - **Limits and cylinder bases.** Small cofiltered diagrams of spectral spaces
   with **spectral transition maps** have spectral limits and spectral
   projections. Compact-open inverse-image cylinders form a basis for a supplied
@@ -140,6 +149,8 @@ or select one of its twenty-two leaves below.
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 | [`Topology.Finite`](SpectralStoneDuality/Topology/Finite.lean) | Generic points of finite irreducible sets; finite-space quasi-sobriety |
+| [`Topology.GenericPoint`](SpectralStoneDuality/Topology/GenericPoint.lean) | Independent generic point with arbitrary closed-point indices |
+| [`Topology.GenericPointRemoval`](SpectralStoneDuality/Topology/GenericPointRemoval.lean) | Discrete labelled specialization boundary, four-map square and Alexandrov pushout criterion |
 | [`Topology.Cofinite`](SpectralStoneDuality/Topology/Cofinite.lean) | Cofinite quasi-sobriety iff finiteness, infinite obstruction |
 
 The [aggregate import](SpectralStoneDuality.lean) publicly re-exports these
@@ -147,6 +158,10 @@ leaves. The three existing example modules are
 [`Examples/SpectralStoneDuality.lean`](Examples/SpectralStoneDuality.lean),
 [`Examples/LimitCylinderDescent.lean`](Examples/LimitCylinderDescent.lean), and
 [`Examples/FiniteCylinderDescent.lean`](Examples/FiniteCylinderDescent.lean).
+The separately built
+[`SpectralStoneDualityExamples/GenericPointRemoval.lean`](SpectralStoneDualityExamples/GenericPointRemoval.lean)
+compares discrete incidence boundaries with non-discrete complements and
+exhibits a noninjective gluing map.
 The separately built
 [`SpectralStoneDualityExamples/Soberification.lean`](SpectralStoneDualityExamples/Soberification.lean)
 exercises the reflection on empty and non-separated spaces, `Prop` and the

@@ -82,6 +82,14 @@ library supplies ideal-completion and compact-principal results at the pin in
 are used here. Dependency authors retain their own notices and license terms;
 neither dependency is credited as original project expression.
 
+The generic-point fork and its independent closed points follow the earlier
+Formal Frontier formalization in *Valuation Integers*. Its topological
+specialization laws are combined here with mathlib's specialization-order and
+topological-category APIs for the discrete-incidence gluing square. The
+finite-space motivation follows Stefan Schröer, *A simple proof for Hochster's
+Theorem*, §2. Schröer credits an antecedent of Y. Ershov; Ershov's original
+text was not consulted.
+
 ## Documentation tooling
 
 [`scripts/generate_api.py`](../scripts/generate_api.py) and
