@@ -59,7 +59,8 @@ def stageDiagram (X : Type u) [TopologicalSpace X] :
 
 @[simp] theorem stageDiagram_map_apply {F G : (Finset (CompactOpens X))ᵒᵖ}
     (f : F ⟶ G) (v : Stage F.unop) :
-    (stageDiagram X).map f v = restrict (leOfHom f.unop) v := rfl
+    ConcreteCategory.hom (X := TopCat.of (Stage F.unop)) (Y := TopCat.of (Stage G.unop))
+      ((stageDiagram X).map f) v = restrict (leOfHom f.unop) v := rfl
 
 /-- Compatible families, with their stage projections, form a cone. -/
 def familyCone (X : Type u) [TopologicalSpace X] : Cone (stageDiagram X) where
@@ -75,7 +76,9 @@ def familyCone (X : Type u) [TopologicalSpace X] : Cone (stageDiagram X) where
       exact (Family.restrict_apply z G.unop F.unop (leOfHom f.unop)).symm }
 
 @[simp] theorem familyCone_π_apply (F : (Finset (CompactOpens X))ᵒᵖ)
-    (z : Family X) : (familyCone X).π.app F z = z.1 F.unop := rfl
+    (z : Family X) :
+    ConcreteCategory.hom (X := (familyCone X).pt) (Y := TopCat.of (Stage F.unop))
+      ((familyCone X).π.app F) z = z.1 F.unop := rfl
 
 /-- Projecting a compatible family after forgetting coordinates agrees with projecting
 directly to the smaller stage. -/
@@ -138,11 +141,14 @@ def evaluationCone (X : Type u) [TopologicalSpace X] : Cone (stageDiagram X) whe
       exact (restrict_point (leOfHom f.unop) x).symm }
 
 @[simp] theorem evaluationCone_π_apply (F : (Finset (CompactOpens X))ᵒᵖ)
-    (x : X) : (evaluationCone X).π.app F x = point F.unop x := rfl
+    (x : X) :
+    ConcreteCategory.hom (X := (evaluationCone X).pt) (Y := TopCat.of (Stage F.unop))
+      ((evaluationCone X).π.app F) x = point F.unop x := rfl
 
 @[simp] theorem evaluationCone_π_coordinate (F : Finset (CompactOpens X))
     (U : Coordinates F) (x : X) :
-    ((evaluationCone X).π.app (Opposite.op F) x).1 U ↔ x ∈ (U.1 : Set X) := Iff.rfl
+    (ConcreteCategory.hom (X := (evaluationCone X).pt) (Y := TopCat.of (Stage F))
+      ((evaluationCone X).π.app (Opposite.op F)) x).1 U ↔ x ∈ (U.1 : Set X) := Iff.rfl
 
 /-- Finite-stage evaluation is compatible with every refinement of coordinates. -/
 theorem evaluationCone_restrict_apply {F G : Finset (CompactOpens X)} (hFG : F ⊆ G)

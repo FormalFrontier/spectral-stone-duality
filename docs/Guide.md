@@ -31,15 +31,11 @@ and [limit-map examples](../SpectralStoneDualityExamples/LimitMaps.lean).
 ## Prime spectra and the open-set convention
 
 `SpectralStoneDuality.PrimeIdealSpectrum A` is the subtype of prime **order
-ideals** of a distributive lattice with bounded order. The `BoundedOrder A`
-parameter is retained at this public boundary even though the underlying
-subtype expression only uses the distributive lattice instance: it is the
-bounded-lattice object used throughout the spectrum API, including prime
-properness, the compact top open and functoriality. The historical native linter
-reports this parameter unused in the abbreviation's *body*; the exposed
-interface deliberately retains bounded order. This is not a linter pass and
-has not been suppressed. In particular `A` need not
-be nontrivial; its prime spectrum may be empty.
+ideals** of a preorder `A`. The carrier type, complementary `primeFilter` and
+set-valued `basicOpen` API require only `[Preorder A]`. The spectral topology
+and Stone duality below use the stronger bounded distributive lattice
+assumptions `[DistribLattice A] [BoundedOrder A]`. In this bounded-lattice
+setting `A` need not be nontrivial; its prime spectrum may be empty.
 
 For an order ideal `I`, `PrimeIdealSpectrum.basicOpen I` is `D(I)`, the prime
 ideals `P` for which `I` is *not* contained in `P`. This orientation matters:

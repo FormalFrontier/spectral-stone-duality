@@ -223,8 +223,8 @@ Install [elan](https://github.com/leanprover/elan); this repository pins Lean
 `v4.34.0-rc2`, mathlib `83abb3e776bdefcbc447a1e44d0debe4010039e5`
 and the officially published `ideal-completion` dependency
 `001e3b7508184ecd51e0d86177cb1d54508bf59d`. The resolved graph is in
-[`lake-manifest.json`](lake-manifest.json). The ideal-completion GitHub
-repository is private; building requires authorized access. Fetch the matching
+[`lake-manifest.json`](lake-manifest.json). Both dependencies are publicly available
+on GitHub. Fetch the matching
 precompiled mathlib cache **before** a build, including after changing pins or
 replacing `.lake`; stop and diagnose if the cache fetch fails:
 

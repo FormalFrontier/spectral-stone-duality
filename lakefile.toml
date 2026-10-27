@@ -2,6 +2,8 @@ name = "spectral-stone-duality"
 version = "0.1.0"
 defaultTargets = ["SpectralStoneDuality", "SpectralStoneDualityExamples"]
 
+lintDriver = "batteries/runLinter"
+
 [leanOptions]
 autoImplicit = false
 relaxedAutoImplicit = false

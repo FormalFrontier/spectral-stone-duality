@@ -42,7 +42,8 @@ namespace SpectralStoneDualityExamples.GenericPointRemoval
 
 section Empty
 
-local instance : TopologicalSpace Empty := ⊥
+/-- The discrete topology on the empty type. -/
+local instance emptyDiscreteTopology : TopologicalSpace Empty := ⊥
 
 private def emptyG : Set Empty := ∅
 
@@ -61,7 +62,8 @@ end Empty
 
 section Singleton
 
-local instance : TopologicalSpace PUnit := ⊥
+/-- The discrete topology on the singleton type `PUnit`. -/
+local instance singletonDiscreteTopology : TopologicalSpace PUnit := ⊥
 
 private def singletonG : Set PUnit := Set.univ
 
@@ -86,7 +88,8 @@ section ThreePointChain
 
 local notation "Chain" => Fin 3
 
-local instance : TopologicalSpace Chain := Topology.upperSet Chain
+/-- The upper-set topology on the three-point chain `Fin 3`. -/
+local instance threePointChainUpperSetTopology : TopologicalSpace Chain := Topology.upperSet Chain
 
 private def chainG : Set Chain := {2}
 
@@ -161,7 +164,8 @@ section SharedSpecialization
 
 local notation "V" => WithGenericPoint Bool
 
-local instance : TopologicalSpace V := Topology.upperSet V
+/-- The upper-set topology on `WithGenericPoint Bool`. -/
+local instance withGenericPointBoolUpperSetTopology : TopologicalSpace V := Topology.upperSet V
 
 private def left : V := .closed false
 private def right : V := .closed true

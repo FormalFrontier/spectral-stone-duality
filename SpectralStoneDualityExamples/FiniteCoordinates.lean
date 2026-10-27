@@ -54,7 +54,8 @@ private theorem not_t1_single_coordinate {X : Type*} [TopologicalSpace X]
 
 section Empty
 
-local instance : TopologicalSpace Empty := ⊥
+/-- The discrete topology on the empty type `Empty`. -/
+local instance discreteEmptyTopology : TopologicalSpace Empty := ⊥
 
 example (F : Finset (CompactOpens Empty)) : IsEmpty (Stage F) := by
   refine ⟨fun v => ?_⟩
@@ -70,7 +71,8 @@ end Empty
 
 section Singleton
 
-local instance : TopologicalSpace PUnit := ⊥
+/-- The discrete topology on the singleton type `PUnit`. -/
+local instance discretePUnitTopology : TopologicalSpace PUnit := ⊥
 
 example (F : Finset (CompactOpens PUnit)) : Nonempty (Stage F) :=
   ⟨point F PUnit.unit⟩
@@ -122,7 +124,8 @@ end Sierpinski
 
 section NonT0
 
-local instance : TopologicalSpace (Fin 2) := ⊤
+/-- The indiscrete topology on the two-point type `Fin 2`. -/
+local instance indiscreteFinTwoTopology : TopologicalSpace (Fin 2) := ⊤
 
 example : Function.Surjective (toFamily (X := Fin 2)) :=
   surjective_toFamily
@@ -144,7 +147,8 @@ end NonT0
 
 section TwoPoints
 
-local instance : TopologicalSpace (Fin 2) := ⊥
+/-- The discrete topology on the two-point type `Fin 2`. -/
+local instance discreteFinTwoTopology : TopologicalSpace (Fin 2) := ⊥
 
 private def singletonOpen : CompactOpens (Fin 2) where
   carrier := {0}
@@ -187,7 +191,8 @@ end TwoPoints
 
 section Refinement
 
-local instance : TopologicalSpace (Fin 3) := ⊥
+/-- The discrete topology on the three-point type `Fin 3`. -/
+local instance discreteFinThreeTopology : TopologicalSpace (Fin 3) := ⊥
 
 private def singletonOpen3 (index : Fin 3) : CompactOpens (Fin 3) where
   carrier := {index}

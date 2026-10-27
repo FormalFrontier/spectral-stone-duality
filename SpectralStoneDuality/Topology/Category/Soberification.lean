@@ -104,7 +104,7 @@ theorem soberificationHomEquiv_apply (X : TopCat.{u}) (Y : SoberTopCat.{u})
 theorem soberificationHomEquiv_symm_apply (X : TopCat.{u}) (Y : SoberTopCat.{u})
     (f : X ⟶ soberInclusion.obj Y) :
     ((soberificationHomEquiv X Y).symm f).hom.hom =
-      @IrreducibleCloseds.extend X Y.obj _ _ Y.property.2 Y.property.1 f.hom :=
+      @IrreducibleCloseds.extend X Y.obj _ _ Y.property.2 f.hom :=
   rfl
 
 /-- Soberification is left adjoint to inclusion of sober spaces;
@@ -122,10 +122,10 @@ noncomputable def soberificationAdjunction : soberification.{u} ⊣ soberInclusi
       apply IrreducibleCloseds.continuous_ext_of_comp_unit (Y := Y.obj)
       apply ContinuousMap.ext
       intro x
-      change (@IrreducibleCloseds.extend X' Y.obj _ _ Y.property.2 Y.property.1
+      change (@IrreducibleCloseds.extend X' Y.obj _ _ Y.property.2
           (g.hom.comp f.hom)).toFun
           (IrreducibleCloseds.unit X' x) =
-        (@IrreducibleCloseds.extend X Y.obj _ _ Y.property.2 Y.property.1 g.hom).toFun
+        (@IrreducibleCloseds.extend X Y.obj _ _ Y.property.2 g.hom).toFun
           (IrreducibleCloseds.map f.hom f.hom.continuous (IrreducibleCloseds.unit X' x))
       rw [IrreducibleCloseds.map_unit]
       have hleft := congrArg (fun k : C(X', Y.obj) => k x)

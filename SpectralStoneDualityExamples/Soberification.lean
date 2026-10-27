@@ -37,7 +37,8 @@ example : IsEmpty (IrreducibleCloseds Empty) := ⟨by
 
 section IndiscreteBool
 
-local instance : TopologicalSpace Bool := ⊤
+/-- The indiscrete topology on the two-point type `Bool`. -/
+local instance boolIndiscreteTopology : TopologicalSpace Bool := ⊤
 
 example : ¬ Function.Injective (unit Bool) := by
   intro hinj

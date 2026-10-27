@@ -34,7 +34,8 @@ namespace SpectralStoneDualityExamples
 
 section Empty
 
-local instance : TopologicalSpace Empty := ⊥
+/-- The discrete topology on `Empty` in the finite quasi-sobriety examples. -/
+local instance finiteSobrietyEmptyDiscreteTopology : TopologicalSpace Empty := ⊥
 
 -- This empty-space check uses Mathlib's R₁ instance, independently of the finite-set theorem.
 example : QuasiSober Empty := inferInstance
@@ -47,7 +48,8 @@ end Empty
 
 section Discrete
 
-local instance : TopologicalSpace (Fin 2) := ⊥
+/-- The discrete topology on the two-point space `Fin 2` in the quasi-sobriety examples. -/
+local instance finiteSobrietyFinTwoDiscreteTopology : TopologicalSpace (Fin 2) := ⊥
 
 example : DiscreteTopology (Fin 2) := inferInstance
 
@@ -79,7 +81,8 @@ end Sierpinski
 
 section Indiscrete
 
-local instance : TopologicalSpace Bool := ⊤
+/-- The indiscrete topology on `Bool` in the finite quasi-sobriety examples. -/
+local instance finiteSobrietyBoolIndiscreteTopology : TopologicalSpace Bool := ⊤
 
 -- The whole two-point space is irreducible, so this exercises the finite-set statement.
 example : ∃ x ∈ (Set.univ : Set Bool),

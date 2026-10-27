@@ -72,7 +72,8 @@ end UpperSet
 
 section Indiscrete
 
-local instance : TopologicalSpace Bool := ⊤
+/-- The indiscrete topology on `Bool`. -/
+local instance indiscreteBoolTopology : TopologicalSpace Bool := ⊤
 
 private theorem originalNotClosed :
     ¬ IsClosed ({(⟨false, mem_nhdsKer_singleton.mpr (specializes_refl false)⟩ :

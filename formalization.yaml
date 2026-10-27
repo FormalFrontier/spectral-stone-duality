@@ -96,7 +96,7 @@ related_formalizations:
     note: >-
       Ideal completion and compact-principal results, pinned to the official
       published commit 001e3b7508184ecd51e0d86177cb1d54508bf59d.
-      This dependency is private and requires authorized GitHub access.
+      This dependency is publicly available on GitHub.
 
 automation:
   methods:

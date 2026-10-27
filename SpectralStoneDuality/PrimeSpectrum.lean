@@ -41,16 +41,18 @@ universe u
 
 namespace SpectralStoneDuality
 
-variable {A : Type u} [DistribLattice A] [BoundedOrder A]
-
-/-- The prime-ideal spectrum of a bounded distributive lattice, in the sense of
-Fujiwara--Kato, *Foundations of Rigid Geometry I*, §2.2(b), Definition 2.2.7. -/
-abbrev PrimeIdealSpectrum (A : Type u) [DistribLattice A] [BoundedOrder A] :=
+/-- The type of prime order ideals of a preorder. For a bounded distributive lattice,
+this is the prime-ideal spectrum in the sense of Fujiwara--Kato,
+*Foundations of Rigid Geometry I*, §2.2(b), Definition 2.2.7. -/
+abbrev PrimeIdealSpectrum (A : Type u) [Preorder A] :=
   {P : Order.Ideal A // P.IsPrime}
 
 namespace PrimeIdealSpectrum
 
-omit [BoundedOrder A] in
+section Preorder
+
+variable {A : Type u} [Preorder A]
+
 private theorem exists_mem_not_mem_of_not_le {I P : Order.Ideal A} (h : ¬ I ≤ P) :
     ∃ a ∈ I, a ∉ P := by
   exact Set.not_subset.mp h
@@ -66,6 +68,15 @@ def primeFilter (P : PrimeIdealSpectrum A) : Order.PFilter A :=
 theorem primeFilter_isPrime (P : PrimeIdealSpectrum A) :
     (primeFilter P).IsPrime :=
   P.2.toPrimePair.F_isPrime
+
+/-- The basic open `D(I)` consists of the prime ideals which do not contain `I`. -/
+@[expose]
+def basicOpen (I : Order.Ideal A) : Set (PrimeIdealSpectrum A) :=
+  {P | ¬ I ≤ P.1}
+
+end Preorder
+
+variable {A : Type u} [DistribLattice A] [BoundedOrder A]
 
 /-- A prime ideal determines a point of the frame of order ideals. -/
 def toPoint (P : PrimeIdealSpectrum A) : Locale.PT (Order.Ideal A) where
@@ -179,11 +190,6 @@ def pointEquiv : PrimeIdealSpectrum A ≃ Locale.PT (Order.Ideal A) where
   left_inv := ofPoint_toPoint
   right_inv := toPoint_ofPoint
 
-/-- The basic open `D(I)` consists of the prime ideals which do not contain `I`. -/
-@[expose]
-def basicOpen (I : Order.Ideal A) : Set (PrimeIdealSpectrum A) :=
-  {P | ¬ I ≤ P.1}
-
 /-- The prime-spectrum topology transported from the point space of the ideal frame. -/
 instance instTopologicalSpace : TopologicalSpace (PrimeIdealSpectrum A) :=
   TopologicalSpace.induced toPoint inferInstance
@@ -239,6 +245,7 @@ theorem specializes_iff_primeFilter_ge (P Q : PrimeIdealSpectrum A) :
     by_contra haQ
     exact (hQP (mem_primeFilter Q a |>.mpr haQ)) haP
 
+omit [BoundedOrder A] in
 private theorem le_of_basicOpen_subset {I J : Order.Ideal A}
     (h : basicOpen I ⊆ basicOpen J) : I ≤ J := by
   intro a haI
@@ -261,6 +268,7 @@ private theorem le_of_basicOpen_subset {I J : Order.Ideal A}
     exact haP (hIP haI)
   exact (h hpI) hJP
 
+omit [BoundedOrder A] in
 theorem basicOpen_subset_iff {I J : Order.Ideal A} :
     basicOpen I ⊆ basicOpen J ↔ I ≤ J := by
   constructor
@@ -357,6 +365,7 @@ instance instPrespectralSpace : PrespectralSpace (PrimeIdealSpectrum A) :=
   PrespectralSpace.of_isTopologicalBasis' isTopologicalBasis_basicOpen_principal
     isCompact_basicOpen_principal
 
+omit [BoundedOrder A] in
 private theorem basicOpen_principal_inter (a b : A) :
     basicOpen (Order.Ideal.principal a) ∩ basicOpen (Order.Ideal.principal b) =
       basicOpen (Order.Ideal.principal (a ⊓ b)) := by

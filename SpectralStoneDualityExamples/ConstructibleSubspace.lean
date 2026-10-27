@@ -38,7 +38,8 @@ namespace SpectralStoneDualityExamples
 
 section Boundaries
 
-local instance : TopologicalSpace Empty := ⊥
+/-- The discrete topology on `Empty` for the empty and whole constructibly closed subspaces. -/
+local instance constructibleSubspaceEmptyDiscreteTopology : TopologicalSpace Empty := ⊥
 
 private theorem empty_constructiblyClosed :
     IsClosed[constructibleTopology Empty] (∅ : Set Empty) :=
@@ -56,7 +57,8 @@ end Boundaries
 
 section ProperDiscrete
 
-local instance : TopologicalSpace (Fin 3) := ⊥
+/-- The discrete topology on `Fin 3` for the proper constructibly closed subset `{0, 1}`. -/
+local instance constructibleSubspaceFinThreeDiscreteTopology : TopologicalSpace (Fin 3) := ⊥
 
 private def twoPoints : Set (Fin 3) := {0, 1}
 

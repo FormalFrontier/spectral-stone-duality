@@ -256,7 +256,7 @@ def toFamily (x : X) : Family X :=
   rfl
 
 /-- A singleton-stage cylinder evaluates to its original compact open. -/
-@[simp] theorem toFamily_preimage_singleton_cylinder (U : CompactOpens X) :
+theorem toFamily_preimage_singleton_cylinder (U : CompactOpens X) :
     toFamily (X := X) ⁻¹'
       (cylinder ({U} : Finset (CompactOpens X))
         ⟨U, Finset.mem_singleton_self U⟩ : Set (Family X)) = (U : Set X) :=

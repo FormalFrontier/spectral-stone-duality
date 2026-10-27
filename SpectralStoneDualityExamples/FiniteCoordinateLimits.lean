@@ -33,7 +33,8 @@ namespace SpectralStoneDualityExamples.FiniteCoordinateLimits
 
 section Empty
 
-local instance : TopologicalSpace Empty := ⊥
+/-- The discrete topology on the empty type. -/
+local instance emptyDiscreteTopology : TopologicalSpace Empty := ⊥
 
 example : IsCofiltered ((Finset (CompactOpens Empty))ᵒᵖ) := inferInstance
 
@@ -93,7 +94,8 @@ end Sierpinski
 
 section NonT0
 
-local instance : TopologicalSpace (Fin 2) := ⊤
+/-- The indiscrete topology on the two-point type `Fin 2`. -/
+local instance indiscreteTwoPointTopology : TopologicalSpace (Fin 2) := ⊤
 
 /-- In the indiscrete two-point space, all finite-stage evaluations agree at distinct points. -/
 example : (∀ F : Finset (CompactOpens (Fin 2)),

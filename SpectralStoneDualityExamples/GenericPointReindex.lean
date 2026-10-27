@@ -49,7 +49,8 @@ example (x : WithGenericPoint PUnit) : x = .generic ∨ x = .closed PUnit.unit :
 example : IsClosed ({WithGenericPoint.closed PUnit.unit} :
     Set (WithGenericPoint PUnit)) := WithGenericPoint.closed_isClosed PUnit.unit
 
-private theorem closed_false_ne_closed_true :
+/-- The two Boolean-indexed closed points of the generic-point fork are distinct. -/
+theorem closed_false_ne_closed_true :
     (WithGenericPoint.closed false : WithGenericPoint Bool) ≠ .closed true := by
   intro h
   exact (by decide : false ≠ true) (WithGenericPoint.closed.inj h)

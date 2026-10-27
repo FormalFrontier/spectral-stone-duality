@@ -31,7 +31,9 @@ category structure on two copies of the Boolean order category.
 
 open CategoryTheory CategoryTheory.Limits
 
-local instance : SmallCategory (Bool × Bool) := Preorder.smallCategory (Bool × Bool)
+/-- The category on the Boolean square induced by its componentwise order. -/
+local instance boolSquareOrderCategory : SmallCategory (Bool × Bool) :=
+  Preorder.smallCategory (Bool × Bool)
 
 private def firstProjection : BoundedLatticeHom (Bool × Bool) Bool where
   toFun := Prod.fst

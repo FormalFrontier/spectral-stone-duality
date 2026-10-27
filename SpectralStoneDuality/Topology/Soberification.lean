@@ -416,7 +416,7 @@ theorem continuous_ext_of_comp_unit [T0Space Y]
       _ = h ⁻¹' S := hV.symm
   exact Set.ext_iff.mp hEq F
 
-@[simp]
+@[simp↓]
 theorem map_mem_openSet_iff (f : C(X, Y)) (F : IrreducibleCloseds X) (V : Opens Y) :
     map f f.continuous F ∈ openSet V ↔
       F ∈ openSet ⟨f ⁻¹' (V : Set Y), V.isOpen.preimage f.continuous⟩ := by
@@ -456,11 +456,15 @@ theorem map_unit (f : C(X, Y)) (x : X) :
   change closure (f '' closure ({x} : Set X)) = closure ({f x} : Set Y)
   rw [closure_image_closure f.continuous, image_singleton]
 
-/-- Extend a map to a sober space by sending each irreducible closed subset to the
-generic point of the closure of its image. This realizes the extension in
+/-- The chosen generic-point map to a quasi-sober space, sending each irreducible
+closed subset to a chosen generic point of the closure of its image.
+
+When the target also has `T0Space`, `extend_comp_unit` identifies this map as an
+extension along the soberification unit. In that case it realizes the extension in
 Fujiwara--Kato, *Foundations of Rigid Geometry I*, Proposition 2.1.3,
-via the open-intersection characterization, not the proof cited there. -/
-noncomputable def extend [QuasiSober Y] [T0Space Y] (f : C(X, Y)) :
+via the open-intersection characterization, not the proof cited there.
+Without `T0Space`, this map need not agree with `f` after composition with the unit. -/
+noncomputable def extend [QuasiSober Y] (f : C(X, Y)) :
     C(IrreducibleCloseds X, Y) :=
   ⟨fun F => (map f f.continuous F).isIrreducible.genericPoint, by
     rw [continuous_def]
@@ -472,13 +476,13 @@ noncomputable def extend [QuasiSober Y] [T0Space Y] (f : C(X, Y)) :
       (map f f.continuous F).isClosed).mem_open_set_iff V.isOpen).trans
         (map_mem_openSet_iff f F V)⟩
 
-theorem extend_isGenericPoint [QuasiSober Y] [T0Space Y]
+theorem extend_isGenericPoint [QuasiSober Y]
     (f : C(X, Y)) (F : IrreducibleCloseds X) :
     IsGenericPoint (extend f F) (map f f.continuous F : Set Y) :=
   (map f f.continuous F).isIrreducible.isGenericPoint_genericPoint
     (map f f.continuous F).isClosed
 
-theorem extend_mem_iff [QuasiSober Y] [T0Space Y]
+theorem extend_mem_iff [QuasiSober Y]
     (f : C(X, Y)) (F : IrreducibleCloseds X) (V : Opens Y) :
     extend f F ∈ V ↔ ((F : Set X) ∩ f ⁻¹' (V : Set Y)).Nonempty :=
   ((extend_isGenericPoint f F).mem_open_set_iff V.isOpen).trans

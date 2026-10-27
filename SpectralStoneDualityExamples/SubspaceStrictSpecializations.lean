@@ -38,8 +38,11 @@ namespace SpectralStoneDualityExamples.SubspaceStrictSpecializations
 
 section ProperClosedNonT0
 
-local instance : TopologicalSpace (Fin 2) := Topology.upperSet (Fin 2)
-local instance : TopologicalSpace Bool := ⊤
+/-- The upper-set topology on the two-point chain forming the closed summand. -/
+local instance closedSummandUpperSetTopology : TopologicalSpace (Fin 2) :=
+  Topology.upperSet (Fin 2)
+/-- The indiscrete topology on the Boolean summand. -/
+local instance indiscreteSummandTopology : TopologicalSpace Bool := ⊤
 
 private abbrev Ambient := Fin 2 ⊕ Bool
 
@@ -135,7 +138,8 @@ end ProperClosedNonT0
 
 section Singleton
 
-local instance : TopologicalSpace PUnit := ⊤
+/-- The indiscrete topology on the singleton type `PUnit`. -/
+local instance singletonIndiscreteTopology : TopologicalSpace PUnit := ⊤
 
 private def singleZ : Set PUnit := Set.univ
 private def singleG : Set singleZ := Set.univ
@@ -152,7 +156,8 @@ end Singleton
 
 section MissingContainment
 
-local instance : TopologicalSpace (Fin 2) := Topology.upperSet (Fin 2)
+/-- The upper-set topology on the two-point chain `Fin 2`. -/
+local instance twoPointUpperSetTopology : TopologicalSpace (Fin 2) := Topology.upperSet (Fin 2)
 
 private def missingZ : Set (Fin 2) := {1}
 private def missingG : Set missingZ := Set.univ
@@ -195,7 +200,8 @@ end MissingContainment
 
 section MissingGenericity
 
-local instance : TopologicalSpace Bool := ⊤
+/-- The indiscrete topology on `Bool`. -/
+local instance indiscreteBoolTopology : TopologicalSpace Bool := ⊤
 
 private def allPoints : Set Bool := Set.univ
 private def nonGeneric : Set allPoints := {z | (z : Bool) = false}

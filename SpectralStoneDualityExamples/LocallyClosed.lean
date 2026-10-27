@@ -37,7 +37,8 @@ namespace SpectralStoneDualityExamples
 
 section Empty
 
-local instance : TopologicalSpace Empty := ⊥
+/-- The discrete topology on `Empty` in the compact locally closed subspace examples. -/
+local instance locallyClosedEmptyDiscreteTopology : TopologicalSpace Empty := ⊥
 
 example : IsRetrocompact (∅ : Set Empty) :=
   isCompact_empty.isRetrocompact_of_isLocallyClosed isClosed_empty.isLocallyClosed
@@ -50,7 +51,8 @@ end Empty
 
 section FiniteDiscrete
 
-local instance : TopologicalSpace (Fin 3) := ⊥
+/-- The discrete topology on `Fin 3`, whose subset `{0, 1}` is compact and locally closed. -/
+local instance locallyClosedFinThreeDiscreteTopology : TopologicalSpace (Fin 3) := ⊥
 
 private def twoPoints : Set (Fin 3) := {0, 1}
 
@@ -71,8 +73,10 @@ end FiniteDiscrete
 
 section NonSeparated
 
-local instance : TopologicalSpace Bool := ⊤
-local instance : TopologicalSpace Unit := ⊤
+/-- The indiscrete topology on `Bool`, a finite non-`T₀` locally closed example. -/
+local instance locallyClosedBoolIndiscreteTopology : TopologicalSpace Bool := ⊤
+/-- The indiscrete topology on `Unit`, the target of the inducing constant map from `Bool`. -/
+local instance locallyClosedUnitIndiscreteTopology : TopologicalSpace Unit := ⊤
 
 private theorem boolToUnit_inducing : Topology.IsInducing (fun _ : Bool => ()) :=
   ⟨(induced_const).symm⟩
@@ -102,7 +106,8 @@ end NonSeparated
 
 section NoncompactAmbient
 
-local instance : TopologicalSpace ℕ := ⊥
+/-- The discrete topology on `ℕ`, a noncompact ambient space for a finite locally closed subset. -/
+local instance locallyClosedNatDiscreteTopology : TopologicalSpace ℕ := ⊥
 
 private def twoNaturals : Set ℕ := {0, 1}
 
