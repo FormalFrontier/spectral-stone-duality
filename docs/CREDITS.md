@@ -47,6 +47,13 @@ irreducible-closed and category APIs. The
 [soberification examples](../SpectralStoneDualityExamples/Soberification.lean)
 exercise empty, non-separated, already sober and non-sober input spaces.
 
+The [T₁ quotient](../SpectralStoneDuality/Topology/T1Quotient.lean) was developed
+by Formal Frontier agent contributors using mathlib's setoid infima, quotient
+topology, continuous-map descent and separation quotient APIs. Its arbitrary-space
+universal property is distinct from the maximal-point presentation of separated
+quotients for valuative spaces in Fujiwara–Kato, Chapter 0, §2.3(c); no
+identification with that presentation is asserted here.
+
 ## Mathematical sources and prior formalizations
 
 Fujiwara and Kato, *Foundations of Rigid Geometry I*,

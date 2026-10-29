@@ -18,6 +18,7 @@ public import SpectralStoneDuality.Topology.ConstructibleSubspace
 public import SpectralStoneDuality.LimitCylinderDescent
 public import SpectralStoneDuality.FiniteCylinderDescent
 public import SpectralStoneDuality.Topology.Soberification
+public import SpectralStoneDuality.Topology.T1Quotient
 public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
 public import SpectralStoneDuality.Topology.Finite
@@ -47,6 +48,9 @@ the soberification of any topological space and its adjunction with the inclusio
 of `T₀` quasi-sober spaces; these are independent of spectrality. The separately
 built `Examples.SpectralStoneDuality` and `SpectralStoneDualityExamples.Soberification`
 modules demonstrate these imports.
+The `Topology.T1Quotient` leaf constructs the universal T₁ quotient of every
+topological space from closed-class setoids, with induced maps and comparison
+homeomorphisms for T₁ and R₀ inputs.
 The `Topology.Cofinite` leaf characterizes quasi-sobriety of a cofinite space by
 finiteness of its underlying type, including the empty case.
 The `Topology.Finite` leaf proves that every finite irreducible set contains a generic

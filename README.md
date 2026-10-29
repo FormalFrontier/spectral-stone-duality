@@ -4,10 +4,17 @@ A Lean library for prime-ideal spectra, the contravariant equivalence of bounded
 distributive lattices with spectral spaces, and compact-open topology of spectral
 limits and arbitrary subspaces. It also provides the soberification of any
 topological space. Import the whole library with `import SpectralStoneDuality`
-or select one of its twenty-five leaves below.
+or select one of its leaves below.
 
 ## Headline results
 
+- **Universal T₁ quotient.** For every topological space `X`,
+  [`T1Quotient X`](SpectralStoneDuality/Topology/T1Quotient.lean) is the quotient
+  by the infimum of all setoids with closed equivalence classes. Its unit is
+  a continuous quotient map, universal for maps to every T₁ space, with source
+  and target in independent universes. Induced continuous maps preserve identities
+  and composition. The unit is a homeomorphism when `X` is T₁; for an R₀ input,
+  the construction agrees homeomorphically with Mathlib's `SeparationQuotient`.
 - **Prime spectrum and compact opens.** For a bounded distributive lattice `A`,
   [`PrimeIdealSpectrum`](SpectralStoneDuality/PrimeSpectrum.lean) consists of prime
   **order ideals**. The opens `D(I)` are primes *not containing* the ideal `I`;
@@ -175,6 +182,7 @@ import SpectralStoneDuality
 | [`CategoryTheory.Lattice.Extensive`](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean) | Universal finite joins, conditional disjointness and extensive-topology coverings |
 | [`CategoryTheory.Lattice.Preserves`](SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean) | Finite-(co)limit preservation, bounded lattice maps and their equivalence |
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
+| [`Topology.T1Quotient`](SpectralStoneDuality/Topology/T1Quotient.lean) | Universal T₁ quotient of every space, induced maps and R₀ comparison |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 | [`Topology.Finite`](SpectralStoneDuality/Topology/Finite.lean) | Generic points of finite irreducible sets; finite-space quasi-sobriety |
 | [`Topology.GenericPoint`](SpectralStoneDuality/Topology/GenericPoint.lean) | Independent generic point with arbitrary closed-point indices and reindexing by equivalence |
@@ -239,7 +247,8 @@ certify the changed inputs in this checkout.
   proof. It was not consulted or followed for the Lean proof here.
 - [Mathlib](https://github.com/leanprover-community/mathlib4), especially
   its order ideals, spectral and sober topology, constructible topology,
-  cofiltered `TopCat` limits and category-of-lattices APIs. These are prior
+  cofiltered `TopCat` limits, setoid infima, quotient topology, continuous-map
+  descent, separation quotients and category-of-lattices APIs. These are prior
   formalizations and proof tools used throughout, not original contributions
   of this library; the pinned version is in [`lakefile.toml`](lakefile.toml).
 - Formal Frontier Agents, [*Ideal Completion*](https://github.com/FormalFrontier/ideal-completion),
