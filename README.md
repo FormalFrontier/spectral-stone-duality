@@ -132,6 +132,26 @@ or select one of its twenty-five leaves below.
   [constructibly closed subspaces](SpectralStoneDuality/Topology/ConstructibleSubspace.lean)
   and [examples](SpectralStoneDualityExamples/ConstructibleSubspace.lean).
 
+## Using the library
+
+Add the package to your `lakefile.toml`:
+
+```toml
+[[require]]
+name = "spectral-stone-duality"
+git = "https://github.com/FormalFrontier/spectral-stone-duality.git"
+rev = "main"
+```
+
+GitHub `main` contains reviewed releases. Lake resolves a release when you
+first add or update the dependency and records it in `lake-manifest.json`.
+To pin a specific release, replace `main` with its full commit hash. Libraries
+used together must have compatible Lean toolchains and the same Mathlib revision.
+
+```lean
+import SpectralStoneDuality
+```
+
 ## Modules and examples
 
 | Public leaf (`SpectralStoneDuality.*`) | Main interface |
@@ -162,60 +182,11 @@ or select one of its twenty-five leaves below.
 | [`Topology.SubspaceStrictSpecializations`](SpectralStoneDuality/Topology/SubspaceStrictSpecializations.lean) | Ambient strict indices in a closed subspace, point equations and selected-point openness |
 | [`Topology.Cofinite`](SpectralStoneDuality/Topology/Cofinite.lean) | Cofinite quasi-sobriety iff finiteness, infinite obstruction |
 
-The [aggregate import](SpectralStoneDuality.lean) publicly re-exports these
-leaves. The three existing example modules are
-[`Examples/SpectralStoneDuality.lean`](Examples/SpectralStoneDuality.lean),
-[`Examples/LimitCylinderDescent.lean`](Examples/LimitCylinderDescent.lean), and
-[`Examples/FiniteCylinderDescent.lean`](Examples/FiniteCylinderDescent.lean).
-The separately built
-[`SpectralStoneDualityExamples/GenericPointRemoval.lean`](SpectralStoneDualityExamples/GenericPointRemoval.lean)
-compares discrete incidence boundaries with non-discrete complements and
-exhibits a noninjective gluing map.
-The [generic-point reindexing examples](SpectralStoneDualityExamples/GenericPointReindex.lean)
-test empty, singleton, two-point permutation and universe-lifted closed-point
-indices. These points belong to the independent fork, not to a topology
-inherited by any ambient endpoint set.
-The [subspace specialization examples](SpectralStoneDualityExamples/SubspaceStrictSpecializations.lean)
-compare ambient and relative boundaries in a proper closed component of a
-non-`T₀` space and give independent containment and genericity obstructions.
-The separately built
-[`SpectralStoneDualityExamples/Soberification.lean`](SpectralStoneDualityExamples/Soberification.lean)
-exercises the reflection on empty and non-separated spaces, `Prop` and the
-infinite cofinite space. The
-[`SpectralStoneDualityExamples/LatticeExtensive.lean`](SpectralStoneDualityExamples/LatticeExtensive.lean)
-clients cover finite disjoint families, base change and a non-disjoint repeated
-summand. The [closed-generization examples](SpectralStoneDualityExamples/NhdsKer.lean)
-contrast the upper-set topology on two points with an indiscrete space.
-The [finite-preservation examples](SpectralStoneDualityExamples/LatticePreserves.lean)
-test identity, a nonconstant Boolean-square projection, the one-element lattice,
-and constant maps that preserve binary operations but fail a nullary law.
-The [cofinite examples](SpectralStoneDualityExamples/Cofinite.lean) test the
-empty space, discrete two-point space, and infinite irreducible Nat space.
-The [finite-space examples](SpectralStoneDualityExamples/FiniteSobriety.lean)
-contrast the existing discrete-space route with finite quasi-sobriety on `Prop`
-and indiscrete `Bool`, and test the infinite cofinite obstruction.
-The [locally closed examples](SpectralStoneDualityExamples/LocallyClosed.lean)
-test empty and proper finite subspaces, a noninjective inducing map on a non-`T₀`
-space, and a compact subset of an infinite discrete space.
-The [constructible-subspace examples](SpectralStoneDualityExamples/ConstructibleSubspace.lean)
-include empty and whole subspaces and a proper constructibly closed subset of
-the non-Hausdorff two-point upper-set space that is not generization-stable.
-In an infinite Boolean product, compact-open cylinders have a non-open
-intersection.
-The [finite-coordinate examples](SpectralStoneDualityExamples/FiniteCoordinates.lean)
-include empty and singleton spaces, Sierpiński patterns, a non-`T₀` surjectivity
-case, nonquotient finite stages and strict three-point refinements.
-The [finite-coordinate limit examples](SpectralStoneDualityExamples/FiniteCoordinateLimits.lean)
-test empty and non-`T₀` boundaries and identify canonical lifts for indiscrete
-two-point and spectral Sierpiński spaces.
-The [limit-map examples](SpectralStoneDualityExamples/LimitMaps.lean) exercise
-the induced-map theorems on finite spectral stages, including a surjection onto
-a two-point space, a nonsurjective closed-point map into non-Hausdorff
-Sierpiński space, and an empty-domain boundary.
-These are separate example modules, not exported by
-`SpectralStoneDuality`. `Examples.SpectralStoneDuality` exposes the public theorem
-`SpectralStoneDualityExamples.natRefinement`; its other named clients remain private. The
-[mathematical guide](docs/Guide.md) gives conventions and proof outlines.
+The [aggregate import](SpectralStoneDuality.lean) publicly re-exports the library
+leaves. The `SpectralStoneDualityExamples` target builds separate example modules,
+which are not exported by `SpectralStoneDuality`. The [examples guide](docs/Examples.md)
+describes their mathematical scope and public interfaces; the
+[mathematical guide](docs/Guide.md) explains the conventions and proofs.
 
 ## Build and documentation
 
@@ -237,12 +208,7 @@ The default build includes the library and the `SpectralStoneDualityExamples`
 target, whose [example roots are listed in the Guide](docs/Guide.md).
 Following the same cache prerequisite,
 `lake --wfail build SpectralStoneDualityExamples` selects the example target.
-A successful build alone does not check transitive axiom dependencies. Build
-and complete private-inclusive axiom-audit evidence applies when the relevant
-Lean source, build targets and configuration, resolved dependencies, toolchain
-and checker inputs and required coverage match. A prose-only commit needs no
-repeat proof checks; renew only affected checks for changed inputs or missing
-coverage.
+A successful build alone does not check transitive axiom dependencies.
 
 The [API reference](docs/API.md) contains **99 historical native display sites
 from seven leaves**, not a current census of all declarations or modules.
@@ -255,17 +221,6 @@ introduction or the aggregate, Examples, Lake and Lean docstrings in this checko
 [reproduction notes](docs/README.md) distinguish analyzed and translated
 inputs and show how to use the older public snapshot; the fixed adapter cannot
 certify the changed inputs in this checkout.
-
-In an earlier nine-source snapshot, a cache fetch took 95.087 s, a build
-14.013 s and a separate public-import client 3.004 s under a 23-GiB whole-job
-cgroup. A distinct cached default build took 15 s under a 15-GiB cgroup; its
-pre-existing cgroup `memory.peak` included cache-download page cache and cannot
-isolate build memory. Native doc-gen `single` steps took 2.5–3.1 s each and
-`fromDb` took 1.27 s **excluding setup**. About 7.8 GiB of cached dependency
-storage is a disk observation, not a RAM requirement. These historical
-observations are not portable limits: they used an older internal
-ideal-completion commit with the same dependency tree and do not measure a
-fetch or build at the official GitHub pin.
 
 ## References
 
