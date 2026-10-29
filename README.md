@@ -8,6 +8,16 @@ or select one of its leaves below.
 
 ## Headline results
 
+- **Maximal-generization reflection.** In any topological space where every point
+  has a unique maximal generization as an original point,
+  [`MaximalGenerizationSpace X h`](SpectralStoneDuality/Topology/MaximalGenerization.lean)
+  carries the projection-final topology, not the inherited subtype topology.
+  Its quotient unit has singleton-closure fibres; the target is T₁ and canonically
+  homeomorphic to `T1Quotient X`, preserving the unit. Maps to every T₁ target
+  in an independent universe factor uniquely. Continuous maps between such spaces
+  induce maps by projecting after mapping, with identity, composition and
+  naturality laws. No global T₀, compactness, coherence or nonemptiness is required.
+
 - **Universal T₁ quotient.** For every topological space `X`,
   [`T1Quotient X`](SpectralStoneDuality/Topology/T1Quotient.lean) is the quotient
   by the infimum of all setoids with closed equivalence classes. Its unit is
