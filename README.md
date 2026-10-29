@@ -8,6 +8,9 @@ or select one of its leaves below.
 
 ## Headline results
 
+[Tube predicates](SpectralStoneDuality/Topology/Tube.lean) are defined for arbitrary topological spaces: a tube-closed set is the closure of a retrocompact open subset, and a tube-open set has tube-closed complement. The API provides witness and complement characterizations, ordinary closedness and openness, and empty-set and whole-space cases. Tube-closed sets are stable under finite unions, and tube-open sets under finite intersections, including empty families.
+
+
 - **Maximal-generization reflection.** In any topological space where every point
   has a unique maximal generization as an original point,
   [`MaximalGenerizationSpace X h`](SpectralStoneDuality/Topology/MaximalGenerization.lean)

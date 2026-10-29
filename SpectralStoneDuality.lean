@@ -20,6 +20,7 @@ public import SpectralStoneDuality.FiniteCylinderDescent
 public import SpectralStoneDuality.Topology.Soberification
 public import SpectralStoneDuality.Topology.T1Quotient
 public import SpectralStoneDuality.Topology.MaximalGenerization
+public import SpectralStoneDuality.Topology.Tube
 public import SpectralStoneDuality.Topology.Category.Soberification
 public import SpectralStoneDuality.Topology.Cofinite
 public import SpectralStoneDuality.Topology.Finite
