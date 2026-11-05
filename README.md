@@ -76,12 +76,16 @@ or select one of its leaves below.
   general-topology reflection is separate from the spectral-space
   reconstruction in Stone duality. See [topology](SpectralStoneDuality/Topology/Soberification.lean)
   and [adjunction](SpectralStoneDuality/Topology/Category/Soberification.lean).
-- **Krull dimension and specialization.** For any quasi-sober space `X`,
+- **Krull dimension, specialization and soberification.** For any quasi-sober space `X`,
   [`topologicalKrullDim_eq_krullDim_specialization`](SpectralStoneDuality/Topology/KrullDimension.lean)
   identifies its topological Krull dimension with `Order.krullDim (Specialization X)`.
   The specialization preorder retains the original points, without requiring `T₀`
-  or finiteness. Both dimensions lie in `WithBot ℕ∞`: the empty space has dimension
-  `⊥`, and unbounded finite chain lengths give `⊤` without an attainment assumption.
+  or finiteness. For every topological space `X`,
+  [`topologicalKrullDim_irreducibleCloseds`](SpectralStoneDuality/Topology/KrullDimension.lean)
+  shows that its canonical soberification has the same topological Krull dimension,
+  with no quasi-sobriety or separation assumption on `X`. These dimensions lie in
+  `WithBot ℕ∞`: the empty space has dimension `⊥`, and unbounded finite chain lengths
+  give `⊤` without an attainment assumption.
 - **Finite quasi-sobriety.** Every finite irreducible subset of any topological
   space contains a generic point of its closure. In particular, every finite
   topological space is quasi-sober, including the empty space and spaces that
@@ -201,7 +205,7 @@ import SpectralStoneDuality
 | [`CategoryTheory.Lattice.Extensive`](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean) | Universal finite joins, conditional disjointness and extensive-topology coverings |
 | [`CategoryTheory.Lattice.Preserves`](SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean) | Finite-(co)limit preservation, bounded lattice maps and their equivalence |
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
-| [`Topology.KrullDimension`](SpectralStoneDuality/Topology/KrullDimension.lean) | Quasi-sober topological dimension equals original-point specialization dimension |
+| [`Topology.KrullDimension`](SpectralStoneDuality/Topology/KrullDimension.lean) | Quasi-sober specialization dimension and invariance under arbitrary-space soberification |
 | [`Topology.T1Quotient`](SpectralStoneDuality/Topology/T1Quotient.lean) | Universal T₁ quotient of every space, induced maps and R₀ comparison |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 | [`Topology.Finite`](SpectralStoneDuality/Topology/Finite.lean) | Generic points of finite irreducible sets; finite-space quasi-sobriety |

@@ -22,6 +22,11 @@ The soberification unit `TopologicalSpace.IrreducibleCloseds.unit X` sends `x` t
 irreducible closed subsets, in the same direction as the specialization order.
 No separation axiom or finiteness assumption is imposed on `X`.
 
+For an arbitrary topological space `X`, its soberification `IrreducibleCloseds X`
+has the same topological Krull dimension as `X`. Specialization in the soberification
+reverses inclusion, so its point-specialization order agrees with the inclusion order
+on the original irreducible closed subsets.
+
 Both dimensions take values in `WithBot ℕ∞`: the empty space has dimension `⊥`,
 and unbounded finite chain lengths give dimension `⊤`, without requiring a chain
 attaining the supremum.
@@ -59,3 +64,27 @@ theorem topologicalKrullDim_eq_krullDim_specialization (X : Type u)
   exact le_antisymm
     (Order.krullDim_le_of_strictComono_and_surj f (fun {a b} h => (hlt a b).mp h) hsurj)
     (Order.krullDim_le_of_strictMono f (fun {a b} h => (hlt a b).mpr h))
+
+/-- Soberification preserves the topological Krull dimension of any topological space. -/
+theorem topologicalKrullDim_irreducibleCloseds (X : Type u) [TopologicalSpace X] :
+    topologicalKrullDim (TopologicalSpace.IrreducibleCloseds X) =
+      topologicalKrullDim X := by
+  -- Both orders reverse specialization, so the tag equivalence preserves inclusion.
+  let e : Specialization (TopologicalSpace.IrreducibleCloseds X) ≃o
+      TopologicalSpace.IrreducibleCloseds X :=
+    Specialization.ofEquiv.toOrderIso
+      (by
+        intro F G hFG
+        exact (TopologicalSpace.IrreducibleCloseds.specializes_iff_le _ _).mp
+          (Specialization.ofEquiv_specializes_ofEquiv.mpr hFG))
+      (by
+        intro F G hFG
+        exact Specialization.toEquiv_le_toEquiv.mpr
+          ((TopologicalSpace.IrreducibleCloseds.specializes_iff_le G F).mpr hFG))
+  calc
+    topologicalKrullDim (TopologicalSpace.IrreducibleCloseds X) =
+        Order.krullDim (Specialization (TopologicalSpace.IrreducibleCloseds X)) :=
+      topologicalKrullDim_eq_krullDim_specialization _
+    _ = Order.krullDim (TopologicalSpace.IrreducibleCloseds X) :=
+      Order.krullDim_eq_of_orderIso e
+    _ = topologicalKrullDim X := rfl

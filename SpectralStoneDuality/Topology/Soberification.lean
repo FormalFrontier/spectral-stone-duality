@@ -12,6 +12,7 @@ public import Mathlib.Topology.Sober
 The points of the soberification are Mathlib's nonempty irreducible closed subsets.
 An open subset consists of those points meeting a given open subset of the original space.
 The unit sends a point to the closure of its singleton.
+Specialization between its points reverses inclusion of the original irreducible closed subsets.
 
 ## References
 
@@ -233,6 +234,13 @@ theorem closure_singleton_eq_closedSet (F : IrreducibleCloseds X) :
     have hFU : F ∈ (openSet U : Set (IrreducibleCloseds X)) := ⟨x, hGF hxG, hxU⟩
     have hFV : F ∈ V := by rwa [hVU]
     exact ⟨F, hFV, rfl⟩
+
+/-- Specialization in the soberification is reverse inclusion of irreducible closed subsets. -/
+@[simp]
+theorem specializes_iff_le (F G : IrreducibleCloseds X) :
+    F ⤳ G ↔ G ≤ F := by
+  rw [specializes_iff_mem_closure, closure_singleton_eq_closedSet, mem_closedSet,
+    SetLike.coe_subset_coe]
 
 /-- The unit of soberification takes `x` to the closure of its singleton. -/
 def unit (X : Type u) [TopologicalSpace X] : C(X, IrreducibleCloseds X) :=

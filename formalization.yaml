@@ -29,12 +29,26 @@ project:
     A cofinite space is quasi-sober exactly when its underlying type is finite,
     including the empty space. For any quasi-sober space, topological Krull
     dimension equals the order-theoretic Krull dimension of the original points
-    with their specialization preorder, without a T0 assumption.
+    with their specialization preorder, without a T0 assumption. The canonical
+    soberification of every topological space preserves its topological Krull
+    dimension, without quasi-sobriety or separation assumptions on the input.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
     - "Formal Frontier source-maintainer team"
   license: "Apache-2.0"
+
+highlights:
+  - title: "Specialization and soberification dimensions"
+    statement: >-
+      For quasi-sober spaces, topological Krull dimension equals the order-theoretic
+      Krull dimension of the original-point specialization preorder, and canonical
+      soberification preserves topological Krull dimension for every topological space.
+    declarations:
+      - declaration: "topologicalKrullDim_eq_krullDim_specialization"
+        file: "SpectralStoneDuality/Topology/KrullDimension.lean"
+      - declaration: "topologicalKrullDim_irreducibleCloseds"
+        file: "SpectralStoneDuality/Topology/KrullDimension.lean"
 
 sources:
   - title: "Stone duality for bounded distributive lattices and spectral spaces"
@@ -60,8 +74,9 @@ sources:
     note: >-
       The irreducible-closed construction gives a T0 quasi-sober reflection
       of every topological space; the unit and categorical adjunction impose
-      no separation or spectrality condition on the input. This general-topology
-      result is separate from reconstruction of spectral spaces.
+      no separation or spectrality condition on the input. Soberification also
+      preserves topological Krull dimension for every input space. These
+      general-topology results are separate from reconstruction of spectral spaces.
   - title: "Cofinite quasi-sobriety"
     type: "folklore"
     relationship: "independently-proves"
@@ -91,7 +106,7 @@ related_formalizations:
   - id: "https://github.com/leanprover-community/mathlib4"
     relationship: "builds-on"
     note: >-
-      Native order ideals, frame points, spectral topology and category APIs,
+      Mathlib order ideals, frame points, spectral topology and category APIs,
       pinned at the revision in the Lake manifest.
   - id: "https://github.com/FormalFrontier/ideal-completion"
     relationship: "builds-on"
@@ -123,7 +138,10 @@ status:
     Cofinite topology is quasi-sober precisely on finite underlying types,
     with no nonemptiness assumption. Quasi-sober spaces have topological Krull
     dimension equal to the Krull dimension of their original-point specialization
-    preorder, including empty spaces and unbounded finite chain lengths.
+    preorder. Soberification preserves topological Krull dimension for every
+    topological space, with no quasi-sobriety or separation assumption on the input.
+    Both results include empty spaces and unbounded finite chain lengths without
+    an attainment assumption.
     Source-specific correspondence and coverage decisions are maintained
     separately.
 
