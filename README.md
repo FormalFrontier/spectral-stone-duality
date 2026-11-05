@@ -76,6 +76,12 @@ or select one of its leaves below.
   general-topology reflection is separate from the spectral-space
   reconstruction in Stone duality. See [topology](SpectralStoneDuality/Topology/Soberification.lean)
   and [adjunction](SpectralStoneDuality/Topology/Category/Soberification.lean).
+- **Krull dimension and specialization.** For any quasi-sober space `X`,
+  [`topologicalKrullDim_eq_krullDim_specialization`](SpectralStoneDuality/Topology/KrullDimension.lean)
+  identifies its topological Krull dimension with `Order.krullDim (Specialization X)`.
+  The specialization preorder retains the original points, without requiring `T₀`
+  or finiteness. Both dimensions lie in `WithBot ℕ∞`: the empty space has dimension
+  `⊥`, and unbounded finite chain lengths give `⊤` without an attainment assumption.
 - **Finite quasi-sobriety.** Every finite irreducible subset of any topological
   space contains a generic point of its closure. In particular, every finite
   topological space is quasi-sober, including the empty space and spaces that
@@ -195,6 +201,7 @@ import SpectralStoneDuality
 | [`CategoryTheory.Lattice.Extensive`](SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean) | Universal finite joins, conditional disjointness and extensive-topology coverings |
 | [`CategoryTheory.Lattice.Preserves`](SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean) | Finite-(co)limit preservation, bounded lattice maps and their equivalence |
 | [`Topology.Soberification`](SpectralStoneDuality/Topology/Soberification.lean) | Irreducible-closed topology, unit, open-set equivalence and universal extension |
+| [`Topology.KrullDimension`](SpectralStoneDuality/Topology/KrullDimension.lean) | Quasi-sober topological dimension equals original-point specialization dimension |
 | [`Topology.T1Quotient`](SpectralStoneDuality/Topology/T1Quotient.lean) | Universal T₁ quotient of every space, induced maps and R₀ comparison |
 | [`Topology.Category.Soberification`](SpectralStoneDuality/Topology/Category/Soberification.lean) | Reflective `SoberTopCat` and soberification adjunction |
 | [`Topology.Finite`](SpectralStoneDuality/Topology/Finite.lean) | Generic points of finite irreducible sets; finite-space quasi-sobriety |
@@ -259,9 +266,10 @@ certify the changed inputs in this checkout.
   (new edition), 0, §2.9, is cited by Fujiwara–Kato for their soberification
   proof. It was not consulted or followed for the Lean proof here.
 - [Mathlib](https://github.com/leanprover-community/mathlib4), especially
-  its order ideals, spectral and sober topology, constructible topology,
-  cofiltered `TopCat` limits, setoid infima, quotient topology, continuous-map
-  descent, separation quotients and category-of-lattices APIs. These are prior
+  its order ideals, spectral and sober topology, generic points, Krull dimensions,
+  specialization preorders, constructible topology, cofiltered `TopCat` limits,
+  setoid infima, quotient topology, continuous-map descent, separation quotients
+  and category-of-lattices APIs. These are prior
   formalizations and proof tools used throughout, not original contributions
   of this library; the pinned version is in [`lakefile.toml`](lakefile.toml).
 - Formal Frontier Agents, [*Ideal Completion*](https://github.com/FormalFrontier/ideal-completion),

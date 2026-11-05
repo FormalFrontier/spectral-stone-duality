@@ -18,6 +18,7 @@ public import SpectralStoneDuality.Topology.ConstructibleSubspace
 public import SpectralStoneDuality.LimitCylinderDescent
 public import SpectralStoneDuality.FiniteCylinderDescent
 public import SpectralStoneDuality.Topology.Soberification
+public import SpectralStoneDuality.Topology.KrullDimension
 public import SpectralStoneDuality.Topology.T1Quotient
 public import SpectralStoneDuality.Topology.MaximalGenerization
 public import SpectralStoneDuality.Topology.Tube
@@ -50,6 +51,9 @@ the soberification of any topological space and its adjunction with the inclusio
 of `T₀` quasi-sober spaces; these are independent of spectrality. The separately
 built `Examples.SpectralStoneDuality` and `SpectralStoneDualityExamples.Soberification`
 modules demonstrate these imports.
+The `Topology.KrullDimension` leaf identifies the topological Krull dimension of a
+quasi-sober space with the order-theoretic dimension of its original points in
+`Specialization`, without a `T₀` assumption.
 The `Topology.T1Quotient` leaf constructs the universal T₁ quotient of every
 topological space from closed-class setoids, with induced maps and comparison
 homeomorphisms for T₁ and R₀ inputs.

@@ -252,6 +252,13 @@ theorem coe_unit_apply (x : X) :
     ((unit X x : IrreducibleCloseds X) : Set X) = closure {x} :=
   rfl
 
+/-- Inclusion between unit images is specialization in the original space, in reverse order. -/
+@[simp]
+theorem unit_le_unit_iff (x y : X) :
+    unit X x ≤ unit X y ↔ y ⤳ x := by
+  rw [← SetLike.coe_subset_coe, coe_unit_apply, coe_unit_apply,
+    specializes_iff_closure_subset]
+
 @[simp]
 theorem unit_preimage_openSet (U : Opens X) :
     (unit X) ⁻¹' (openSet U : Set _) = (U : Set X) := by
@@ -370,6 +377,15 @@ theorem unit_isEmbedding_iff_t0 (X : Type u) [TopologicalSpace X] :
     Topology.IsEmbedding (unit X) ↔ T0Space X := by
   rw [Topology.isEmbedding_iff, unit_injective_iff_t0]
   simp only [unit_isInducing, true_and]
+
+/-- Every irreducible closed subset of a quasi-sober space is in the image of the unit. -/
+theorem unit_surjective (X : Type u) [TopologicalSpace X] [QuasiSober X] :
+    Function.Surjective (unit X) := by
+  intro F
+  refine ⟨F.isIrreducible.genericPoint, ?_⟩
+  apply IrreducibleCloseds.ext
+  rw [coe_unit_apply]
+  exact F.isIrreducible.closure_genericPoint F.isClosed
 
 theorem closure_range_unit (X : Type u) [TopologicalSpace X] :
     closure (Set.range (unit X)) = Set.univ := by

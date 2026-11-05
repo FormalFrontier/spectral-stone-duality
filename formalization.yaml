@@ -27,7 +27,9 @@ project:
     limits and colimits exactly when their object maps are bounded lattice
     homomorphisms, without distributivity or shared carrier universe.
     A cofinite space is quasi-sober exactly when its underlying type is finite,
-    including the empty space.
+    including the empty space. For any quasi-sober space, topological Krull
+    dimension equals the order-theoretic Krull dimension of the original points
+    with their specialization preorder, without a T0 assumption.
   authors:
     - "Formal Frontier Agents"
   responsible_maintainers:
@@ -119,7 +121,9 @@ status:
     lattice categories correspond to bounded lattice homomorphisms; the
     binary preservation laws also hold for the corresponding semilattices.
     Cofinite topology is quasi-sober precisely on finite underlying types,
-    with no nonemptiness assumption.
+    with no nonemptiness assumption. Quasi-sober spaces have topological Krull
+    dimension equal to the Krull dimension of their original-point specialization
+    preorder, including empty spaces and unbounded finite chain lengths.
     Source-specific correspondence and coverage decisions are maintained
     separately.
 
